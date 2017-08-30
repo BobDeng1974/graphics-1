@@ -1,0 +1,245 @@
+#!/bin/sh
+# -*- ksh -*-
+
+# Small time to wait before sending events
+export SMALL1=0.1
+# Time to wait before making the dump
+export SMALL2=0.2
+
+
+if false
+then
+  VALGRIND=valgrind
+  SMALL1=100
+  SMALL2=200
+fi
+
+X=0
+Y=0
+
+zmw_small_scale() {
+SAVE_SMALL1=$SMALL1
+SAVE_SMALL2=$SMALL2
+
+SMALL1=`echo "$SMALL1 * $1" | bc`
+SMALL2=`echo "$SMALL2 * $1" | bc`
+}
+
+zmw_small_restore() {
+SMALL1=$ZMW_SMALL1
+SMALL2=$ZMW_SMALL2
+}
+
+export KEY_A=37
+export KEY_B=38
+export KEY_LEFT=39
+export KEY_CONTROL=40
+export KEY_SLASH=41
+export KEY_BACKSPACE=42
+export KEY_F1=43
+export KEY_PAGEUP=44
+export KEY_UP=45
+export KEY_ALT=46
+export KEY_META=47
+export KEY_SHIFT=48
+export KEY_ESCAPE=49
+export KEY_TAB=50
+export KEY_DOWN=51
+export KEY_RIGHT=52
+export KEY_PLUS=53
+export KEY_F11=54
+export KEY_W=55
+
+
+start_xvfb() {
+  if [ "" = "$1" ]
+  then
+    RESOLUTION=700x700
+  else
+    RESOLUTION=$1
+  fi
+
+  # X server start number for Xvfb
+  # Will launch X server until one starts
+  export ZMW_XVFBN=9
+  while true
+  do
+    if true
+    then
+      # depth 32 does NOT work, the "xwd" command does not work correctly
+      Xvfb :$ZMW_XVFBN -ac -screen 0 ${RESOLUTION}x24 -noreset &
+    else
+      Xnest :$ZMW_XVFBN -ac -noreset &
+    fi >xxx.bad
+    sleep 1
+    if [ `fgrep -c "Fatal server error" xxx.bad` = "1" ]
+    then
+      echo "Server X yet running on $ZMW_XVFBN, take the next" >&2
+      export ZMW_XVFBN=`expr $ZMW_XVFBN + 1`
+      rm xxx.bad
+    else
+      break
+    fi
+  done
+
+  export ZMW_XVFB=`hostname`:$ZMW_XVFBN.0
+  export ZMW_XVFB_PID=$!
+  echo "Starting X11 server: $ZMW_XVFB_PID"
+  trap stop_xvfb 0 1 2 3
+  xsetroot -display $ZMW_XVFB -solid white
+  # Clear the keyboard
+  xmodmap -display $ZMW_XVFB -pke | sed 's/= .*/=/' |
+          xmodmap -display $ZMW_XVFB -
+  # Define the keyboard
+  xmodmap -display $ZMW_XVFB -e "keycode $KEY_A = a" \
+   -e "keycode $KEY_B = b" \
+   -e "keycode $KEY_W = w" \
+   -e "keycode $KEY_SLASH = slash" \
+   -e "keycode $KEY_LEFT = Left" \
+   -e "keycode $KEY_BACKSPACE = BackSpace" \
+   -e "keycode $KEY_CONTROL = Control_L" \
+   -e "keycode $KEY_F1 = F1" \
+   -e "keycode $KEY_F11 = F11" \
+   -e "keycode $KEY_PAGEUP = Prior" \
+   -e "keycode $KEY_ALT = Alt_L" \
+   -e "keycode $KEY_META = Meta_L" \
+   -e "keycode $KEY_SHIFT = Shift_L" \
+   -e "keycode $KEY_UP = Up" \
+   -e "keycode $KEY_ESCAPE = Escape" \
+   -e "keycode $KEY_TAB = Tab" \
+   -e "keycode $KEY_DOWN = Down" \
+   -e "keycode $KEY_RIGHT = Right" \
+   -e "keycode $KEY_PLUS = plus" \
+   -e "clear Lock" \
+   -e "clear Shift" \
+   -e "clear Mod1" \
+   -e "clear Mod2" \
+   -e "clear Mod3" \
+   -e "clear Mod4" \
+   -e "clear Mod5" \
+   -e "clear Control" \
+   -e "add Shift = Shift_L" \
+   -e "add Mod1 = Alt_L" \
+   -e "add Mod2 = Meta_L" \
+   -e "add Control = Control_L"
+
+   cat >xxx.fvwm2rc <<%
+ColormapFocus FollowsMouse
+
+WindowFont              -misc-fixed-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+# Key Tab         A       N       CursorMove 50 50
+# Style "*"           BorderWidth 3, HandleWidth 5
+%
+
+  fvwm2 -display $ZMW_XVFB -f $(pwd)/xxx.fvwm2rc 2>&1 |
+                grep -v "<<WARNING>> Couldn't load image" &
+  sleep 1
+  rm xxx.fvwm2rc
+  xnee_loop
+}
+
+stop_xvfb() {
+  if [ "" = "$ZMW_XVFB_PID" ]
+  then
+    echo "Stopping a not started X11 server ?" >&2
+  else
+    echo "Stopping X11 server: $ZMW_XVFB_PID"
+    kill "$ZMW_XVFB_PID" >/dev/null 2>&1
+  fi
+  touch xxx.xnee_stop
+}
+
+xnee_loop() {
+  rm xxx.xnee_stop xxx.xnee
+  while [ ! -f xxx.xnee_stop ]
+    do
+      if [ -f xxx.xnee ]
+      then
+	  cat xxx.xnee
+	  rm xxx.xnee
+      fi
+      sleep 0.1
+  done | 
+  (
+  if [ "" = "$(xnee --help | grep -e --no-resolution-adjustment)" ]
+    then
+      xnee --display $ZMW_XVFB --replay 2>&1
+      else
+      xnee --display $ZMW_XVFB --replay --no-resolution-adjustment 2>&1
+    fi
+  ) |
+  sed 's/.*/XNEE:&/' &
+}
+
+ZMW_COUNTER="1000"
+
+zmw_send() {
+  while [ -f "xxx.xnee" ]
+  do
+    sleep 0.01
+  done
+  echo "$1,0,$ZMW_COUNTER
+0,6,$X,$Y,0,0,0,$(expr $ZMW_COUNTER + 1)" > xxx.xnee
+  ZMW_COUNTER=$(expr $ZMW_COUNTER + 2)
+}
+
+zmw_move_cursor_to() {
+        X="$1"
+        Y="$2"
+        zmw_send "0,6,$1,$2,0,0"
+	zmw_sleep $SMALL1
+        zmw_send "0,6,`expr $1 + 1`,$2,0,0"
+	zmw_sleep $SMALL1
+}
+
+zmw_button_press() {
+	zmw_send "0,4,0,0,1,0"
+}
+
+zmw_button_release() {
+	zmw_send "0,5,0,0,1,0"
+}
+
+zmw_button_click() {
+	zmw_button_press
+	zmw_button_release
+}
+
+zmw_button2_press() {
+	zmw_send "0,4,0,0,2,0"
+}
+
+zmw_button2_release() {
+	zmw_send "0,5,0,0,2,0"
+}
+
+zmw_button2_click() {
+	zmw_button2_press
+	zmw_button2_release
+}
+zmw_key_press() {
+	zmw_send "0,2,0,0,0,$1"
+}
+
+zmw_key_release() {
+	zmw_send "0,3,0,0,0,$1"
+}
+
+zmw_key() {
+    zmw_key_press "$1"
+    zmw_key_release "$1"
+}
+
+zmw_sleep() {
+	sleep $1 || sleep 1
+}
+
+zmw_dump_screen() {
+	echo -n "$1"
+	zmw_sleep $SMALL2
+	xwd -root -screen |
+	    xwdtopnm  |
+	    pnmcrop -white >"xxx.$NAME.$1.ppm"
+}
+

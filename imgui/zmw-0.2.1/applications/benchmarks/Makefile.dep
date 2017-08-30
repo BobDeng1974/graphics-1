@@ -1,0 +1,7 @@
+speed.o: speed.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h

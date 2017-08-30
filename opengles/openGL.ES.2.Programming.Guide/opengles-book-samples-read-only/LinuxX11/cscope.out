@@ -1,0 +1,11422 @@
+cscope 15 $HOME/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11 -q 0000000487 0000067402
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_1/Vertex_Shader/Vertex_Shader.c
+
+17 
+	~<¡dlib.h
+>
+
+18 
+	~"esUt.h
+"
+
+21 
+unifÜm
+ 
+m©4
+
+
+22 
+	gu_mvpM©rix
+;
+
+25 
+©Œibu‹
+ 
+vec4
+
+
+26 
+	ga_pos™iÚ
+;
+
+27 
+©Œibu‹
+ 
+vec4
+
+
+28 
+	ga_cŞÜ
+;
+
+31 
+v¬yšg
+ 
+vec4
+
+
+32 
+	gv_cŞÜ
+;
+
+35 
+	$maš
+()
+
+37 
+v_cŞÜ
+ = 
+a_cŞÜ
+;
+
+38 
+gl_Pos™iÚ
+ = 
+u_mvpM©rix
+ * 
+a_pos™iÚ
+;
+
+39 
+	`´štf
+("Vertex_Shader\n");
+
+41 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_10/MultiTexture/MultiTexture.c
+
+16 
+	~<¡dlib.h
+>
+
+17 
+	~"esUt.h
+"
+
+22 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+25 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+26 
+GLšt
+ 
+	m‹xCoÜdLoc
+;
+
+29 
+GLšt
+ 
+	mba£M­Loc
+;
+
+30 
+GLšt
+ 
+	mlightM­Loc
+;
+
+33 
+GLušt
+ 
+	mba£M­TexId
+;
+
+34 
+GLušt
+ 
+	mlightM­TexId
+;
+
+36 } 
+	tU£rD©a
+;
+
+42 
+GLušt
+ 
+	$LßdTextu»
+ ( *
+feName
+ )
+
+44 
+width
+,
+
+45 
+height
+;
+
+46 *
+bufãr
+ = 
+	`esLßdTGA
+ ( 
+feName
+, &
+width
+, &
+height
+ );
+
+47 
+GLušt
+ 
+‹xId
+;
+
+49 iàĞ
+bufãr
+ =ğ
+NULL
+ )
+
+51 
+	`esLogMes§ge
+ ( "E¼Ü†ßdšg (%sèimage.\n", 
+feName
+ );
+
+55 
+	`glG’Textu»s
+ ( 1, &
+‹xId
+ );
+
+56 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+‹xId
+ );
+
+58 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_2D
+, 0, 
+GL_RGB
+, 
+width
+, 
+height
+, 0, GL_RGB, 
+GL_UNSIGNED_BYTE
+, 
+bufãr
+ );
+
+59 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_LINEAR
+ );
+
+60 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MAG_FILTER
+, 
+GL_LINEAR
+ );
+
+61 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_S
+, 
+GL_CLAMP_TO_EDGE
+ );
+
+62 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_T
+, 
+GL_CLAMP_TO_EDGE
+ );
+
+64 
+	`ä“
+ ( 
+bufãr
+ );
+
+66  
+‹xId
+;
+
+67 
+	}
+}
+
+74 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+76 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+77 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+87 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+103 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+106 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+107 
+u£rD©a
+->
+‹xCoÜdLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_texCoord" );
+
+110 
+u£rD©a
+->
+ba£M­Loc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "s_baseMap" );
+
+111 
+u£rD©a
+->
+lightM­Loc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "s_lightMap" );
+
+114 
+u£rD©a
+->
+ba£M­TexId
+ = 
+	`LßdTextu»
+ ( "basemap.tga" );
+
+115 
+u£rD©a
+->
+lightM­TexId
+ = 
+	`LßdTextu»
+ ( "lightmap.tga" );
+
+117 iàĞ
+u£rD©a
+->
+ba£M­TexId
+ =ğ0 || u£rD©a->
+lightM­TexId
+ == 0 )
+
+118  
+FALSE
+;
+
+120 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+121  
+TRUE
+;
+
+122 
+	}
+}
+
+127 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+129 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+130 
+GLæßt
+ 
+vV”tiûs
+[] = { -0.5f, 0.5f, 0.0f,
+
+139 
+GLushÜt
+ 
+šdiûs
+[] = { 0, 1, 2, 0, 2, 3 };
+
+142 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+145 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+148 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+151 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+152 
+GL_FALSE
+, 5 * (
+GLæßt
+), 
+vV”tiûs
+ );
+
+154 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+, 2, 
+GL_FLOAT
+,
+
+155 
+GL_FALSE
+, 5 * (
+GLæßt
+), &
+vV”tiûs
+[3] );
+
+157 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+158 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+ );
+
+161 
+	`glAùiveTextu»
+ ( 
+GL_TEXTURE0
+ );
+
+162 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+u£rD©a
+->
+ba£M­TexId
+ );
+
+165 
+	`glUnifÜm1i
+ ( 
+u£rD©a
+->
+ba£M­Loc
+, 0 );
+
+168 
+	`glAùiveTextu»
+ ( 
+GL_TEXTURE1
+ );
+
+169 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+u£rD©a
+->
+lightM­TexId
+ );
+
+172 
+	`glUnifÜm1i
+ ( 
+u£rD©a
+->
+lightM­Loc
+, 1 );
+
+174 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_SHORT
+, 
+šdiûs
+ );
+
+176 
+	`eglSw­Bufãrs
+ ( 
+esCÚ‹xt
+->
+eglDi¥Ïy
+,ƒsCÚ‹xt->
+eglSurçû
+ );
+
+177 
+	}
+}
+
+182 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+184 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+187 
+	`glD–‘eTextu»s
+ ( 1, &
+u£rD©a
+->
+ba£M­TexId
+ );
+
+188 
+	`glD–‘eTextu»s
+ ( 1, &
+u£rD©a
+->
+lightM­TexId
+ );
+
+191 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+192 
+	}
+}
+
+195 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+197 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+198 
+U£rD©a
+ 
+u£rD©a
+;
+
+200 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+201 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+203 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "MuÉiTextu»", 320, 240, 
+ES_WINDOW_RGB
+ );
+
+205 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+208 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+210 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+212 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+213 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_11/Multisample/Multisample.c
+
+16 
+	~<¡dlib.h
+>
+
+17 
+	~<¡dio.h
+>
+
+18 
+	~"esUt.h
+"
+
+23 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+26 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+29 
+GLšt
+ 
+	mcŞÜLoc
+;
+
+31 } 
+	tU£rD©a
+;
+
+36 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+38 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+39 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+46 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+55 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+58 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+61 
+u£rD©a
+->
+cŞÜLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "u_color" );
+
+64 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+67 
+	`glCË¬S‹nc
+ ( 0x1 );
+
+70 
+	`glCË¬D•thf
+( 0.75f );
+
+73 
+	`glEÇbË
+Ğ
+GL_DEPTH_TEST
+ );
+
+74 
+	`glEÇbË
+Ğ
+GL_STENCIL_TEST
+ );
+
+76  
+TRUE
+;
+
+77 
+	}
+}
+
+83 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+85 
+i
+;
+
+87 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+89 
+GLæßt
+ 
+vV”tiûs
+[] = {
+
+112 
+GLuby‹
+ 
+šdiûs
+[][6] = {
+
+120 
+	#NumTe¡s
+ 4
+
+	)
+
+121 
+GLæßt
+ 
+cŞÜs
+[
+NumTe¡s
+][4] = {
+
+128 
+GLšt
+ 
+numS‹ncB™s
+;
+
+129 
+GLušt
+ 
+¡’cV®ues
+[
+NumTe¡s
+] = {
+
+138 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+142 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ | 
+GL_DEPTH_BUFFER_BIT
+ | 
+GL_STENCIL_BUFFER_BIT
+ );
+
+145 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+148 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+149 
+GL_FALSE
+, 0, 
+vV”tiûs
+ );
+
+151 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+166 
+	`glS‹ncFunc
+Ğ
+GL_LESS
+, 0x7, 0x3 );
+
+167 
+	`glS‹ncOp
+Ğ
+GL_REPLACE
+, 
+GL_DECR
+, GL_DECR );
+
+168 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[0] );
+
+182 
+	`glS‹ncFunc
+Ğ
+GL_GREATER
+, 0x3, 0x3 );
+
+183 
+	`glS‹ncOp
+Ğ
+GL_KEEP
+, 
+GL_DECR
+, GL_KEEP );
+
+184 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[1] );
+
+198 
+	`glS‹ncFunc
+Ğ
+GL_EQUAL
+, 0x1, 0x3 );
+
+199 
+	`glS‹ncOp
+Ğ
+GL_KEEP
+, 
+GL_INCR
+, GL_INCR );
+
+200 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[2] );
+
+215 
+	`glS‹ncFunc
+Ğ
+GL_EQUAL
+, 0x2, 0x1 );
+
+216 
+	`glS‹ncOp
+Ğ
+GL_INVERT
+, 
+GL_KEEP
+, GL_KEEP );
+
+217 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[3] );
+
+223 
+	`glG‘IÁeg”v
+Ğ
+GL_STENCIL_BITS
+, &
+numS‹ncB™s
+ );
+
+225 
+¡’cV®ues
+[3] = ~(((1 << 
+numS‹ncB™s
+) - 1) & 0x1) & 0xff;
+
+231 
+	`glS‹ncMask
+( 0x0 );
+
+233  
+i
+ = 0; i < 
+NumTe¡s
+; ++i )
+
+235 
+	`glS‹ncFunc
+Ğ
+GL_EQUAL
+, 
+¡’cV®ues
+[
+i
+], 0xff );
+
+236 
+	`glUnifÜm4fv
+Ğ
+u£rD©a
+->
+cŞÜLoc
+, 1, 
+cŞÜs
+[
+i
+] );
+
+237 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[4] );
+
+241 
+	}
+}
+
+247 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+249 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+252 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+253 
+	}
+}
+
+259 
+	$Key
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, 
+key
+, 
+x
+, 
+y
+)
+
+261  
+key
+ )
+
+264 
+	`´štf
+( "Saw‡n 'm'\n" );
+
+268 
+	`´štf
+( "Saw‡n 'a'\n" );
+
+272 
+	`´štf
+( "Saw‡ '1'\n" );
+
+276 
+	`ShutDown
+Ğ
+esCÚ‹xt
+ );
+
+277 
+	`ex™
+( 0 );
+
+280 
+	}
+}
+
+283 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+285 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+286 
+U£rD©a
+ 
+u£rD©a
+;
+
+288 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+289 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+291 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "MuÉi-§m¶šg", 320, 240, 
+ES_WINDOW_RGB
+ );
+
+293 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+296 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+297 
+	`esRegi¡”KeyFunc
+Ğ&
+esCÚ‹xt
+, 
+Key
+ );
+
+299 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+301 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+302 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_11/Stencil_Test/Stencil_Test.c
+
+16 
+	~<¡dlib.h
+>
+
+17 
+	~"esUt.h
+"
+
+22 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+25 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+28 
+GLšt
+ 
+	mcŞÜLoc
+;
+
+30 } 
+	tU£rD©a
+;
+
+35 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+37 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+38 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+45 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+54 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+57 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+60 
+u£rD©a
+->
+cŞÜLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "u_color" );
+
+63 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+66 
+	`glCË¬S‹nc
+ ( 0x1 );
+
+69 
+	`glCË¬D•thf
+( 0.75f );
+
+72 
+	`glEÇbË
+Ğ
+GL_DEPTH_TEST
+ );
+
+73 
+	`glEÇbË
+Ğ
+GL_STENCIL_TEST
+ );
+
+75  
+TRUE
+;
+
+76 
+	}
+}
+
+82 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+84 
+i
+;
+
+86 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+88 
+GLæßt
+ 
+vV”tiûs
+[] = {
+
+111 
+GLuby‹
+ 
+šdiûs
+[][6] = {
+
+119 
+	#NumTe¡s
+ 4
+
+	)
+
+120 
+GLæßt
+ 
+cŞÜs
+[
+NumTe¡s
+][4] = {
+
+127 
+GLšt
+ 
+numS‹ncB™s
+;
+
+128 
+GLušt
+ 
+¡’cV®ues
+[
+NumTe¡s
+] = {
+
+137 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+141 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ | 
+GL_DEPTH_BUFFER_BIT
+ | 
+GL_STENCIL_BUFFER_BIT
+ );
+
+144 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+147 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+148 
+GL_FALSE
+, 0, 
+vV”tiûs
+ );
+
+150 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+165 
+	`glS‹ncFunc
+Ğ
+GL_LESS
+, 0x7, 0x3 );
+
+166 
+	`glS‹ncOp
+Ğ
+GL_REPLACE
+, 
+GL_DECR
+, GL_DECR );
+
+167 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[0] );
+
+181 
+	`glS‹ncFunc
+Ğ
+GL_GREATER
+, 0x3, 0x3 );
+
+182 
+	`glS‹ncOp
+Ğ
+GL_KEEP
+, 
+GL_DECR
+, GL_KEEP );
+
+183 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[1] );
+
+197 
+	`glS‹ncFunc
+Ğ
+GL_EQUAL
+, 0x1, 0x3 );
+
+198 
+	`glS‹ncOp
+Ğ
+GL_KEEP
+, 
+GL_INCR
+, GL_INCR );
+
+199 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[2] );
+
+214 
+	`glS‹ncFunc
+Ğ
+GL_EQUAL
+, 0x2, 0x1 );
+
+215 
+	`glS‹ncOp
+Ğ
+GL_INVERT
+, 
+GL_KEEP
+, GL_KEEP );
+
+216 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[3] );
+
+222 
+	`glG‘IÁeg”v
+Ğ
+GL_STENCIL_BITS
+, &
+numS‹ncB™s
+ );
+
+224 
+¡’cV®ues
+[3] = ~(((1 << 
+numS‹ncB™s
+) - 1) & 0x1) & 0xff;
+
+230 
+	`glS‹ncMask
+( 0x0 );
+
+232  
+i
+ = 0; i < 
+NumTe¡s
+; ++i )
+
+234 
+	`glS‹ncFunc
+Ğ
+GL_EQUAL
+, 
+¡’cV®ues
+[
+i
+], 0xff );
+
+235 
+	`glUnifÜm4fv
+Ğ
+u£rD©a
+->
+cŞÜLoc
+, 1, 
+cŞÜs
+[
+i
+] );
+
+236 
+	`glD¿wEËm’ts
+Ğ
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_BYTE
+, 
+šdiûs
+[4] );
+
+239 
+	`eglSw­Bufãrs
+ ( 
+esCÚ‹xt
+->
+eglDi¥Ïy
+,ƒsCÚ‹xt->
+eglSurçû
+ );
+
+240 
+	}
+}
+
+245 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+247 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+250 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+251 
+	}
+}
+
+254 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+256 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+257 
+U£rD©a
+ 
+u£rD©a
+;
+
+259 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+260 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+262 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "Stencil Test", 320, 240,
+
+263 
+ES_WINDOW_RGB
+ | 
+ES_WINDOW_DEPTH
+ | 
+ES_WINDOW_STENCIL
+ );
+
+265 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+268 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+270 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+272 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+273 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_13/ParticleSystem/ParticleSystem.c
+
+16 
+	~<¡dlib.h
+>
+
+17 
+	~<m©h.h
+>
+
+18 
+	~"esUt.h
+"
+
+20 
+	#NUM_PARTICLES
+ 1000
+
+	)
+
+21 
+	#PARTICLE_SIZE
+ 7
+
+	)
+
+26 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+29 
+GLšt
+ 
+	mliãtimeLoc
+;
+
+30 
+GLšt
+ 
+	m¡¬tPos™iÚLoc
+;
+
+31 
+GLšt
+ 
+	m’dPos™iÚLoc
+;
+
+34 
+GLšt
+ 
+	mtimeLoc
+;
+
+35 
+GLšt
+ 
+	mcŞÜLoc
+;
+
+36 
+GLšt
+ 
+	mûÁ”Pos™iÚLoc
+;
+
+37 
+GLšt
+ 
+	m§m¶”Loc
+;
+
+40 
+GLušt
+ 
+	m‹xtu»Id
+;
+
+43 
+	m·¹işeD©a
+[ 
+NUM_PARTICLES
+ * 
+PARTICLE_SIZE
+ ];
+
+46 
+	mtime
+;
+
+48 } 
+	tU£rD©a
+;
+
+53 
+GLušt
+ 
+	$LßdTextu»
+ ( *
+feName
+ )
+
+55 
+width
+,
+
+56 
+height
+;
+
+57 *
+bufãr
+ = 
+	`esLßdTGA
+ ( 
+feName
+, &
+width
+, &
+height
+ );
+
+58 
+GLušt
+ 
+‹xId
+;
+
+60 iàĞ
+bufãr
+ =ğ
+NULL
+ )
+
+62 
+	`esLogMes§ge
+ ( "E¼Ü†ßdšg (%sèimage.\n", 
+feName
+ );
+
+66 
+	`glG’Textu»s
+ ( 1, &
+‹xId
+ );
+
+67 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+‹xId
+ );
+
+69 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_2D
+, 0, 
+GL_RGB
+, 
+width
+, 
+height
+, 0, GL_RGB, 
+GL_UNSIGNED_BYTE
+, 
+bufãr
+ );
+
+70 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_LINEAR
+ );
+
+71 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MAG_FILTER
+, 
+GL_LINEAR
+ );
+
+72 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_S
+, 
+GL_CLAMP_TO_EDGE
+ );
+
+73 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_T
+, 
+GL_CLAMP_TO_EDGE
+ );
+
+75 
+	`ä“
+ ( 
+bufãr
+ );
+
+77  
+‹xId
+;
+
+78 
+	}
+}
+
+84 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+86 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+87 
+i
+;
+
+89 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+112 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+126 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+129 
+u£rD©a
+->
+liãtimeLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_lifetime" );
+
+130 
+u£rD©a
+->
+¡¬tPos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_startPosition" );
+
+131 
+u£rD©a
+->
+’dPos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_endPosition" );
+
+134 
+u£rD©a
+->
+timeLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "u_time" );
+
+135 
+u£rD©a
+->
+ûÁ”Pos™iÚLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "u_centerPosition" );
+
+136 
+u£rD©a
+->
+cŞÜLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "u_color" );
+
+137 
+u£rD©a
+->
+§m¶”Loc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "s_texture" );
+
+139 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+142 
+	`¤ªd
+ ( 0 );
+
+143  
+i
+ = 0; i < 
+NUM_PARTICLES
+; i++ )
+
+145 *
+·¹işeD©a
+ = &
+u£rD©a
+->·¹işeD©a[
+i
+ * 
+PARTICLE_SIZE
+];
+
+148 (*
+·¹işeD©a
+++èğĞ()(
+	`¿nd
+() % 10000) / 10000.0f );
+
+151 (*
+·¹işeD©a
+++èğĞ()(
+	`¿nd
+() % 10000) / 5000.0f ) - 1.0f;
+
+152 (*
+·¹işeD©a
+++èğĞ()(
+	`¿nd
+() % 10000) / 5000.0f ) - 1.0f;
+
+153 (*
+·¹işeD©a
+++èğĞ()(
+	`¿nd
+() % 10000) / 5000.0f ) - 1.0f;
+
+156 (*
+·¹işeD©a
+++èğĞ()(
+	`¿nd
+() % 10000) / 40000.0f ) - 0.125f;
+
+157 (*
+·¹işeD©a
+++èğĞ()(
+	`¿nd
+() % 10000) / 40000.0f ) - 0.125f;
+
+158 (*
+·¹işeD©a
+++èğĞ()(
+	`¿nd
+() % 10000) / 40000.0f ) - 0.125f;
+
+163 
+u£rD©a
+->
+time
+ = 1.0f;
+
+165 
+u£rD©a
+->
+‹xtu»Id
+ = 
+	`LßdTextu»
+ ( "smoke.tga" );
+
+166 iàĞ
+u£rD©a
+->
+‹xtu»Id
+ <= 0 )
+
+168  
+FALSE
+;
+
+171  
+TRUE
+;
+
+172 
+	}
+}
+
+177 
+	$Upd©e
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, 
+d–Time
+ )
+
+179 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+181 
+u£rD©a
+->
+time
+ +ğ
+d–Time
+;
+
+183 iàĞ
+u£rD©a
+->
+time
+ >= 1.0f )
+
+185 
+ûÁ”Pos
+[3];
+
+186 
+cŞÜ
+[4];
+
+188 
+u£rD©a
+->
+time
+ = 0.0f;
+
+191 
+ûÁ”Pos
+[0] = ( ()(
+	`¿nd
+() % 10000) / 10000.0f ) - 0.5f;
+
+192 
+ûÁ”Pos
+[1] = ( ()(
+	`¿nd
+() % 10000) / 10000.0f ) - 0.5f;
+
+193 
+ûÁ”Pos
+[2] = ( ()(
+	`¿nd
+() % 10000) / 10000.0f ) - 0.5f;
+
+195 
+	`glUnifÜm3fv
+ ( 
+u£rD©a
+->
+ûÁ”Pos™iÚLoc
+, 1, &
+ûÁ”Pos
+[0] );
+
+198 
+cŞÜ
+[0] = ( ()(
+	`¿nd
+() % 10000) / 20000.0f ) + 0.5f;
+
+199 
+cŞÜ
+[1] = ( ()(
+	`¿nd
+() % 10000) / 20000.0f ) + 0.5f;
+
+200 
+cŞÜ
+[2] = ( ()(
+	`¿nd
+() % 10000) / 20000.0f ) + 0.5f;
+
+201 
+cŞÜ
+[3] = 0.5;
+
+203 
+	`glUnifÜm4fv
+ ( 
+u£rD©a
+->
+cŞÜLoc
+, 1, &
+cŞÜ
+[0] );
+
+207 
+	`glUnifÜm1f
+ ( 
+u£rD©a
+->
+timeLoc
+, u£rD©a->
+time
+ );
+
+208 
+	}
+}
+
+213 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+215 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+218 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+221 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+224 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+227 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+liãtimeLoc
+, 1, 
+GL_FLOAT
+,
+
+228 
+GL_FALSE
+, 
+PARTICLE_SIZE
+ * (
+GLæßt
+),
+
+229 
+u£rD©a
+->
+·¹işeD©a
+ );
+
+231 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+’dPos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+232 
+GL_FALSE
+, 
+PARTICLE_SIZE
+ * (
+GLæßt
+),
+
+233 &
+u£rD©a
+->
+·¹işeD©a
+[1] );
+
+235 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+¡¬tPos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+236 
+GL_FALSE
+, 
+PARTICLE_SIZE
+ * (
+GLæßt
+),
+
+237 &
+u£rD©a
+->
+·¹işeD©a
+[4] );
+
+240 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+liãtimeLoc
+ );
+
+241 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+’dPos™iÚLoc
+ );
+
+242 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+¡¬tPos™iÚLoc
+ );
+
+244 
+	`glEÇbË
+ ( 
+GL_BLEND
+ );
+
+245 
+	`glBËndFunc
+ ( 
+GL_SRC_ALPHA
+, 
+GL_ONE
+ );
+
+248 
+	`glAùiveTextu»
+ ( 
+GL_TEXTURE0
+ );
+
+249 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+u£rD©a
+->
+‹xtu»Id
+ );
+
+250 
+	`glEÇbË
+ ( 
+GL_TEXTURE_2D
+ );
+
+253 
+	`glUnifÜm1i
+ ( 
+u£rD©a
+->
+§m¶”Loc
+, 0 );
+
+255 
+	`glD¿wA¼ays
+Ğ
+GL_POINTS
+, 0, 
+NUM_PARTICLES
+ );
+
+257 
+	`eglSw­Bufãrs
+ ( 
+esCÚ‹xt
+->
+eglDi¥Ïy
+,ƒsCÚ‹xt->
+eglSurçû
+ );
+
+258 
+	}
+}
+
+263 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+265 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+268 
+	`glD–‘eTextu»s
+ ( 1, &
+u£rD©a
+->
+‹xtu»Id
+ );
+
+271 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+272 
+	}
+}
+
+275 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+277 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+278 
+U£rD©a
+ 
+u£rD©a
+;
+
+280 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+281 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+283 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "P¬tişeSy¡em", 640, 480, 
+ES_WINDOW_RGB
+ );
+
+285 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+288 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+289 
+	`esRegi¡”Upd©eFunc
+ ( &
+esCÚ‹xt
+, 
+Upd©e
+ );
+
+291 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+293 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+294 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_15/Hello_Triangle_KD/Hello_Triangle_KD.c
+
+16 
+	~<KD/kd.h
+>
+
+17 
+	~<EGL/egl.h
+>
+
+18 
+	~<GLES2/gl2.h
+>
+
+23 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+26 
+EGLDi¥Ïy
+ 
+	meglDi¥Ïy
+;
+
+27 
+EGLCÚ‹xt
+ 
+	meglCÚ‹xt
+;
+
+28 
+EGLSurçû
+ 
+	meglSurçû
+;
+
+30 } 
+	tU£rD©a
+;
+
+36 
+GLušt
+ 
+	$LßdShad”
+ ( 
+GL’um
+ 
+ty³
+, cÚ¡ *
+shad”Src
+ )
+
+38 
+GLušt
+ 
+shad”
+;
+
+39 
+GLšt
+ 
+comped
+;
+
+42 
+shad”
+ = 
+	`glC»©eShad”
+ ( 
+ty³
+ );
+
+44 iàĞ
+shad”
+ == 0 )
+
+48 
+	`glShad”Sourû
+ ( 
+shad”
+, 1, &
+shad”Src
+, 
+NULL
+ );
+
+51 
+	`glCompeShad”
+ ( 
+shad”
+ );
+
+54 
+	`glG‘Shad”iv
+ ( 
+shad”
+, 
+GL_COMPILE_STATUS
+, &
+comped
+ );
+
+56 iàĞ!
+comped
+ )
+
+58 
+GLšt
+ 
+šfoL’
+ = 0;
+
+60 
+	`glG‘Shad”iv
+ ( 
+shad”
+, 
+GL_INFO_LOG_LENGTH
+, &
+šfoL’
+ );
+
+62 iàĞ
+šfoL’
+ > 1 )
+
+64 * 
+šfoLog
+ = 
+	`kdM®loc
+ ((è* 
+šfoL’
+ );
+
+66 
+	`glG‘Shad”InfoLog
+ ( 
+shad”
+, 
+šfoL’
+, 
+NULL
+, 
+šfoLog
+ );
+
+67 
+	`kdLogMes§ge
+ ( 
+šfoLog
+ );
+
+69 
+	`kdF»e
+ ( 
+šfoLog
+ );
+
+72 
+	`glD–‘eShad”
+ ( 
+shad”
+ );
+
+76  
+shad”
+;
+
+78 
+	}
+}
+
+83 
+	$In™
+ ( 
+U£rD©a
+ *
+u£rD©a
+ )
+
+85 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+92 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+99 
+GLušt
+ 
+v”‹xShad”
+;
+
+100 
+GLušt
+ 
+äagm’tShad”
+;
+
+101 
+GLušt
+ 
+´og¿mObjeù
+;
+
+102 
+GLšt
+ 
+lšked
+;
+
+105 
+v”‹xShad”
+ = 
+	`LßdShad”
+ ( 
+GL_VERTEX_SHADER
+, 
+vShad”SŒ
+ );
+
+106 
+äagm’tShad”
+ = 
+	`LßdShad”
+ ( 
+GL_FRAGMENT_SHADER
+, 
+fShad”SŒ
+ );
+
+109 
+´og¿mObjeù
+ = 
+	`glC»©eProg¿m
+ ( );
+
+111 iàĞ
+´og¿mObjeù
+ == 0 )
+
+114 
+	`glA‰achShad”
+ ( 
+´og¿mObjeù
+, 
+v”‹xShad”
+ );
+
+115 
+	`glA‰achShad”
+ ( 
+´og¿mObjeù
+, 
+äagm’tShad”
+ );
+
+118 
+	`glBšdA‰ribLoÿtiÚ
+ ( 
+´og¿mObjeù
+, 0, "vPosition" );
+
+121 
+	`glLškProg¿m
+ ( 
+´og¿mObjeù
+ );
+
+124 
+	`glG‘Prog¿miv
+ ( 
+´og¿mObjeù
+, 
+GL_LINK_STATUS
+, &
+lšked
+ );
+
+126 iàĞ!
+lšked
+ )
+
+128 
+GLšt
+ 
+šfoL’
+ = 0;
+
+130 
+	`glG‘Prog¿miv
+ ( 
+´og¿mObjeù
+, 
+GL_INFO_LOG_LENGTH
+, &
+šfoL’
+ );
+
+132 iàĞ
+šfoL’
+ > 1 )
+
+134 * 
+šfoLog
+ = 
+	`kdM®loc
+ ((è* 
+šfoL’
+ );
+
+136 
+	`glG‘Prog¿mInfoLog
+ ( 
+´og¿mObjeù
+, 
+šfoL’
+, 
+NULL
+, 
+šfoLog
+ );
+
+137 
+	`kdLogMes§ge
+ ( 
+šfoLog
+ );
+
+139 
+	`kdF»e
+ ( 
+šfoLog
+ );
+
+142 
+	`glD–‘eProg¿m
+ ( 
+´og¿mObjeù
+ );
+
+143  
+FALSE
+;
+
+147 
+u£rD©a
+->
+´og¿mObjeù
+ =…rogramObject;
+
+149 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+150  
+TRUE
+;
+
+151 
+	}
+}
+
+156 
+	$D¿w
+ ( 
+U£rD©a
+ *
+u£rD©a
+ )
+
+158 
+GLæßt
+ 
+vV”tiûs
+[] = { 0.0f, 0.5f, 0.0f,
+
+163 
+	`glV›wpÜt
+ ( 0, 0, 320, 240 );
+
+166 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+169 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+172 
+	`glV”‹xA‰ribPoš‹r
+ ( 0, 3, 
+GL_FLOAT
+, 
+GL_FALSE
+, 0, 
+vV”tiûs
+ );
+
+173 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 0 );
+
+175 
+	`glD¿wA¼ays
+ ( 
+GL_TRIANGLES
+, 0, 3 );
+
+177 
+	`eglSw­Bufãrs
+ ( 
+u£rD©a
+->
+eglDi¥Ïy
+, u£rD©a->
+eglSurçû
+ );
+
+178 
+	}
+}
+
+186 
+EGLBoŞ—n
+ 
+	$In™EGLCÚ‹xt
+ ( 
+U£rD©a
+ *
+u£rD©a
+,
+
+187 
+KDWšdow
+ *
+wšdow
+,
+
+188 
+EGLCÚfig
+ 
+cÚfig
+ )
+
+190 
+EGLCÚ‹xt
+ 
+cÚ‹xt
+;
+
+191 
+EGLSurçû
+ 
+surçû
+;
+
+192 
+EGLšt
+ 
+cÚ‹xtA‰ribs
+[] = { 
+EGL_CONTEXT_CLIENT_VERSION
+, 2, 
+EGL_NONE
+, EGL_NONE };
+
+195 
+EGLN©iveWšdowTy³
+ 
+hWnd
+;
+
+196 if(
+	`kdR—lizeWšdow
+(
+wšdow
+, &
+hWnd
+) != 0)
+
+198  
+EGL_FALSE
+;
+
+200 
+surçû
+ = 
+	`eglC»©eWšdowSurçû
+(
+u£rD©a
+->
+eglDi¥Ïy
+, 
+cÚfig
+, 
+hWnd
+, 
+NULL
+);
+
+201 iàĞ
+surçû
+ =ğ
+EGL_NO_SURFACE
+ )
+
+203  
+EGL_FALSE
+;
+
+207 
+cÚ‹xt
+ = 
+	`eglC»©eCÚ‹xt
+(
+u£rD©a
+->
+eglDi¥Ïy
+, 
+cÚfig
+, 
+EGL_NO_CONTEXT
+, 
+cÚ‹xtA‰ribs
+ );
+
+208 iàĞ
+cÚ‹xt
+ =ğ
+EGL_NO_CONTEXT
+ )
+
+210  
+EGL_FALSE
+;
+
+214 iàĞ!
+	`eglMakeCu¼’t
+(
+u£rD©a
+->
+eglDi¥Ïy
+, 
+surçû
+, surçû, 
+cÚ‹xt
+) )
+
+216  
+EGL_FALSE
+;
+
+219 
+u£rD©a
+->
+eglCÚ‹xt
+ = 
+cÚ‹xt
+;
+
+220 
+u£rD©a
+->
+eglSurçû
+ = 
+surçû
+;
+
+222  
+EGL_TRUE
+;
+
+223 
+	}
+}
+
+230 
+KDšt
+ 
+	$kdMaš
+ ( 
+KDšt
+ 
+¬gc
+, cÚ¡ 
+KDch¬
+ *cÚ¡ *
+¬gv
+ )
+
+232 
+EGLšt
+ 
+©ŒibLi¡
+[] =
+
+234 
+EGL_RED_SIZE
+, 8,
+
+235 
+EGL_GREEN_SIZE
+, 8,
+
+236 
+EGL_BLUE_SIZE
+, 8,
+
+237 
+EGL_ALPHA_SIZE
+, 
+EGL_DONT_CARE
+,
+
+238 
+EGL_DEPTH_SIZE
+, 
+EGL_DONT_CARE
+,
+
+239 
+EGL_STENCIL_SIZE
+, 
+EGL_DONT_CARE
+,
+
+240 
+EGL_NONE
+
+
+242 
+EGLšt
+ 
+majÜV”siÚ
+,
+
+243 
+mšÜV”siÚ
+;
+
+244 
+U£rD©a
+ 
+u£rD©a
+;
+
+245 
+EGLšt
+ 
+numCÚfigs
+;
+
+246 
+EGLCÚfig
+ 
+cÚfig
+;
+
+247 
+KDWšdow
+ *
+wšdow
+ = 
+KD_NULL
+;
+
+249 
+u£rD©a
+.
+eglDi¥Ïy
+ = 
+	`eglG‘Di¥Ïy
+Ğ
+EGL_DEFAULT_DISPLAY
+ );
+
+252 iàĞ!
+	`eglIn™Ÿlize
+(
+u£rD©a
+.
+eglDi¥Ïy
+, &
+majÜV”siÚ
+, &
+mšÜV”siÚ
+) )
+
+254  
+EGL_FALSE
+;
+
+258 iàĞ!
+	`eglG‘CÚfigs
+(
+u£rD©a
+.
+eglDi¥Ïy
+, 
+NULL
+, 0, &
+numCÚfigs
+) )
+
+260  
+EGL_FALSE
+;
+
+264 iàĞ!
+	`eglChoo£CÚfig
+(
+u£rD©a
+.
+eglDi¥Ïy
+, 
+©ŒibLi¡
+, &
+cÚfig
+, 1, &
+numCÚfigs
+) )
+
+266  
+EGL_FALSE
+;
+
+271 
+wšdow
+ = 
+	`kdC»©eWšdow
+ ( 
+u£rD©a
+.
+eglDi¥Ïy
+, 
+cÚfig
+, 
+KD_NULL
+ );
+
+272 ifĞ!
+wšdow
+ )
+
+273 
+	`kdEx™
+ ( 0 );
+
+275 iàĞ!
+	`In™EGLCÚ‹xt
+ ( &
+u£rD©a
+, 
+wšdow
+, 
+cÚfig
+ ) )
+
+276 
+	`kdEx™
+ ( 0 );
+
+278 iàĞ!
+	`In™
+ ( &
+u£rD©a
+ ) )
+
+279 
+	`kdEx™
+ ( 0 );
+
+285 cÚ¡ 
+KDEv’t
+ *
+evt
+ = 
+	`kdWa™Ev’t
+ ( 0 );
+
+286 iàĞ
+evt
+ )
+
+289 iàĞ
+evt
+->
+ty³
+ =ğ
+KD_EVENT_WINDOW_CLOSE
+)
+
+294 
+	`D¿w
+ ( &
+u£rD©a
+ );
+
+298 
+	`eglMakeCu¼’t
+ ( 0, 0, 0, 0 );
+
+299 
+	`eglDe¡roySurçû
+ ( 
+u£rD©a
+.
+eglDi¥Ïy
+, u£rD©a.
+eglSurçû
+ );
+
+300 
+	`eglDe¡royCÚ‹xt
+ ( 
+u£rD©a
+.
+eglDi¥Ïy
+, u£rD©a.
+eglCÚ‹xt
+ );
+
+303 
+	`kdDe¡royWšdow
+(
+wšdow
+);
+
+306 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_2/Hello_Triangle/Hello_Triangle.c
+
+17 
+	~<¡dlib.h
+>
+
+18 
+	~"esUt.h
+"
+
+23 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+25 } 
+	tU£rD©a
+;
+
+31 
+GLušt
+ 
+	$LßdShad”
+ ( 
+GL’um
+ 
+ty³
+, cÚ¡ *
+shad”Src
+ )
+
+33 
+GLušt
+ 
+shad”
+;
+
+34 
+GLšt
+ 
+comped
+;
+
+37 
+shad”
+ = 
+	`glC»©eShad”
+ ( 
+ty³
+ );
+
+39 iàĞ
+shad”
+ == 0 )
+
+43 
+	`glShad”Sourû
+ ( 
+shad”
+, 1, &
+shad”Src
+, 
+NULL
+ );
+
+46 
+	`glCompeShad”
+ ( 
+shad”
+ );
+
+49 
+	`glG‘Shad”iv
+ ( 
+shad”
+, 
+GL_COMPILE_STATUS
+, &
+comped
+ );
+
+51 iàĞ!
+comped
+ )
+
+53 
+GLšt
+ 
+šfoL’
+ = 0;
+
+55 
+	`glG‘Shad”iv
+ ( 
+shad”
+, 
+GL_INFO_LOG_LENGTH
+, &
+šfoL’
+ );
+
+57 iàĞ
+šfoL’
+ > 1 )
+
+59 * 
+šfoLog
+ = 
+	`m®loc
+ ((è* 
+šfoL’
+ );
+
+61 
+	`glG‘Shad”InfoLog
+ ( 
+shad”
+, 
+šfoL’
+, 
+NULL
+, 
+šfoLog
+ );
+
+62 
+	`esLogMes§ge
+ ( "E¼Ü compšg shad”:\n%s\n", 
+šfoLog
+ );
+
+64 
+	`ä“
+ ( 
+šfoLog
+ );
+
+67 
+	`glD–‘eShad”
+ ( 
+shad”
+ );
+
+71  
+shad”
+;
+
+73 
+	}
+}
+
+78 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+80 
+esCÚ‹xt
+->
+u£rD©a
+ = 
+	`m®loc
+((
+U£rD©a
+));
+
+82 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+83 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+90 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+97 
+GLušt
+ 
+v”‹xShad”
+;
+
+98 
+GLušt
+ 
+äagm’tShad”
+;
+
+99 
+GLušt
+ 
+´og¿mObjeù
+;
+
+100 
+GLšt
+ 
+lšked
+;
+
+103 
+v”‹xShad”
+ = 
+	`LßdShad”
+ ( 
+GL_VERTEX_SHADER
+, 
+vShad”SŒ
+ );
+
+104 
+äagm’tShad”
+ = 
+	`LßdShad”
+ ( 
+GL_FRAGMENT_SHADER
+, 
+fShad”SŒ
+ );
+
+107 
+´og¿mObjeù
+ = 
+	`glC»©eProg¿m
+ ( );
+
+109 iàĞ
+´og¿mObjeù
+ == 0 )
+
+112 
+	`glA‰achShad”
+ ( 
+´og¿mObjeù
+, 
+v”‹xShad”
+ );
+
+113 
+	`glA‰achShad”
+ ( 
+´og¿mObjeù
+, 
+äagm’tShad”
+ );
+
+116 
+	`glBšdA‰ribLoÿtiÚ
+ ( 
+´og¿mObjeù
+, 0, "vPosition" );
+
+119 
+	`glLškProg¿m
+ ( 
+´og¿mObjeù
+ );
+
+122 
+	`glG‘Prog¿miv
+ ( 
+´og¿mObjeù
+, 
+GL_LINK_STATUS
+, &
+lšked
+ );
+
+124 iàĞ!
+lšked
+ )
+
+126 
+GLšt
+ 
+šfoL’
+ = 0;
+
+128 
+	`glG‘Prog¿miv
+ ( 
+´og¿mObjeù
+, 
+GL_INFO_LOG_LENGTH
+, &
+šfoL’
+ );
+
+130 iàĞ
+šfoL’
+ > 1 )
+
+132 * 
+šfoLog
+ = 
+	`m®loc
+ ((è* 
+šfoL’
+ );
+
+134 
+	`glG‘Prog¿mInfoLog
+ ( 
+´og¿mObjeù
+, 
+šfoL’
+, 
+NULL
+, 
+šfoLog
+ );
+
+135 
+	`esLogMes§ge
+ ( "E¼Ü†škšg…rog¿m:\n%s\n", 
+šfoLog
+ );
+
+137 
+	`ä“
+ ( 
+šfoLog
+ );
+
+140 
+	`glD–‘eProg¿m
+ ( 
+´og¿mObjeù
+ );
+
+141  
+GL_FALSE
+;
+
+145 
+u£rD©a
+->
+´og¿mObjeù
+ =…rogramObject;
+
+147 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 1.0f );
+
+148  
+GL_TRUE
+;
+
+149 
+	}
+}
+
+154 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+156 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+157 
+GLæßt
+ 
+vV”tiûs
+[] = { 0.0f, 0.5f, 0.0f,
+
+162 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+165 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+168 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+171 
+	`glV”‹xA‰ribPoš‹r
+ ( 0, 3, 
+GL_FLOAT
+, 
+GL_FALSE
+, 0, 
+vV”tiûs
+ );
+
+172 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 0 );
+
+174 
+	`glD¿wA¼ays
+ ( 
+GL_TRIANGLES
+, 0, 3 );
+
+175 
+	}
+}
+
+177 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+179 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+180 
+U£rD©a
+ 
+u£rD©a
+;
+
+182 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+183 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+185 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "H–lØTrŸngË", 320, 240, 
+ES_WINDOW_RGB
+ );
+
+187 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+190 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+192 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+193 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_8/Simple_VertexShader/Simple_VertexShader.c
+
+16 
+	~<¡dlib.h
+>
+
+17 
+	~"esUt.h
+"
+
+22 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+25 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+28 
+GLšt
+ 
+	mmvpLoc
+;
+
+31 
+GLæßt
+ *
+	mv”tiûs
+;
+
+32 
+GLušt
+ *
+	mšdiûs
+;
+
+33 
+	mnumIndiûs
+;
+
+36 
+GLæßt
+ 
+	mªgË
+;
+
+39 
+ESM©rix
+ 
+	mmvpM©rix
+;
+
+40 } 
+	tU£rD©a
+;
+
+45 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+47 
+esCÚ‹xt
+->
+u£rD©a
+ = 
+	`m®loc
+((
+U£rD©a
+));
+
+49 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+50 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+58 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+66 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+69 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+72 
+u£rD©a
+->
+mvpLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+Ğu£rD©a->
+´og¿mObjeù
+, "u_mvpMatrix" );
+
+75 
+u£rD©a
+->
+numIndiûs
+ = 
+	`esG’Cube
+Ğ1.0, &u£rD©a->
+v”tiûs
+,
+
+76 
+NULL
+, NULL, &
+u£rD©a
+->
+šdiûs
+ );
+
+79 
+u£rD©a
+->
+ªgË
+ = 45.0f;
+
+81 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+82  
+GL_TRUE
+;
+
+83 
+	}
+}
+
+89 
+	$Upd©e
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, 
+d–Time
+ )
+
+91 
+U£rD©a
+ *
+u£rD©a
+ = (U£rD©a*è
+esCÚ‹xt
+->userData;
+
+92 
+ESM©rix
+ 
+³r¥eùive
+;
+
+93 
+ESM©rix
+ 
+mod–v›w
+;
+
+94 
+a¥eù
+;
+
+97 
+u£rD©a
+->
+ªgË
+ +ğĞ
+d–Time
+ * 40.0f );
+
+98 ifĞ
+u£rD©a
+->
+ªgË
+ >= 360.0f )
+
+99 
+u£rD©a
+->
+ªgË
+ -= 360.0f;
+
+102 
+a¥eù
+ = (
+GLæßt
+è
+esCÚ‹xt
+->
+width
+ / (GLæßtèesCÚ‹xt->
+height
+;
+
+105 
+	`esM©rixLßdId’t™y
+Ğ&
+³r¥eùive
+ );
+
+106 
+	`esP”¥eùive
+Ğ&
+³r¥eùive
+, 60.0f, 
+a¥eù
+, 1.0f, 20.0f );
+
+109 
+	`esM©rixLßdId’t™y
+Ğ&
+mod–v›w
+ );
+
+112 
+	`esT¿n¦©e
+Ğ&
+mod–v›w
+, 0.0, 0.0, -2.0 );
+
+115 
+	`esRÙ©e
+Ğ&
+mod–v›w
+, 
+u£rD©a
+->
+ªgË
+, 1.0, 0.0, 1.0 );
+
+119 
+	`esM©rixMuÉly
+Ğ&
+u£rD©a
+->
+mvpM©rix
+, &
+mod–v›w
+, &
+³r¥eùive
+ );
+
+120 
+	}
+}
+
+125 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+127 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+130 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+134 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+137 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+140 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+141 
+GL_FALSE
+, 3 * (
+GLæßt
+), 
+u£rD©a
+->
+v”tiûs
+ );
+
+143 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+147 
+	`glUnifÜmM©rix4fv
+Ğ
+u£rD©a
+->
+mvpLoc
+, 1, 
+GL_FALSE
+, (
+GLæßt
+*è&u£rD©a->
+mvpM©rix
+.
+m
+[0][0] );
+
+150 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 
+u£rD©a
+->
+numIndiûs
+, 
+GL_UNSIGNED_INT
+, u£rD©a->
+šdiûs
+ );
+
+151 
+	}
+}
+
+156 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+158 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+160 iàĞ
+u£rD©a
+->
+v”tiûs
+ !ğ
+NULL
+ )
+
+162 
+	`ä“
+ ( 
+u£rD©a
+->
+v”tiûs
+ );
+
+165 iàĞ
+u£rD©a
+->
+šdiûs
+ !ğ
+NULL
+ )
+
+167 
+	`ä“
+ ( 
+u£rD©a
+->
+šdiûs
+ );
+
+171 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+173 
+	`ä“
+(
+u£rD©a
+);
+
+174 
+	}
+}
+
+176 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+178 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+179 
+U£rD©a
+ 
+u£rD©a
+;
+
+181 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+182 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+184 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "Sim¶Textu» 2D", 320, 240, 
+ES_WINDOW_RGB
+ );
+
+186 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+189 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+190 
+	`esRegi¡”Upd©eFunc
+ ( &
+esCÚ‹xt
+, 
+Upd©e
+ );
+
+192 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+194 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+195 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/MipMap2D/MipMap2D.c
+
+16 
+	~<¡dlib.h
+>
+
+17 
+	~"esUt.h
+"
+
+22 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+25 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+26 
+GLšt
+ 
+	m‹xCoÜdLoc
+;
+
+29 
+GLšt
+ 
+	m§m¶”Loc
+;
+
+32 
+GLšt
+ 
+	moff£tLoc
+;
+
+35 
+GLušt
+ 
+	m‹xtu»Id
+;
+
+37 } 
+	tU£rD©a
+;
+
+43 
+GLboŞ—n
+ 
+	$G’MM­2D
+Ğ
+GLuby‹
+ *
+¤c
+, GLuby‹ **
+d¡
+, 
+¤cWidth
+, 
+¤cHeight
+, *
+d¡Width
+, *
+d¡Height
+ )
+
+45 
+x
+,
+
+46 
+y
+;
+
+47 
+‹x–Size
+ = 3;
+
+49 *
+d¡Width
+ = 
+¤cWidth
+ / 2;
+
+50 iàĞ*
+d¡Width
+ <= 0 )
+
+51 *
+d¡Width
+ = 1;
+
+53 *
+d¡Height
+ = 
+¤cHeight
+ / 2;
+
+54 iàĞ*
+d¡Height
+ <= 0 )
+
+55 *
+d¡Height
+ = 1;
+
+57 *
+d¡
+ = 
+	`m®loc
+ ( (
+GLuby‹
+è* 
+‹x–Size
+ * (*
+d¡Width
+è* (*
+d¡Height
+) );
+
+58 iàĞ*
+d¡
+ =ğ
+NULL
+ )
+
+59  
+GL_FALSE
+;
+
+61  
+y
+ = 0; y < *
+d¡Height
+; y++ )
+
+63  
+x
+ = 0; x < *
+d¡Width
+; x++ )
+
+65 
+¤cIndex
+[4];
+
+66 
+r
+ = 0.0f,
+
+67 
+g
+ = 0.0f,
+
+68 
+b
+ = 0.0f;
+
+69 
+§m¶e
+;
+
+73 
+¤cIndex
+[0] =
+
+74 (((
+y
+ * 2è* 
+¤cWidth
+è+ (
+x
+ * 2)è* 
+‹x–Size
+;
+
+75 
+¤cIndex
+[1] =
+
+76 (((
+y
+ * 2è* 
+¤cWidth
+è+ (
+x
+ * 2 + 1)è* 
+‹x–Size
+;
+
+77 
+¤cIndex
+[2] =
+
+78 ((((
+y
+ * 2è+ 1è* 
+¤cWidth
+è+ (
+x
+ * 2)è* 
+‹x–Size
+;
+
+79 
+¤cIndex
+[3] =
+
+80 ((((
+y
+ * 2è+ 1è* 
+¤cWidth
+è+ (
+x
+ * 2 + 1)è* 
+‹x–Size
+;
+
+83  
+§m¶e
+ = 0; sample < 4; sample++ )
+
+85 
+r
+ +ğ
+¤c
+[
+¤cIndex
+[
+§m¶e
+]];
+
+86 
+g
+ +ğ
+¤c
+[
+¤cIndex
+[
+§m¶e
+] + 1];
+
+87 
+b
+ +ğ
+¤c
+[
+¤cIndex
+[
+§m¶e
+] + 2];
+
+91 
+r
+ /= 4.0;
+
+92 
+g
+ /= 4.0;
+
+93 
+b
+ /= 4.0;
+
+96 (*
+d¡
+)[ ( 
+y
+ * (*
+d¡Width
+è+ 
+x
+ ) * 
+‹x–Size
+ ] = (
+GLuby‹
+)Ğ
+r
+ );
+
+97 (*
+d¡
+)[ ( 
+y
+ * (*
+d¡Width
+è+ 
+x
+ ) * 
+‹x–Size
+ + 1] = (
+GLuby‹
+)Ğ
+g
+ );
+
+98 (*
+d¡
+)[ ( 
+y
+ * (*
+d¡Width
+è+ 
+x
+ ) * 
+‹x–Size
+ + 2] = (
+GLuby‹
+)Ğ
+b
+ );
+
+102  
+GL_TRUE
+;
+
+103 
+	}
+}
+
+108 
+GLuby‹
+* 
+	$G’CheckImage
+Ğ
+width
+, 
+height
+, 
+checkSize
+ )
+
+110 
+x
+,
+
+111 
+y
+;
+
+112 
+GLuby‹
+ *
+pix–s
+ = 
+	`m®loc
+Ğ
+width
+ * 
+height
+ * 3 );
+
+114 iàĞ
+pix–s
+ =ğ
+NULL
+ )
+
+115  
+NULL
+;
+
+117  
+y
+ = 0; y < 
+height
+; y++ )
+
+118  
+x
+ = 0; x < 
+width
+; x++ )
+
+120 
+GLuby‹
+ 
+rCŞÜ
+ = 0;
+
+121 
+GLuby‹
+ 
+bCŞÜ
+ = 0;
+
+123 iàĞĞ
+x
+ / 
+checkSize
+ ) % 2 == 0 )
+
+125 
+rCŞÜ
+ = 255 * ( ( 
+y
+ / 
+checkSize
+ ) % 2 );
+
+126 
+bCŞÜ
+ = 255 * ( 1 - ( ( 
+y
+ / 
+checkSize
+ ) % 2 ) );
+
+130 
+bCŞÜ
+ = 255 * ( ( 
+y
+ / 
+checkSize
+ ) % 2 );
+
+131 
+rCŞÜ
+ = 255 * ( 1 - ( ( 
+y
+ / 
+checkSize
+ ) % 2 ) );
+
+134 
+pix–s
+[(
+y
+ * 
+height
+ + 
+x
+è* 3] = 
+rCŞÜ
+;
+
+135 
+pix–s
+[(
+y
+ * 
+height
+ + 
+x
+) * 3 + 1] = 0;
+
+136 
+pix–s
+[(
+y
+ * 
+height
+ + 
+x
+è* 3 + 2] = 
+bCŞÜ
+;
+
+139  
+pix–s
+;
+
+140 
+	}
+}
+
+145 
+GLušt
+ 
+	$C»©eMM­³dTextu»2D
+( )
+
+148 
+GLušt
+ 
+‹xtu»Id
+;
+
+149 
+width
+ = 256,
+
+150 
+height
+ = 256;
+
+151 
+Ëv–
+;
+
+152 
+GLuby‹
+ *
+pix–s
+;
+
+153 
+GLuby‹
+ *
+´evImage
+;
+
+154 
+GLuby‹
+ *
+ÃwImage
+;
+
+156 
+pix–s
+ = 
+	`G’CheckImage
+Ğ
+width
+, 
+height
+, 8 );
+
+157 iàĞ
+pix–s
+ =ğ
+NULL
+ )
+
+161 
+	`glG’Textu»s
+ ( 1, &
+‹xtu»Id
+ );
+
+164 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+‹xtu»Id
+ );
+
+167 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_2D
+, 0, 
+GL_RGB
+, 
+width
+, 
+height
+,
+
+168 0, 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, 
+pix–s
+ );
+
+170 
+Ëv–
+ = 1;
+
+171 
+´evImage
+ = &
+pix–s
+[0];
+
+173  
+width
+ > 1 && 
+height
+ > 1 )
+
+175 
+ÃwWidth
+,
+
+176 
+ÃwHeight
+;
+
+179 
+	`G’MM­2D
+Ğ
+´evImage
+, &
+ÃwImage
+, 
+width
+, 
+height
+,
+
+180 &
+ÃwWidth
+, &
+ÃwHeight
+ );
+
+183 
+	`glTexImage2D
+Ğ
+GL_TEXTURE_2D
+, 
+Ëv–
+, 
+GL_RGB
+,
+
+184 
+ÃwWidth
+, 
+ÃwHeight
+, 0, 
+GL_RGB
+,
+
+185 
+GL_UNSIGNED_BYTE
+, 
+ÃwImage
+ );
+
+188 
+	`ä“
+ ( 
+´evImage
+ );
+
+191 
+´evImage
+ = 
+ÃwImage
+;
+
+192 
+Ëv–
+++;
+
+195 
+width
+ = 
+ÃwWidth
+;
+
+196 
+height
+ = 
+ÃwHeight
+;
+
+199 
+	`ä“
+ ( 
+ÃwImage
+ );
+
+202 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_NEAREST_MIPMAP_NEAREST
+ );
+
+203 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MAG_FILTER
+, 
+GL_LINEAR
+ );
+
+205  
+‹xtu»Id
+;
+
+207 
+	}
+}
+
+213 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+215 
+esCÚ‹xt
+->
+u£rD©a
+ = 
+	`m®loc
+((
+U£rD©a
+));
+
+217 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+218 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+230 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+240 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+243 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+244 
+u£rD©a
+->
+‹xCoÜdLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_texCoord" );
+
+247 
+u£rD©a
+->
+§m¶”Loc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "s_texture" );
+
+250 
+u£rD©a
+->
+off£tLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+Ğu£rD©a->
+´og¿mObjeù
+, "u_offset" );
+
+253 
+u£rD©a
+->
+‹xtu»Id
+ = 
+	`C»©eMM­³dTextu»2D
+ ();
+
+255 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+256  
+GL_TRUE
+;
+
+257 
+	}
+}
+
+262 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+264 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+265 
+GLæßt
+ 
+vV”tiûs
+[] = { -0.5f, 0.5f, 0.0f, 1.5f,
+
+274 
+GLushÜt
+ 
+šdiûs
+[] = { 0, 1, 2, 0, 2, 3 };
+
+277 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+280 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+283 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+286 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 4, 
+GL_FLOAT
+,
+
+287 
+GL_FALSE
+, 6 * (
+GLæßt
+), 
+vV”tiûs
+ );
+
+289 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+, 2, 
+GL_FLOAT
+,
+
+290 
+GL_FALSE
+, 6 * (
+GLæßt
+), &
+vV”tiûs
+[4] );
+
+292 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+293 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+ );
+
+296 
+	`glAùiveTextu»
+ ( 
+GL_TEXTURE0
+ );
+
+297 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+u£rD©a
+->
+‹xtu»Id
+ );
+
+300 
+	`glUnifÜm1i
+ ( 
+u£rD©a
+->
+§m¶”Loc
+, 0 );
+
+303 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_NEAREST
+ );
+
+304 
+	`glUnifÜm1f
+ ( 
+u£rD©a
+->
+off£tLoc
+, -0.6f );
+
+305 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_SHORT
+, 
+šdiûs
+ );
+
+308 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_LINEAR_MIPMAP_LINEAR
+ );
+
+309 
+	`glUnifÜm1f
+ ( 
+u£rD©a
+->
+off£tLoc
+, 0.6f );
+
+310 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_SHORT
+, 
+šdiûs
+ );
+
+312 
+	}
+}
+
+317 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+319 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+322 
+	`glD–‘eTextu»s
+ ( 1, &
+u£rD©a
+->
+‹xtu»Id
+ );
+
+325 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+327 
+	`ä“
+(
+esCÚ‹xt
+->
+u£rD©a
+);
+
+328 
+	}
+}
+
+330 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+332 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+333 
+U£rD©a
+ 
+u£rD©a
+;
+
+335 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+336 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+338 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "MM­ 2D", 320, 240, 
+ES_WINDOW_RGB
+ );
+
+340 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+343 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+345 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+347 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+348 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/Simple_Texture2D/Simple_Texture2D.c
+
+17 
+	~<¡dlib.h
+>
+
+18 
+	~"esUt.h
+"
+
+23 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+26 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+27 
+GLšt
+ 
+	m‹xCoÜdLoc
+;
+
+30 
+GLšt
+ 
+	m§m¶”Loc
+;
+
+33 
+GLušt
+ 
+	m‹xtu»Id
+;
+
+35 } 
+	tU£rD©a
+;
+
+40 
+GLušt
+ 
+	$C»©eSim¶eTextu»2D
+( )
+
+43 
+GLušt
+ 
+‹xtu»Id
+;
+
+46 
+GLuby‹
+ 
+pix–s
+[4 * 3] =
+
+55 
+	`glPix–StÜei
+ ( 
+GL_UNPACK_ALIGNMENT
+, 1 );
+
+58 
+	`glG’Textu»s
+ ( 1, &
+‹xtu»Id
+ );
+
+61 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+‹xtu»Id
+ );
+
+64 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_2D
+, 0, 
+GL_RGB
+, 2, 2, 0, GL_RGB, 
+GL_UNSIGNED_BYTE
+, 
+pix–s
+ );
+
+67 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_NEAREST
+ );
+
+68 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MAG_FILTER
+, 
+GL_NEAREST
+ );
+
+70  
+‹xtu»Id
+;
+
+72 
+	}
+}
+
+78 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+80 
+esCÚ‹xt
+->
+u£rD©a
+ = 
+	`m®loc
+((
+U£rD©a
+));
+
+81 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+82 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+92 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+102 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+105 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+106 
+u£rD©a
+->
+‹xCoÜdLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_texCoord" );
+
+109 
+u£rD©a
+->
+§m¶”Loc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "s_texture" );
+
+112 
+u£rD©a
+->
+‹xtu»Id
+ = 
+	`C»©eSim¶eTextu»2D
+ ();
+
+114 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+115  
+GL_TRUE
+;
+
+116 
+	}
+}
+
+121 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+123 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+124 
+GLæßt
+ 
+vV”tiûs
+[] = { -0.5f, 0.5f, 0.0f,
+
+133 
+GLushÜt
+ 
+šdiûs
+[] = { 0, 1, 2, 0, 2, 3 };
+
+136 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+139 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+142 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+145 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+146 
+GL_FALSE
+, 5 * (
+GLæßt
+), 
+vV”tiûs
+ );
+
+148 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+, 2, 
+GL_FLOAT
+,
+
+149 
+GL_FALSE
+, 5 * (
+GLæßt
+), &
+vV”tiûs
+[3] );
+
+151 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+152 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+ );
+
+155 
+	`glAùiveTextu»
+ ( 
+GL_TEXTURE0
+ );
+
+156 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+u£rD©a
+->
+‹xtu»Id
+ );
+
+159 
+	`glUnifÜm1i
+ ( 
+u£rD©a
+->
+§m¶”Loc
+, 0 );
+
+161 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_SHORT
+, 
+šdiûs
+ );
+
+163 
+	}
+}
+
+168 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+170 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+173 
+	`glD–‘eTextu»s
+ ( 1, &
+u£rD©a
+->
+‹xtu»Id
+ );
+
+176 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+178 
+	`ä“
+(
+esCÚ‹xt
+->
+u£rD©a
+);
+
+179 
+	}
+}
+
+181 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+183 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+184 
+U£rD©a
+ 
+u£rD©a
+;
+
+186 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+187 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+189 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "Sim¶Textu» 2D", 320, 240, 
+ES_WINDOW_RGB
+ );
+
+191 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+194 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+196 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+198 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+199 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/Simple_TextureCubemap/Simple_TextureCubemap.c
+
+15 
+	~<¡dlib.h
+>
+
+16 
+	~"esUt.h
+"
+
+21 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+24 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+25 
+GLšt
+ 
+	mnÜm®Loc
+;
+
+28 
+GLšt
+ 
+	m§m¶”Loc
+;
+
+31 
+GLušt
+ 
+	m‹xtu»Id
+;
+
+34 
+	mnumIndiûs
+;
+
+35 
+GLæßt
+ *
+	mv”tiûs
+;
+
+36 
+GLæßt
+ *
+	mnÜm®s
+;
+
+37 
+GLušt
+ *
+	mšdiûs
+;
+
+39 } 
+	tU£rD©a
+;
+
+44 
+GLušt
+ 
+	$C»©eSim¶eTextu»Cubem­
+( )
+
+46 
+GLušt
+ 
+‹xtu»Id
+;
+
+48 
+GLuby‹
+ 
+cubePix–s
+[6][3] =
+
+65 
+	`glG’Textu»s
+ ( 1, &
+‹xtu»Id
+ );
+
+68 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_CUBE_MAP
+, 
+‹xtu»Id
+ );
+
+71 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_CUBE_MAP_POSITIVE_X
+, 0, 
+GL_RGB
+, 1, 1, 0,
+
+72 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, &
+cubePix–s
+[0] );
+
+75 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_CUBE_MAP_NEGATIVE_X
+, 0, 
+GL_RGB
+, 1, 1, 0,
+
+76 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, &
+cubePix–s
+[1] );
+
+79 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_CUBE_MAP_POSITIVE_Y
+, 0, 
+GL_RGB
+, 1, 1, 0,
+
+80 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, &
+cubePix–s
+[2] );
+
+83 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_CUBE_MAP_NEGATIVE_Y
+, 0, 
+GL_RGB
+, 1, 1, 0,
+
+84 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, &
+cubePix–s
+[3] );
+
+87 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_CUBE_MAP_POSITIVE_Z
+, 0, 
+GL_RGB
+, 1, 1, 0,
+
+88 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, &
+cubePix–s
+[4] );
+
+91 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_CUBE_MAP_NEGATIVE_Z
+, 0, 
+GL_RGB
+, 1, 1, 0,
+
+92 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, &
+cubePix–s
+[5] );
+
+95 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_CUBE_MAP
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_NEAREST
+ );
+
+96 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_CUBE_MAP
+, 
+GL_TEXTURE_MAG_FILTER
+, 
+GL_NEAREST
+ );
+
+98  
+‹xtu»Id
+;
+
+100 
+	}
+}
+
+102 
+	~<¡dio.h
+>
+
+106 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+109 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+110 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+120 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+130 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+133 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+134 
+u£rD©a
+->
+nÜm®Loc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_normal" );
+
+137 
+u£rD©a
+->
+§m¶”Loc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "s_texture" );
+
+140 
+u£rD©a
+->
+‹xtu»Id
+ = 
+	`C»©eSim¶eTextu»Cubem­
+ ();
+
+143 
+u£rD©a
+->
+numIndiûs
+ = 
+	`esG’Sph”e
+ ( 20, 0.75f, &u£rD©a->
+v”tiûs
+, &u£rD©a->
+nÜm®s
+,
+
+144 
+NULL
+, &
+u£rD©a
+->
+šdiûs
+ );
+
+146 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+147  
+GL_TRUE
+;
+
+148 
+	}
+}
+
+153 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+155 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+158 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+161 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+163 
+	`glCuÎFaû
+ ( 
+GL_BACK
+ );
+
+164 
+	`glEÇbË
+ ( 
+GL_CULL_FACE
+ );
+
+167 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+170 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 3, 
+GL_FLOAT
+,
+
+171 
+GL_FALSE
+, 0, 
+u£rD©a
+->
+v”tiûs
+ );
+
+173 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+nÜm®Loc
+, 3, 
+GL_FLOAT
+,
+
+174 
+GL_FALSE
+, 0, 
+u£rD©a
+->
+nÜm®s
+ );
+
+176 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+177 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+nÜm®Loc
+ );
+
+180 
+	`glAùiveTextu»
+ ( 
+GL_TEXTURE0
+ );
+
+181 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_CUBE_MAP
+, 
+u£rD©a
+->
+‹xtu»Id
+ );
+
+184 
+	`glUnifÜm1i
+ ( 
+u£rD©a
+->
+§m¶”Loc
+, 0 );
+
+186 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 
+u£rD©a
+->
+numIndiûs
+,
+
+187 
+GL_UNSIGNED_INT
+, 
+u£rD©a
+->
+šdiûs
+ );
+
+188 
+	}
+}
+
+193 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+195 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+198 
+	`glD–‘eTextu»s
+ ( 1, &
+u£rD©a
+->
+‹xtu»Id
+ );
+
+201 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+203 
+	`ä“
+ ( 
+u£rD©a
+->
+v”tiûs
+ );
+
+204 
+	`ä“
+ ( 
+u£rD©a
+->
+nÜm®s
+ );
+
+207 
+	}
+}
+
+209 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+211 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+212 
+U£rD©a
+ 
+u£rD©a
+;
+
+214 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+215 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+217 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "Sim¶Textu» Cubem­", 320, 240, 
+ES_WINDOW_RGB
+ );
+
+219 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+222 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+224 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+226 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+227 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/TextureWrap/TextureWrap.c
+
+16 
+	~<¡dlib.h
+>
+
+17 
+	~"esUt.h
+"
+
+22 
+GLušt
+ 
+	m´og¿mObjeù
+;
+
+25 
+GLšt
+ 
+	mpos™iÚLoc
+;
+
+26 
+GLšt
+ 
+	m‹xCoÜdLoc
+;
+
+29 
+GLšt
+ 
+	m§m¶”Loc
+;
+
+32 
+GLšt
+ 
+	moff£tLoc
+;
+
+35 
+GLušt
+ 
+	m‹xtu»Id
+;
+
+37 } 
+	tU£rD©a
+;
+
+42 
+GLuby‹
+* 
+	$G’CheckImage
+Ğ
+width
+, 
+height
+, 
+checkSize
+ )
+
+44 
+x
+,
+
+45 
+y
+;
+
+46 
+GLuby‹
+ *
+pix–s
+ = 
+	`m®loc
+Ğ
+width
+ * 
+height
+ * 3 );
+
+48 iàĞ
+pix–s
+ =ğ
+NULL
+ )
+
+49  
+NULL
+;
+
+51  
+y
+ = 0; y < 
+height
+; y++ )
+
+52  
+x
+ = 0; x < 
+width
+; x++ )
+
+54 
+GLuby‹
+ 
+rCŞÜ
+ = 0;
+
+55 
+GLuby‹
+ 
+bCŞÜ
+ = 0;
+
+57 iàĞĞ
+x
+ / 
+checkSize
+ ) % 2 == 0 )
+
+59 
+rCŞÜ
+ = 255 * ( ( 
+y
+ / 
+checkSize
+ ) % 2 );
+
+60 
+bCŞÜ
+ = 255 * ( 1 - ( ( 
+y
+ / 
+checkSize
+ ) % 2 ) );
+
+64 
+bCŞÜ
+ = 255 * ( ( 
+y
+ / 
+checkSize
+ ) % 2 );
+
+65 
+rCŞÜ
+ = 255 * ( 1 - ( ( 
+y
+ / 
+checkSize
+ ) % 2 ) );
+
+68 
+pix–s
+[(
+y
+ * 
+height
+ + 
+x
+è* 3] = 
+rCŞÜ
+;
+
+69 
+pix–s
+[(
+y
+ * 
+height
+ + 
+x
+) * 3 + 1] = 0;
+
+70 
+pix–s
+[(
+y
+ * 
+height
+ + 
+x
+è* 3 + 2] = 
+bCŞÜ
+;
+
+73  
+pix–s
+;
+
+74 
+	}
+}
+
+79 
+GLušt
+ 
+	$C»©eTextu»2D
+( )
+
+82 
+GLušt
+ 
+‹xtu»Id
+;
+
+83 
+width
+ = 256,
+
+84 
+height
+ = 256;
+
+85 
+GLuby‹
+ *
+pix–s
+;
+
+87 
+pix–s
+ = 
+	`G’CheckImage
+Ğ
+width
+, 
+height
+, 64 );
+
+88 iàĞ
+pix–s
+ =ğ
+NULL
+ )
+
+92 
+	`glG’Textu»s
+ ( 1, &
+‹xtu»Id
+ );
+
+95 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+‹xtu»Id
+ );
+
+98 
+	`glTexImage2D
+ ( 
+GL_TEXTURE_2D
+, 0, 
+GL_RGB
+, 
+width
+, 
+height
+,
+
+99 0, 
+GL_RGB
+, 
+GL_UNSIGNED_BYTE
+, 
+pix–s
+ );
+
+102 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MIN_FILTER
+, 
+GL_LINEAR
+ );
+
+103 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_MAG_FILTER
+, 
+GL_LINEAR
+ );
+
+105  
+‹xtu»Id
+;
+
+107 
+	}
+}
+
+113 
+	$In™
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+115 
+esCÚ‹xt
+->
+u£rD©a
+ = 
+	`m®loc
+((
+U£rD©a
+));
+
+117 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+118 
+GLby‹
+ 
+vShad”SŒ
+[] =
+
+130 
+GLby‹
+ 
+fShad”SŒ
+[] =
+
+140 
+u£rD©a
+->
+´og¿mObjeù
+ = 
+	`esLßdProg¿m
+ ( 
+vShad”SŒ
+, 
+fShad”SŒ
+ );
+
+143 
+u£rD©a
+->
+pos™iÚLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_position" );
+
+144 
+u£rD©a
+->
+‹xCoÜdLoc
+ = 
+	`glG‘A‰ribLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "a_texCoord" );
+
+147 
+u£rD©a
+->
+§m¶”Loc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+ ( u£rD©a->
+´og¿mObjeù
+, "s_texture" );
+
+150 
+u£rD©a
+->
+off£tLoc
+ = 
+	`glG‘UnifÜmLoÿtiÚ
+Ğu£rD©a->
+´og¿mObjeù
+, "u_offset" );
+
+153 
+u£rD©a
+->
+‹xtu»Id
+ = 
+	`C»©eTextu»2D
+ ();
+
+155 
+	`glCË¬CŞÜ
+ ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+156  
+GL_TRUE
+;
+
+157 
+	}
+}
+
+162 
+	$D¿w
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+164 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+165 
+GLæßt
+ 
+vV”tiûs
+[] = { -0.3f, 0.3f, 0.0f, 1.0f,
+
+174 
+GLushÜt
+ 
+šdiûs
+[] = { 0, 1, 2, 0, 2, 3 };
+
+177 
+	`glV›wpÜt
+ ( 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+ );
+
+180 
+	`glCË¬
+ ( 
+GL_COLOR_BUFFER_BIT
+ );
+
+183 
+	`glU£Prog¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+186 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+, 4, 
+GL_FLOAT
+,
+
+187 
+GL_FALSE
+, 6 * (
+GLæßt
+), 
+vV”tiûs
+ );
+
+189 
+	`glV”‹xA‰ribPoš‹r
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+, 2, 
+GL_FLOAT
+,
+
+190 
+GL_FALSE
+, 6 * (
+GLæßt
+), &
+vV”tiûs
+[4] );
+
+192 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+pos™iÚLoc
+ );
+
+193 
+	`glEÇbËV”‹xA‰ribA¼ay
+ ( 
+u£rD©a
+->
+‹xCoÜdLoc
+ );
+
+196 
+	`glAùiveTextu»
+ ( 
+GL_TEXTURE0
+ );
+
+197 
+	`glBšdTextu»
+ ( 
+GL_TEXTURE_2D
+, 
+u£rD©a
+->
+‹xtu»Id
+ );
+
+200 
+	`glUnifÜm1i
+ ( 
+u£rD©a
+->
+§m¶”Loc
+, 0 );
+
+203 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_S
+, 
+GL_REPEAT
+ );
+
+204 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_T
+, 
+GL_REPEAT
+ );
+
+205 
+	`glUnifÜm1f
+ ( 
+u£rD©a
+->
+off£tLoc
+, -0.7f );
+
+206 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_SHORT
+, 
+šdiûs
+ );
+
+209 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_S
+, 
+GL_CLAMP_TO_EDGE
+ );
+
+210 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_T
+, 
+GL_CLAMP_TO_EDGE
+ );
+
+211 
+	`glUnifÜm1f
+ ( 
+u£rD©a
+->
+off£tLoc
+, 0.0f );
+
+212 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_SHORT
+, 
+šdiûs
+ );
+
+215 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_S
+, 
+GL_MIRRORED_REPEAT
+ );
+
+216 
+	`glTexP¬am‘”i
+ ( 
+GL_TEXTURE_2D
+, 
+GL_TEXTURE_WRAP_T
+, 
+GL_MIRRORED_REPEAT
+ );
+
+217 
+	`glUnifÜm1f
+ ( 
+u£rD©a
+->
+off£tLoc
+, 0.7f );
+
+218 
+	`glD¿wEËm’ts
+ ( 
+GL_TRIANGLES
+, 6, 
+GL_UNSIGNED_SHORT
+, 
+šdiûs
+ );
+
+220 
+	}
+}
+
+225 
+	$ShutDown
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+227 
+U£rD©a
+ *
+u£rD©a
+ = 
+esCÚ‹xt
+->userData;
+
+230 
+	`glD–‘eTextu»s
+ ( 1, &
+u£rD©a
+->
+‹xtu»Id
+ );
+
+233 
+	`glD–‘eProg¿m
+ ( 
+u£rD©a
+->
+´og¿mObjeù
+ );
+
+235 
+	`ä“
+ ( 
+esCÚ‹xt
+->
+u£rD©a
+);
+
+236 
+	}
+}
+
+238 
+	$maš
+ ( 
+¬gc
+, *
+¬gv
+[] )
+
+240 
+ESCÚ‹xt
+ 
+esCÚ‹xt
+;
+
+241 
+U£rD©a
+ 
+u£rD©a
+;
+
+243 
+	`esIn™CÚ‹xt
+ ( &
+esCÚ‹xt
+ );
+
+244 
+esCÚ‹xt
+.
+u£rD©a
+ = &userData;
+
+246 
+	`esC»©eWšdow
+ ( &
+esCÚ‹xt
+, "MM­ 2D", 640, 480, 
+ES_WINDOW_RGB
+ );
+
+248 iàĞ!
+	`In™
+ ( &
+esCÚ‹xt
+ ) )
+
+251 
+	`esRegi¡”D¿wFunc
+ ( &
+esCÚ‹xt
+, 
+D¿w
+ );
+
+253 
+	`esMašLoİ
+ ( &
+esCÚ‹xt
+ );
+
+255 
+	`ShutDown
+ ( &
+esCÚ‹xt
+ );
+
+256 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esShader.c
+
+19 
+	~"esUt.h
+"
+
+20 
+	~<¡dlib.h
+>
+
+43 
+GLušt
+ 
+ESUTIL_API
+ 
+	$esLßdShad”
+ ( 
+GL’um
+ 
+ty³
+, cÚ¡ *
+shad”Src
+ )
+
+45 
+GLušt
+ 
+shad”
+;
+
+46 
+GLšt
+ 
+comped
+;
+
+49 
+shad”
+ = 
+	`glC»©eShad”
+ ( 
+ty³
+ );
+
+51 iàĞ
+shad”
+ == 0 )
+
+55 
+	`glShad”Sourû
+ ( 
+shad”
+, 1, &
+shad”Src
+, 
+NULL
+ );
+
+58 
+	`glCompeShad”
+ ( 
+shad”
+ );
+
+61 
+	`glG‘Shad”iv
+ ( 
+shad”
+, 
+GL_COMPILE_STATUS
+, &
+comped
+ );
+
+63 iàĞ!
+comped
+ )
+
+65 
+GLšt
+ 
+šfoL’
+ = 0;
+
+67 
+	`glG‘Shad”iv
+ ( 
+shad”
+, 
+GL_INFO_LOG_LENGTH
+, &
+šfoL’
+ );
+
+69 iàĞ
+šfoL’
+ > 1 )
+
+71 * 
+šfoLog
+ = 
+	`m®loc
+ ((è* 
+šfoL’
+ );
+
+73 
+	`glG‘Shad”InfoLog
+ ( 
+shad”
+, 
+šfoL’
+, 
+NULL
+, 
+šfoLog
+ );
+
+74 
+	`esLogMes§ge
+ ( "E¼Ü compšg shad”:\n%s\n", 
+šfoLog
+ );
+
+76 
+	`ä“
+ ( 
+šfoLog
+ );
+
+79 
+	`glD–‘eShad”
+ ( 
+shad”
+ );
+
+83  
+shad”
+;
+
+85 
+	}
+}
+
+96 
+GLušt
+ 
+ESUTIL_API
+ 
+	$esLßdProg¿m
+ ( cÚ¡ *
+v”tShad”Src
+, cÚ¡ *
+äagShad”Src
+ )
+
+98 
+GLušt
+ 
+v”‹xShad”
+;
+
+99 
+GLušt
+ 
+äagm’tShad”
+;
+
+100 
+GLušt
+ 
+´og¿mObjeù
+;
+
+101 
+GLšt
+ 
+lšked
+;
+
+104 
+v”‹xShad”
+ = 
+	`esLßdShad”
+ ( 
+GL_VERTEX_SHADER
+, 
+v”tShad”Src
+ );
+
+105 iàĞ
+v”‹xShad”
+ == 0 )
+
+108 
+äagm’tShad”
+ = 
+	`esLßdShad”
+ ( 
+GL_FRAGMENT_SHADER
+, 
+äagShad”Src
+ );
+
+109 iàĞ
+äagm’tShad”
+ == 0 )
+
+111 
+	`glD–‘eShad”
+Ğ
+v”‹xShad”
+ );
+
+116 
+´og¿mObjeù
+ = 
+	`glC»©eProg¿m
+ ( );
+
+118 iàĞ
+´og¿mObjeù
+ == 0 )
+
+121 
+	`glA‰achShad”
+ ( 
+´og¿mObjeù
+, 
+v”‹xShad”
+ );
+
+122 
+	`glA‰achShad”
+ ( 
+´og¿mObjeù
+, 
+äagm’tShad”
+ );
+
+125 
+	`glLškProg¿m
+ ( 
+´og¿mObjeù
+ );
+
+128 
+	`glG‘Prog¿miv
+ ( 
+´og¿mObjeù
+, 
+GL_LINK_STATUS
+, &
+lšked
+ );
+
+130 iàĞ!
+lšked
+ )
+
+132 
+GLšt
+ 
+šfoL’
+ = 0;
+
+134 
+	`glG‘Prog¿miv
+ ( 
+´og¿mObjeù
+, 
+GL_INFO_LOG_LENGTH
+, &
+šfoL’
+ );
+
+136 iàĞ
+šfoL’
+ > 1 )
+
+138 * 
+šfoLog
+ = 
+	`m®loc
+ ((è* 
+šfoL’
+ );
+
+140 
+	`glG‘Prog¿mInfoLog
+ ( 
+´og¿mObjeù
+, 
+šfoL’
+, 
+NULL
+, 
+šfoLog
+ );
+
+141 
+	`esLogMes§ge
+ ( "E¼Ü†škšg…rog¿m:\n%s\n", 
+šfoLog
+ );
+
+143 
+	`ä“
+ ( 
+šfoLog
+ );
+
+146 
+	`glD–‘eProg¿m
+ ( 
+´og¿mObjeù
+ );
+
+151 
+	`glD–‘eShad”
+ ( 
+v”‹xShad”
+ );
+
+152 
+	`glD–‘eShad”
+ ( 
+äagm’tShad”
+ );
+
+154  
+´og¿mObjeù
+;
+
+155 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esShapes.c
+
+19 
+	~"esUt.h
+"
+
+20 
+	~<¡dlib.h
+>
+
+21 
+	~<m©h.h
+>
+
+22 
+	~<¡ršg.h
+>
+
+27 
+	#ES_PI
+ (3.14159265f)
+
+	)
+
+54 
+ESUTIL_API
+ 
+	$esG’Sph”e
+ ( 
+numSliûs
+, 
+¿dius
+, 
+GLæßt
+ **
+v”tiûs
+, GLæßˆ**
+nÜm®s
+,
+
+55 
+GLæßt
+ **
+‹xCoÜds
+, 
+GLušt
+ **
+šdiûs
+ )
+
+57 
+i
+;
+
+58 
+j
+;
+
+59 
+numP¬®Ëls
+ = 
+numSliûs
+ / 2;
+
+60 
+numV”tiûs
+ = ( 
+numP¬®Ëls
+ + 1 ) * ( 
+numSliûs
+ + 1 );
+
+61 
+numIndiûs
+ = 
+numP¬®Ëls
+ * 
+numSliûs
+ * 6;
+
+62 
+ªgËS‹p
+ = (2.0à* 
+ES_PI
+è/ ((è
+numSliûs
+);
+
+65 iàĞ
+v”tiûs
+ !ğ
+NULL
+ )
+
+66 *
+v”tiûs
+ = 
+	`m®loc
+ ( (
+GLæßt
+è* 3 * 
+numV”tiûs
+ );
+
+68 iàĞ
+nÜm®s
+ !ğ
+NULL
+ )
+
+69 *
+nÜm®s
+ = 
+	`m®loc
+ ( (
+GLæßt
+è* 3 * 
+numV”tiûs
+ );
+
+71 iàĞ
+‹xCoÜds
+ !ğ
+NULL
+ )
+
+72 *
+‹xCoÜds
+ = 
+	`m®loc
+ ( (
+GLæßt
+è* 2 * 
+numV”tiûs
+ );
+
+74 iàĞ
+šdiûs
+ !ğ
+NULL
+ )
+
+75 *
+šdiûs
+ = 
+	`m®loc
+ ( (
+GLušt
+è* 
+numIndiûs
+ );
+
+77  
+i
+ = 0; i < 
+numP¬®Ëls
+ + 1; i++ )
+
+79  
+j
+ = 0; j < 
+numSliûs
+ + 1; j++ )
+
+81 
+v”‹x
+ = ( 
+i
+ * (
+numSliûs
+ + 1è+ 
+j
+ ) * 3;
+
+83 iàĞ
+v”tiûs
+ )
+
+85 (*
+v”tiûs
+)[
+v”‹x
+ + 0] = 
+¿dius
+ * 
+	`sšf
+ ( 
+ªgËS‹p
+ * ()
+i
+ ) *
+
+86 
+	`sšf
+ ( 
+ªgËS‹p
+ * ()
+j
+ );
+
+87 (*
+v”tiûs
+)[
+v”‹x
+ + 1] = 
+¿dius
+ * 
+	`cosf
+ ( 
+ªgËS‹p
+ * ()
+i
+ );
+
+88 (*
+v”tiûs
+)[
+v”‹x
+ + 2] = 
+¿dius
+ * 
+	`sšf
+ ( 
+ªgËS‹p
+ * ()
+i
+ ) *
+
+89 
+	`cosf
+ ( 
+ªgËS‹p
+ * ()
+j
+ );
+
+92 iàĞ
+nÜm®s
+ )
+
+94 (*
+nÜm®s
+)[
+v”‹x
+ + 0] = (*
+v”tiûs
+)[v”‹x + 0] / 
+¿dius
+;
+
+95 (*
+nÜm®s
+)[
+v”‹x
+ + 1] = (*
+v”tiûs
+)[v”‹x + 1] / 
+¿dius
+;
+
+96 (*
+nÜm®s
+)[
+v”‹x
+ + 2] = (*
+v”tiûs
+)[v”‹x + 2] / 
+¿dius
+;
+
+99 iàĞ
+‹xCoÜds
+ )
+
+101 
+‹xIndex
+ = ( 
+i
+ * (
+numSliûs
+ + 1è+ 
+j
+ ) * 2;
+
+102 (*
+‹xCoÜds
+)[
+‹xIndex
+ + 0] = (è
+j
+ / (è
+numSliûs
+;
+
+103 (*
+‹xCoÜds
+)[
+‹xIndex
+ + 1] = ( 1.0à- (è
+i
+ ) / (è(
+numP¬®Ëls
+ - 1 );
+
+109 iàĞ
+šdiûs
+ !ğ
+NULL
+ )
+
+111 
+GLušt
+ *
+šdexBuf
+ = (*
+šdiûs
+);
+
+112  
+i
+ = 0; i < 
+numP¬®Ëls
+ ; i++ )
+
+114  
+j
+ = 0; j < 
+numSliûs
+; j++ )
+
+116 *
+šdexBuf
+++ = 
+i
+ * ( 
+numSliûs
+ + 1 ) + 
+j
+;
+
+117 *
+šdexBuf
+++ = ( 
+i
+ + 1 ) * ( 
+numSliûs
+ + 1 ) + 
+j
+;
+
+118 *
+šdexBuf
+++ = ( 
+i
+ + 1 ) * ( 
+numSliûs
+ + 1 ) + ( 
+j
+ + 1 );
+
+120 *
+šdexBuf
+++ = 
+i
+ * ( 
+numSliûs
+ + 1 ) + 
+j
+;
+
+121 *
+šdexBuf
+++ = ( 
+i
+ + 1 ) * ( 
+numSliûs
+ + 1 ) + ( 
+j
+ + 1 );
+
+122 *
+šdexBuf
+++ = 
+i
+ * ( 
+numSliûs
+ + 1 ) + ( 
+j
+ + 1 );
+
+127  
+numIndiûs
+;
+
+128 
+	}
+}
+
+141 
+ESUTIL_API
+ 
+	$esG’Cube
+ ( 
+sÿË
+, 
+GLæßt
+ **
+v”tiûs
+, GLæßˆ**
+nÜm®s
+,
+
+142 
+GLæßt
+ **
+‹xCoÜds
+, 
+GLušt
+ **
+šdiûs
+ )
+
+144 
+i
+;
+
+145 
+numV”tiûs
+ = 24;
+
+146 
+numIndiûs
+ = 36;
+
+148 
+GLæßt
+ 
+cubeV”ts
+[] =
+
+176 
+GLæßt
+ 
+cubeNÜm®s
+[] =
+
+204 
+GLæßt
+ 
+cubeTex
+[] =
+
+233 iàĞ
+v”tiûs
+ !ğ
+NULL
+ )
+
+235 *
+v”tiûs
+ = 
+	`m®loc
+ ( (
+GLæßt
+è* 3 * 
+numV”tiûs
+ );
+
+236 
+	`memıy
+Ğ*
+v”tiûs
+, 
+cubeV”ts
+, ( cubeVerts ) );
+
+237  
+i
+ = 0; i < 
+numV”tiûs
+ * 3; i++ )
+
+239 (*
+v”tiûs
+)[
+i
+] *ğ
+sÿË
+;
+
+243 iàĞ
+nÜm®s
+ !ğ
+NULL
+ )
+
+245 *
+nÜm®s
+ = 
+	`m®loc
+ ( (
+GLæßt
+è* 3 * 
+numV”tiûs
+ );
+
+246 
+	`memıy
+Ğ*
+nÜm®s
+, 
+cubeNÜm®s
+, ( cubeNormals ) );
+
+249 iàĞ
+‹xCoÜds
+ !ğ
+NULL
+ )
+
+251 *
+‹xCoÜds
+ = 
+	`m®loc
+ ( (
+GLæßt
+è* 2 * 
+numV”tiûs
+ );
+
+252 
+	`memıy
+Ğ*
+‹xCoÜds
+, 
+cubeTex
+, ( cubeTex ) ) ;
+
+257 iàĞ
+šdiûs
+ !ğ
+NULL
+ )
+
+259 
+GLušt
+ 
+cubeIndiûs
+[] =
+
+275 *
+šdiûs
+ = 
+	`m®loc
+ ( (
+GLušt
+è* 
+numIndiûs
+ );
+
+276 
+	`memıy
+Ğ*
+šdiûs
+, 
+cubeIndiûs
+, ( cubeIndices ) );
+
+279  
+numIndiûs
+;
+
+280 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esTransform.c
+
+21 
+	~"esUt.h
+"
+
+22 
+	~<m©h.h
+>
+
+23 
+	~<¡ršg.h
+>
+
+25 
+	#PI
+ 3.1415926535897932384626433832795f
+
+	)
+
+27 
+ESUTIL_API
+
+
+28 
+	$esSÿË
+(
+ESM©rix
+ *
+»suÉ
+, 
+GLæßt
+ 
+sx
+, GLæßˆ
+sy
+, GLæßˆ
+sz
+)
+
+30 
+»suÉ
+->
+m
+[0][0] *ğ
+sx
+;
+
+31 
+»suÉ
+->
+m
+[0][1] *ğ
+sx
+;
+
+32 
+»suÉ
+->
+m
+[0][2] *ğ
+sx
+;
+
+33 
+»suÉ
+->
+m
+[0][3] *ğ
+sx
+;
+
+35 
+»suÉ
+->
+m
+[1][0] *ğ
+sy
+;
+
+36 
+»suÉ
+->
+m
+[1][1] *ğ
+sy
+;
+
+37 
+»suÉ
+->
+m
+[1][2] *ğ
+sy
+;
+
+38 
+»suÉ
+->
+m
+[1][3] *ğ
+sy
+;
+
+40 
+»suÉ
+->
+m
+[2][0] *ğ
+sz
+;
+
+41 
+»suÉ
+->
+m
+[2][1] *ğ
+sz
+;
+
+42 
+»suÉ
+->
+m
+[2][2] *ğ
+sz
+;
+
+43 
+»suÉ
+->
+m
+[2][3] *ğ
+sz
+;
+
+44 
+	}
+}
+
+46 
+ESUTIL_API
+
+
+47 
+	$esT¿n¦©e
+(
+ESM©rix
+ *
+»suÉ
+, 
+GLæßt
+ 
+tx
+, GLæßˆ
+ty
+, GLæßˆ
+tz
+)
+
+49 
+»suÉ
+->
+m
+[3][0] +ğÔesuÉ->m[0][0] * 
+tx
+ +„esuÉ->m[1][0] * 
+ty
+ +„esuÉ->m[2][0] * 
+tz
+);
+
+50 
+»suÉ
+->
+m
+[3][1] +ğÔesuÉ->m[0][1] * 
+tx
+ +„esuÉ->m[1][1] * 
+ty
+ +„esuÉ->m[2][1] * 
+tz
+);
+
+51 
+»suÉ
+->
+m
+[3][2] +ğÔesuÉ->m[0][2] * 
+tx
+ +„esuÉ->m[1][2] * 
+ty
+ +„esuÉ->m[2][2] * 
+tz
+);
+
+52 
+»suÉ
+->
+m
+[3][3] +ğÔesuÉ->m[0][3] * 
+tx
+ +„esuÉ->m[1][3] * 
+ty
+ +„esuÉ->m[2][3] * 
+tz
+);
+
+53 
+	}
+}
+
+55 
+ESUTIL_API
+
+
+56 
+	$esRÙ©e
+(
+ESM©rix
+ *
+»suÉ
+, 
+GLæßt
+ 
+ªgË
+, GLæßˆ
+x
+, GLæßˆ
+y
+, GLæßˆ
+z
+)
+
+58 
+GLæßt
+ 
+sšAngË
+, 
+cosAngË
+;
+
+59 
+GLæßt
+ 
+mag
+ = 
+	`sq¹f
+(
+x
+ * x + 
+y
+ * y + 
+z
+ * z);
+
+61 
+sšAngË
+ = 
+	`sšf
+ ( 
+ªgË
+ * 
+PI
+ / 180.0f );
+
+62 
+cosAngË
+ = 
+	`cosf
+ ( 
+ªgË
+ * 
+PI
+ / 180.0f );
+
+63 iàĞ
+mag
+ > 0.0f )
+
+65 
+GLæßt
+ 
+xx
+, 
+yy
+, 
+zz
+, 
+xy
+, 
+yz
+, 
+zx
+, 
+xs
+, 
+ys
+, 
+zs
+;
+
+66 
+GLæßt
+ 
+ÚeMšusCos
+;
+
+67 
+ESM©rix
+ 
+rÙM©
+;
+
+69 
+x
+ /ğ
+mag
+;
+
+70 
+y
+ /ğ
+mag
+;
+
+71 
+z
+ /ğ
+mag
+;
+
+73 
+xx
+ = 
+x
+ * x;
+
+74 
+yy
+ = 
+y
+ * y;
+
+75 
+zz
+ = 
+z
+ * z;
+
+76 
+xy
+ = 
+x
+ * 
+y
+;
+
+77 
+yz
+ = 
+y
+ * 
+z
+;
+
+78 
+zx
+ = 
+z
+ * 
+x
+;
+
+79 
+xs
+ = 
+x
+ * 
+sšAngË
+;
+
+80 
+ys
+ = 
+y
+ * 
+sšAngË
+;
+
+81 
+zs
+ = 
+z
+ * 
+sšAngË
+;
+
+82 
+ÚeMšusCos
+ = 1.0à- 
+cosAngË
+;
+
+84 
+rÙM©
+.
+m
+[0][0] = (
+ÚeMšusCos
+ * 
+xx
+è+ 
+cosAngË
+;
+
+85 
+rÙM©
+.
+m
+[0][1] = (
+ÚeMšusCos
+ * 
+xy
+è- 
+zs
+;
+
+86 
+rÙM©
+.
+m
+[0][2] = (
+ÚeMšusCos
+ * 
+zx
+è+ 
+ys
+;
+
+87 
+rÙM©
+.
+m
+[0][3] = 0.0F;
+
+89 
+rÙM©
+.
+m
+[1][0] = (
+ÚeMšusCos
+ * 
+xy
+è+ 
+zs
+;
+
+90 
+rÙM©
+.
+m
+[1][1] = (
+ÚeMšusCos
+ * 
+yy
+è+ 
+cosAngË
+;
+
+91 
+rÙM©
+.
+m
+[1][2] = (
+ÚeMšusCos
+ * 
+yz
+è- 
+xs
+;
+
+92 
+rÙM©
+.
+m
+[1][3] = 0.0F;
+
+94 
+rÙM©
+.
+m
+[2][0] = (
+ÚeMšusCos
+ * 
+zx
+è- 
+ys
+;
+
+95 
+rÙM©
+.
+m
+[2][1] = (
+ÚeMšusCos
+ * 
+yz
+è+ 
+xs
+;
+
+96 
+rÙM©
+.
+m
+[2][2] = (
+ÚeMšusCos
+ * 
+zz
+è+ 
+cosAngË
+;
+
+97 
+rÙM©
+.
+m
+[2][3] = 0.0F;
+
+99 
+rÙM©
+.
+m
+[3][0] = 0.0F;
+
+100 
+rÙM©
+.
+m
+[3][1] = 0.0F;
+
+101 
+rÙM©
+.
+m
+[3][2] = 0.0F;
+
+102 
+rÙM©
+.
+m
+[3][3] = 1.0F;
+
+104 
+	`esM©rixMuÉly
+Ğ
+»suÉ
+, &
+rÙM©
+,„esult );
+
+106 
+	}
+}
+
+108 
+ESUTIL_API
+
+
+109 
+	$esFru¡um
+(
+ESM©rix
+ *
+»suÉ
+, 
+Ëá
+, 
+right
+, 
+bÙtom
+, 
+tİ
+, 
+Ã¬Z
+, 
+çrZ
+)
+
+111 
+d–X
+ = 
+right
+ - 
+Ëá
+;
+
+112 
+d–Y
+ = 
+tİ
+ - 
+bÙtom
+;
+
+113 
+d–Z
+ = 
+çrZ
+ - 
+Ã¬Z
+;
+
+114 
+ESM©rix
+ 
+äu¡
+;
+
+116 iàĞ(
+Ã¬Z
+ <ğ0.0fè|| (
+çrZ
+ <= 0.0f) ||
+
+117 (
+d–X
+ <ğ0.0fè|| (
+d–Y
+ <ğ0.0fè|| (
+d–Z
+ <= 0.0f) )
+
+120 
+äu¡
+.
+m
+[0][0] = 2.0à* 
+Ã¬Z
+ / 
+d–X
+;
+
+121 
+äu¡
+.
+m
+[0][1] = frust.m[0][2] = frust.m[0][3] = 0.0f;
+
+123 
+äu¡
+.
+m
+[1][1] = 2.0à* 
+Ã¬Z
+ / 
+d–Y
+;
+
+124 
+äu¡
+.
+m
+[1][0] = frust.m[1][2] = frust.m[1][3] = 0.0f;
+
+126 
+äu¡
+.
+m
+[2][0] = (
+right
+ + 
+Ëá
+è/ 
+d–X
+;
+
+127 
+äu¡
+.
+m
+[2][1] = (
+tİ
+ + 
+bÙtom
+è/ 
+d–Y
+;
+
+128 
+äu¡
+.
+m
+[2][2] = -(
+Ã¬Z
+ + 
+çrZ
+è/ 
+d–Z
+;
+
+129 
+äu¡
+.
+m
+[2][3] = -1.0f;
+
+131 
+äu¡
+.
+m
+[3][2] = -2.0à* 
+Ã¬Z
+ * 
+çrZ
+ / 
+d–Z
+;
+
+132 
+äu¡
+.
+m
+[3][0] = frust.m[3][1] = frust.m[3][3] = 0.0f;
+
+134 
+	`esM©rixMuÉly
+(
+»suÉ
+, &
+äu¡
+,„esult);
+
+135 
+	}
+}
+
+138 
+ESUTIL_API
+
+
+139 
+	$esP”¥eùive
+(
+ESM©rix
+ *
+»suÉ
+, 
+fovy
+, 
+a¥eù
+, 
+Ã¬Z
+, 
+çrZ
+)
+
+141 
+GLæßt
+ 
+äu¡umW
+, 
+äu¡umH
+;
+
+143 
+äu¡umH
+ = 
+	`nf
+Ğ
+fovy
+ / 360.0à* 
+PI
+ ) * 
+Ã¬Z
+;
+
+144 
+äu¡umW
+ = 
+äu¡umH
+ * 
+a¥eù
+;
+
+146 
+	`esFru¡um
+Ğ
+»suÉ
+, -
+äu¡umW
+, fru¡umW, -
+äu¡umH
+, fru¡umH, 
+Ã¬Z
+, 
+çrZ
+ );
+
+147 
+	}
+}
+
+149 
+ESUTIL_API
+
+
+150 
+	$esO¹ho
+(
+ESM©rix
+ *
+»suÉ
+, 
+Ëá
+, 
+right
+, 
+bÙtom
+, 
+tİ
+, 
+Ã¬Z
+, 
+çrZ
+)
+
+152 
+d–X
+ = 
+right
+ - 
+Ëá
+;
+
+153 
+d–Y
+ = 
+tİ
+ - 
+bÙtom
+;
+
+154 
+d–Z
+ = 
+çrZ
+ - 
+Ã¬Z
+;
+
+155 
+ESM©rix
+ 
+Ütho
+;
+
+157 iàĞ(
+d–X
+ =ğ0.0fè|| (
+d–Y
+ =ğ0.0fè|| (
+d–Z
+ == 0.0f) )
+
+160 
+	`esM©rixLßdId’t™y
+(&
+Ütho
+);
+
+161 
+Ütho
+.
+m
+[0][0] = 2.0à/ 
+d–X
+;
+
+162 
+Ütho
+.
+m
+[3][0] = -(
+right
+ + 
+Ëá
+è/ 
+d–X
+;
+
+163 
+Ütho
+.
+m
+[1][1] = 2.0à/ 
+d–Y
+;
+
+164 
+Ütho
+.
+m
+[3][1] = -(
+tİ
+ + 
+bÙtom
+è/ 
+d–Y
+;
+
+165 
+Ütho
+.
+m
+[2][2] = -2.0à/ 
+d–Z
+;
+
+166 
+Ütho
+.
+m
+[3][2] = -(
+Ã¬Z
+ + 
+çrZ
+è/ 
+d–Z
+;
+
+168 
+	`esM©rixMuÉly
+(
+»suÉ
+, &
+Ütho
+,„esult);
+
+169 
+	}
+}
+
+172 
+ESUTIL_API
+
+
+173 
+	$esM©rixMuÉly
+(
+ESM©rix
+ *
+»suÉ
+, ESM©rix *
+¤cA
+, ESM©rix *
+¤cB
+)
+
+175 
+ESM©rix
+ 
+tmp
+;
+
+176 
+i
+;
+
+178 
+i
+=0; i<4; i++)
+
+180 
+tmp
+.
+m
+[
+i
+][0] = (
+¤cA
+->m[i][0] * 
+¤cB
+->m[0][0]) +
+
+181 (
+¤cA
+->
+m
+[
+i
+][1] * 
+¤cB
+->m[1][0]) +
+
+182 (
+¤cA
+->
+m
+[
+i
+][2] * 
+¤cB
+->m[2][0]) +
+
+183 (
+¤cA
+->
+m
+[
+i
+][3] * 
+¤cB
+->m[3][0]) ;
+
+185 
+tmp
+.
+m
+[
+i
+][1] = (
+¤cA
+->m[i][0] * 
+¤cB
+->m[0][1]) +
+
+186 (
+¤cA
+->
+m
+[
+i
+][1] * 
+¤cB
+->m[1][1]) +
+
+187 (
+¤cA
+->
+m
+[
+i
+][2] * 
+¤cB
+->m[2][1]) +
+
+188 (
+¤cA
+->
+m
+[
+i
+][3] * 
+¤cB
+->m[3][1]) ;
+
+190 
+tmp
+.
+m
+[
+i
+][2] = (
+¤cA
+->m[i][0] * 
+¤cB
+->m[0][2]) +
+
+191 (
+¤cA
+->
+m
+[
+i
+][1] * 
+¤cB
+->m[1][2]) +
+
+192 (
+¤cA
+->
+m
+[
+i
+][2] * 
+¤cB
+->m[2][2]) +
+
+193 (
+¤cA
+->
+m
+[
+i
+][3] * 
+¤cB
+->m[3][2]) ;
+
+195 
+tmp
+.
+m
+[
+i
+][3] = (
+¤cA
+->m[i][0] * 
+¤cB
+->m[0][3]) +
+
+196 (
+¤cA
+->
+m
+[
+i
+][1] * 
+¤cB
+->m[1][3]) +
+
+197 (
+¤cA
+->
+m
+[
+i
+][2] * 
+¤cB
+->m[2][3]) +
+
+198 (
+¤cA
+->
+m
+[
+i
+][3] * 
+¤cB
+->m[3][3]) ;
+
+200 
+	`memıy
+(
+»suÉ
+, &
+tmp
+, (
+ESM©rix
+));
+
+201 
+	}
+}
+
+204 
+ESUTIL_API
+
+
+205 
+	$esM©rixLßdId’t™y
+(
+ESM©rix
+ *
+»suÉ
+)
+
+207 
+	`mem£t
+(
+»suÉ
+, 0x0, (
+ESM©rix
+));
+
+208 
+»suÉ
+->
+m
+[0][0] = 1.0f;
+
+209 
+»suÉ
+->
+m
+[1][1] = 1.0f;
+
+210 
+»suÉ
+->
+m
+[2][2] = 1.0f;
+
+211 
+»suÉ
+->
+m
+[3][3] = 1.0f;
+
+212 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esUtil.c
+
+21 
+	~<¡dio.h
+>
+
+22 
+	~<¡dlib.h
+>
+
+23 
+	~<¡ršg.h
+>
+
+24 
+	~<¡d¬g.h
+>
+
+25 
+	~<sys/time.h
+>
+
+26 
+	~<GLES2/gl2.h
+>
+
+27 
+	~<EGL/egl.h
+>
+
+28 
+	~"esUt.h
+"
+
+30 
+	~<X11/Xlib.h
+>
+
+31 
+	~<X11/X©om.h
+>
+
+32 
+	~<X11/Xut.h
+>
+
+35 
+Di¥Ïy
+ *
+	gx_di¥Ïy
+ = 
+NULL
+;
+
+42 
+EGLBoŞ—n
+ 
+	$C»©eEGLCÚ‹xt
+ ( 
+EGLN©iveWšdowTy³
+ 
+hWnd
+, 
+EGLDi¥Ïy
+* 
+eglDi¥Ïy
+,
+
+43 
+EGLCÚ‹xt
+* 
+eglCÚ‹xt
+, 
+EGLSurçû
+* 
+eglSurçû
+,
+
+44 
+EGLšt
+ 
+©ŒibLi¡
+[])
+
+46 
+EGLšt
+ 
+numCÚfigs
+;
+
+47 
+EGLšt
+ 
+majÜV”siÚ
+;
+
+48 
+EGLšt
+ 
+mšÜV”siÚ
+;
+
+49 
+EGLDi¥Ïy
+ 
+di¥Ïy
+;
+
+50 
+EGLCÚ‹xt
+ 
+cÚ‹xt
+;
+
+51 
+EGLSurçû
+ 
+surçû
+;
+
+52 
+EGLCÚfig
+ 
+cÚfig
+;
+
+53 
+EGLšt
+ 
+cÚ‹xtA‰ribs
+[] = { 
+EGL_CONTEXT_CLIENT_VERSION
+, 2, 
+EGL_NONE
+, EGL_NONE };
+
+56 
+di¥Ïy
+ = 
+	`eglG‘Di¥Ïy
+((
+EGLN©iveDi¥ÏyTy³
+)
+x_di¥Ïy
+);
+
+57 iàĞ
+di¥Ïy
+ =ğ
+EGL_NO_DISPLAY
+ )
+
+59  
+EGL_FALSE
+;
+
+63 iàĞ!
+	`eglIn™Ÿlize
+(
+di¥Ïy
+, &
+majÜV”siÚ
+, &
+mšÜV”siÚ
+) )
+
+65  
+EGL_FALSE
+;
+
+69 iàĞ!
+	`eglG‘CÚfigs
+(
+di¥Ïy
+, 
+NULL
+, 0, &
+numCÚfigs
+) )
+
+71  
+EGL_FALSE
+;
+
+75 iàĞ!
+	`eglChoo£CÚfig
+(
+di¥Ïy
+, 
+©ŒibLi¡
+, &
+cÚfig
+, 1, &
+numCÚfigs
+) )
+
+77  
+EGL_FALSE
+;
+
+81 
+surçû
+ = 
+	`eglC»©eWšdowSurçû
+(
+di¥Ïy
+, 
+cÚfig
+, (
+EGLN©iveWšdowTy³
+)
+hWnd
+, 
+NULL
+);
+
+82 iàĞ
+surçû
+ =ğ
+EGL_NO_SURFACE
+ )
+
+84  
+EGL_FALSE
+;
+
+88 
+cÚ‹xt
+ = 
+	`eglC»©eCÚ‹xt
+(
+di¥Ïy
+, 
+cÚfig
+, 
+EGL_NO_CONTEXT
+, 
+cÚ‹xtA‰ribs
+ );
+
+89 iàĞ
+cÚ‹xt
+ =ğ
+EGL_NO_CONTEXT
+ )
+
+91  
+EGL_FALSE
+;
+
+95 iàĞ!
+	`eglMakeCu¼’t
+(
+di¥Ïy
+, 
+surçû
+, surçû, 
+cÚ‹xt
+) )
+
+97  
+EGL_FALSE
+;
+
+100 *
+eglDi¥Ïy
+ = 
+di¥Ïy
+;
+
+101 *
+eglSurçû
+ = 
+surçû
+;
+
+102 *
+eglCÚ‹xt
+ = 
+cÚ‹xt
+;
+
+103  
+EGL_TRUE
+;
+
+104 
+	}
+}
+
+112 
+EGLBoŞ—n
+ 
+	$WšC»©e
+(
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, cÚ¡ *
+t™Ë
+)
+
+114 
+Wšdow
+ 
+roÙ
+;
+
+115 
+XS‘WšdowA‰ribu‹s
+ 
+swa
+;
+
+116 
+XS‘WšdowA‰ribu‹s
+ 
+x©Œ
+;
+
+117 
+Atom
+ 
+wm_¡©e
+;
+
+118 
+XWMHšts
+ 
+hšts
+;
+
+119 
+XEv’t
+ 
+xev
+;
+
+120 
+EGLCÚfig
+ 
+ecfg
+;
+
+121 
+EGLšt
+ 
+num_cÚfig
+;
+
+122 
+Wšdow
+ 
+wš
+;
+
+128 
+x_di¥Ïy
+ = 
+	`XO³nDi¥Ïy
+(
+NULL
+);
+
+129 iàĞ
+x_di¥Ïy
+ =ğ
+NULL
+ )
+
+131  
+EGL_FALSE
+;
+
+134 
+roÙ
+ = 
+	`DeçuÉRoÙWšdow
+(
+x_di¥Ïy
+);
+
+136 
+swa
+.
+ev’t_mask
+ = 
+Exposu»Mask
+ | 
+Poš‹rMÙiÚMask
+ | 
+KeyP»ssMask
+;
+
+137 
+wš
+ = 
+	`XC»©eWšdow
+(
+
+138 
+x_di¥Ïy
+, 
+roÙ
+,
+
+139 0, 0, 
+esCÚ‹xt
+->
+width
+,ƒsCÚ‹xt->
+height
+, 0,
+
+140 
+CİyFromP¬’t
+, 
+IÅutOuut
+,
+
+141 
+CİyFromP¬’t
+, 
+CWEv’tMask
+,
+
+142 &
+swa
+ );
+
+144 
+x©Œ
+.
+ov”ride_»dœeù
+ = 
+FALSE
+;
+
+145 
+	`XChªgeWšdowA‰ribu‹s
+ ( 
+x_di¥Ïy
+, 
+wš
+, 
+CWOv”rideRedœeù
+, &
+x©Œ
+ );
+
+147 
+hšts
+.
+šput
+ = 
+TRUE
+;
+
+148 
+hšts
+.
+æags
+ = 
+IÅutHšt
+;
+
+149 
+	`XS‘WMHšts
+(
+x_di¥Ïy
+, 
+wš
+, &
+hšts
+);
+
+152 
+	`XM­Wšdow
+ (
+x_di¥Ïy
+, 
+wš
+);
+
+153 
+	`XStÜeName
+ (
+x_di¥Ïy
+, 
+wš
+, 
+t™Ë
+);
+
+156 
+wm_¡©e
+ = 
+	`XIÁ”nAtom
+ (
+x_di¥Ïy
+, "_NET_WM_STATE", 
+FALSE
+);
+
+158 
+	`mem£t
+ ( &
+xev
+, 0, (xev) );
+
+159 
+xev
+.
+ty³
+ = 
+Cl›ÁMes§ge
+;
+
+160 
+xev
+.
+xş›Á
+.
+wšdow
+ = 
+wš
+;
+
+161 
+xev
+.
+xş›Á
+.
+mes§ge_ty³
+ = 
+wm_¡©e
+;
+
+162 
+xev
+.
+xş›Á
+.
+fÜm©
+ = 32;
+
+163 
+xev
+.
+xş›Á
+.
+d©a
+.
+l
+[0] = 1;
+
+164 
+xev
+.
+xş›Á
+.
+d©a
+.
+l
+[1] = 
+FALSE
+;
+
+165 
+	`XS’dEv’t
+ (
+
+166 
+x_di¥Ïy
+,
+
+167 
+	`DeçuÉRoÙWšdow
+ ( 
+x_di¥Ïy
+ ),
+
+168 
+FALSE
+,
+
+169 
+Sub¡ruùu»NÙifyMask
+,
+
+170 &
+xev
+ );
+
+172 
+esCÚ‹xt
+->
+hWnd
+ = (
+EGLN©iveWšdowTy³
+è
+wš
+;
+
+173  
+EGL_TRUE
+;
+
+174 
+	}
+}
+
+183 
+GLboŞ—n
+ 
+	$u£rIÁ”ru±
+(
+ESCÚ‹xt
+ *
+esCÚ‹xt
+)
+
+185 
+XEv’t
+ 
+xev
+;
+
+186 
+KeySym
+ 
+key
+;
+
+187 
+GLboŞ—n
+ 
+u£rš‹¼u±
+ = 
+GL_FALSE
+;
+
+188 
+‹xt
+;
+
+191  
+	`XP’dšg
+ ( 
+x_di¥Ïy
+ ) )
+
+193 
+	`XNextEv’t
+Ğ
+x_di¥Ïy
+, &
+xev
+ );
+
+194 iàĞ
+xev
+.
+ty³
+ =ğ
+KeyP»ss
+ )
+
+196 ià(
+	`XLookupSŒšg
+(&
+xev
+.
+xkey
+,&
+‹xt
+,1,&
+key
+,0)==1)
+
+198 ià(
+esCÚ‹xt
+->
+keyFunc
+ !ğ
+NULL
+)
+
+199 
+esCÚ‹xt
+->
+	`keyFunc
+ÓsCÚ‹xt, 
+‹xt
+, 0, 0);
+
+202 iàĞ
+xev
+.
+ty³
+ =ğ
+De¡royNÙify
+ )
+
+203 
+u£rš‹¼u±
+ = 
+GL_TRUE
+;
+
+205  
+u£rš‹¼u±
+;
+
+206 
+	}
+}
+
+221 
+ESUTIL_API
+ 
+	$esIn™CÚ‹xt
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+223 iàĞ
+esCÚ‹xt
+ !ğ
+NULL
+ )
+
+225 
+	`mem£t
+Ğ
+esCÚ‹xt
+, 0, Ğ
+ESCÚ‹xt
+) );
+
+227 
+	}
+}
+
+242 
+GLboŞ—n
+ 
+ESUTIL_API
+ 
+	$esC»©eWšdow
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, cÚ¡ * 
+t™Ë
+, 
+GLšt
+ 
+width
+, GLšˆ
+height
+, 
+GLušt
+ 
+æags
+ )
+
+244 
+EGLšt
+ 
+©ŒibLi¡
+[] =
+
+246 
+EGL_RED_SIZE
+, 5,
+
+247 
+EGL_GREEN_SIZE
+, 6,
+
+248 
+EGL_BLUE_SIZE
+, 5,
+
+249 
+EGL_ALPHA_SIZE
+, (
+æags
+ & 
+ES_WINDOW_ALPHA
+è? 8 : 
+EGL_DONT_CARE
+,
+
+250 
+EGL_DEPTH_SIZE
+, (
+æags
+ & 
+ES_WINDOW_DEPTH
+è? 8 : 
+EGL_DONT_CARE
+,
+
+251 
+EGL_STENCIL_SIZE
+, (
+æags
+ & 
+ES_WINDOW_STENCIL
+è? 8 : 
+EGL_DONT_CARE
+,
+
+252 
+EGL_SAMPLE_BUFFERS
+, (
+æags
+ & 
+ES_WINDOW_MULTISAMPLE
+) ? 1 : 0,
+
+253 
+EGL_NONE
+
+
+256 iàĞ
+esCÚ‹xt
+ =ğ
+NULL
+ )
+
+258  
+GL_FALSE
+;
+
+261 
+esCÚ‹xt
+->
+width
+ = width;
+
+262 
+esCÚ‹xt
+->
+height
+ = height;
+
+264 iàĞ!
+	`WšC»©e
+ ( 
+esCÚ‹xt
+, 
+t™Ë
+) )
+
+266  
+GL_FALSE
+;
+
+270 iàĞ!
+	`C»©eEGLCÚ‹xt
+ ( 
+esCÚ‹xt
+->
+hWnd
+,
+
+271 &
+esCÚ‹xt
+->
+eglDi¥Ïy
+,
+
+272 &
+esCÚ‹xt
+->
+eglCÚ‹xt
+,
+
+273 &
+esCÚ‹xt
+->
+eglSurçû
+,
+
+274 
+©ŒibLi¡
+) )
+
+276  
+GL_FALSE
+;
+
+280  
+GL_TRUE
+;
+
+281 
+	}
+}
+
+290 
+ESUTIL_API
+ 
+	$esMašLoİ
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ )
+
+292 
+timev®
+ 
+t1
+, 
+t2
+;
+
+293 
+timezÚe
+ 
+tz
+;
+
+294 
+d–time
+;
+
+295 
+tÙ®time
+ = 0.0f;
+
+296 
+äames
+ = 0;
+
+298 
+	`g‘timeofday
+ ( &
+t1
+ , &
+tz
+ );
+
+300 
+	`u£rIÁ”ru±
+(
+esCÚ‹xt
+è=ğ
+GL_FALSE
+)
+
+302 
+	`g‘timeofday
+(&
+t2
+, &
+tz
+);
+
+303 
+d–time
+ = ()(
+t2
+.
+tv_£c
+ - 
+t1
+.tv_£ø+ (t2.
+tv_u£c
+ -1.tv_usec) * 1e-6);
+
+304 
+t1
+ = 
+t2
+;
+
+306 ià(
+esCÚ‹xt
+->
+upd©eFunc
+ !ğ
+NULL
+)
+
+307 
+esCÚ‹xt
+->
+	`upd©eFunc
+ÓsCÚ‹xt, 
+d–time
+);
+
+308 ià(
+esCÚ‹xt
+->
+d¿wFunc
+ !ğ
+NULL
+)
+
+309 
+esCÚ‹xt
+->
+	`d¿wFunc
+(esContext);
+
+311 
+	`eglSw­Bufãrs
+(
+esCÚ‹xt
+->
+eglDi¥Ïy
+,ƒsCÚ‹xt->
+eglSurçû
+);
+
+313 
+tÙ®time
+ +ğ
+d–time
+;
+
+314 
+äames
+++;
+
+315 ià(
+tÙ®time
+ > 2.0f)
+
+317 
+	`´štf
+("%4d f¿me »nd”ed iÀ%1.4à£cÚd -> FPS=%3.4f\n", 
+äames
+, 
+tÙ®time
+, frames/totaltime);
+
+318 
+tÙ®time
+ -= 2.0f;
+
+319 
+äames
+ = 0;
+
+322 
+	}
+}
+
+328 
+ESUTIL_API
+ 
+esRegi¡”D¿wFunc
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, (
+ESCALLBACK
+ *
+d¿wFunc
+) (ESContext* ) )
+
+330 
+esCÚ‹xt
+->
+d¿wFunc
+ = drawFunc;
+
+331 
+	}
+}
+
+337 
+ESUTIL_API
+ 
+esRegi¡”Upd©eFunc
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, (
+ESCALLBACK
+ *
+upd©eFunc
+) ( ESContext*, ) )
+
+339 
+esCÚ‹xt
+->
+upd©eFunc
+ = updateFunc;
+
+340 
+	}
+}
+
+346 
+ESUTIL_API
+ 
+esRegi¡”KeyFunc
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+,
+
+347 (
+ESCALLBACK
+ *
+keyFunc
+è(
+ESCÚ‹xt
+*, , , ) )
+
+349 
+esCÚ‹xt
+->
+keyFunc
+ = keyFunc;
+
+350 
+	}
+}
+
+358 
+ESUTIL_API
+ 
+	$esLogMes§ge
+ ( cÚ¡ *
+fÜm©SŒ
+, ... )
+
+360 
+va_li¡
+ 
+·¿ms
+;
+
+361 
+buf
+[
+BUFSIZ
+];
+
+363 
+	`va_¡¬t
+ ( 
+·¿ms
+, 
+fÜm©SŒ
+ );
+
+364 
+	`v¥rštf
+ ( 
+buf
+, 
+fÜm©SŒ
+, 
+·¿ms
+ );
+
+366 
+	`´štf
+ ( "%s", 
+buf
+ );
+
+368 
+	`va_’d
+ ( 
+·¿ms
+ );
+
+369 
+	}
+}
+
+380 * 
+ESUTIL_API
+ 
+	$esLßdTGA
+ ( *
+feName
+, *
+width
+, *
+height
+ )
+
+382 *
+bufãr
+ = 
+NULL
+;
+
+383 
+FILE
+ *
+f
+;
+
+384 
+tgah—d”
+[12];
+
+385 
+©Œibu‹s
+[6];
+
+386 
+imagesize
+;
+
+388 
+f
+ = 
+	`fİ’
+(
+feName
+, "rb");
+
+389 if(
+f
+ =ğ
+NULL
+)  NULL;
+
+391 if(
+	`ä—d
+(&
+tgah—d”
+, Ñgah—d”), 1, 
+f
+) == 0)
+
+393 
+	`fşo£
+(
+f
+);
+
+394  
+NULL
+;
+
+397 if(
+	`ä—d
+(
+©Œibu‹s
+, ×‰ribu‹s), 1, 
+f
+) == 0)
+
+399 
+	`fşo£
+(
+f
+);
+
+403 *
+width
+ = 
+©Œibu‹s
+[1] * 256 +‡ttributes[0];
+
+404 *
+height
+ = 
+©Œibu‹s
+[3] * 256 +‡ttributes[2];
+
+405 
+imagesize
+ = 
+©Œibu‹s
+[4] / 8 * *
+width
+ * *
+height
+;
+
+406 
+bufãr
+ = 
+	`m®loc
+(
+imagesize
+);
+
+407 ià(
+bufãr
+ =ğ
+NULL
+)
+
+409 
+	`fşo£
+(
+f
+);
+
+413 if(
+	`ä—d
+(
+bufãr
+, 1, 
+imagesize
+, 
+f
+) != imagesize)
+
+415 
+	`ä“
+(
+bufãr
+);
+
+416  
+NULL
+;
+
+418 
+	`fşo£
+(
+f
+);
+
+419  
+bufãr
+;
+
+420 
+	}
+}
+
+	@/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esUtil.h
+
+17 #iâdeà
+ESUTIL_H
+
+
+18 
+	#ESUTIL_H
+
+
+	)
+
+23 
+	~<GLES2/gl2.h
+>
+
+24 
+	~<EGL/egl.h
+>
+
+26 #ifdeà
+__ılu¥lus
+
+
+35 
+	#ESUTIL_API
+
+
+	)
+
+36 
+	#ESCALLBACK
+
+
+	)
+
+40 
+	#ES_WINDOW_RGB
+ 0
+
+	)
+
+42 
+	#ES_WINDOW_ALPHA
+ 1
+
+	)
+
+44 
+	#ES_WINDOW_DEPTH
+ 2
+
+	)
+
+46 
+	#ES_WINDOW_STENCIL
+ 4
+
+	)
+
+48 
+	#ES_WINDOW_MULTISAMPLE
+ 8
+
+	)
+
+55 #iâdeà
+FALSE
+
+
+56 
+	#FALSE
+ 0
+
+	)
+
+58 #iâdeà
+TRUE
+
+
+59 
+	#TRUE
+ 1
+
+	)
+
+64 
+GLæßt
+ 
+m
+[4][4];
+
+65 } 
+	tESM©rix
+;
+
+67 
+	s_escÚ‹xt
+
+
+70 * 
+u£rD©a
+;
+
+73 
+GLšt
+ 
+width
+;
+
+76 
+GLšt
+ 
+height
+;
+
+79 
+EGLN©iveWšdowTy³
+ 
+hWnd
+;
+
+82 
+EGLDi¥Ïy
+ 
+eglDi¥Ïy
+;
+
+85 
+EGLCÚ‹xt
+ 
+eglCÚ‹xt
+;
+
+88 
+EGLSurçû
+ 
+eglSurçû
+;
+
+91 (
+ESCALLBACK
+ *
+d¿wFunc
+èĞ
+_escÚ‹xt
+ * );
+
+92 (
+ESCALLBACK
+ *
+keyFunc
+èĞ
+_escÚ‹xt
+ *, , , );
+
+93 (
+ESCALLBACK
+ *
+upd©eFunc
+èĞ
+_escÚ‹xt
+ *, 
+d–Time
+ );
+
+94 } 
+	tESCÚ‹xt
+;
+
+106 
+ESUTIL_API
+ 
+esIn™CÚ‹xt
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ );
+
+121 
+GLboŞ—n
+ 
+ESUTIL_API
+ 
+esC»©eWšdow
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, cÚ¡ *
+t™Ë
+, 
+GLšt
+ 
+width
+, GLšˆ
+height
+, 
+GLušt
+ 
+æags
+ );
+
+127 
+ESUTIL_API
+ 
+esMašLoİ
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+ );
+
+134 
+ESUTIL_API
+ 
+esRegi¡”D¿wFunc
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, (
+ESCALLBACK
+ *
+d¿wFunc
+) ( ESContext* ) );
+
+141 
+ESUTIL_API
+ 
+esRegi¡”Upd©eFunc
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+, (
+ESCALLBACK
+ *
+upd©eFunc
+) ( ESContext*, ) );
+
+148 
+ESUTIL_API
+ 
+esRegi¡”KeyFunc
+ ( 
+ESCÚ‹xt
+ *
+esCÚ‹xt
+,
+
+149 (
+ESCALLBACK
+ *
+d¿wFunc
+èĞ
+ESCÚ‹xt
+*, , , ) );
+
+154 
+ESUTIL_API
+ 
+esLogMes§ge
+ ( cÚ¡ *
+fÜm©SŒ
+, ... );
+
+163 
+GLušt
+ 
+ESUTIL_API
+ 
+esLßdShad”
+ ( 
+GL’um
+ 
+ty³
+, cÚ¡ *
+shad”Src
+ );
+
+173 
+GLušt
+ 
+ESUTIL_API
+ 
+esLßdProg¿m
+ ( cÚ¡ *
+v”tShad”Src
+, cÚ¡ *
+äagShad”Src
+ );
+
+187 
+ESUTIL_API
+ 
+esG’Sph”e
+ ( 
+numSliûs
+, 
+¿dius
+, 
+GLæßt
+ **
+v”tiûs
+, GLæßˆ**
+nÜm®s
+,
+
+188 
+GLæßt
+ **
+‹xCoÜds
+, 
+GLušt
+ **
+šdiûs
+ );
+
+201 
+ESUTIL_API
+ 
+esG’Cube
+ ( 
+sÿË
+, 
+GLæßt
+ **
+v”tiûs
+, GLæßˆ**
+nÜm®s
+,
+
+202 
+GLæßt
+ **
+‹xCoÜds
+, 
+GLušt
+ **
+šdiûs
+ );
+
+211 * 
+ESUTIL_API
+ 
+esLßdTGA
+ ( *
+feName
+, *
+width
+, *
+height
+ );
+
+219 
+ESUTIL_API
+ 
+esSÿË
+(
+ESM©rix
+ *
+»suÉ
+, 
+GLæßt
+ 
+sx
+, GLæßˆ
+sy
+, GLæßˆ
+sz
+);
+
+226 
+ESUTIL_API
+ 
+esT¿n¦©e
+(
+ESM©rix
+ *
+»suÉ
+, 
+GLæßt
+ 
+tx
+, GLæßˆ
+ty
+, GLæßˆ
+tz
+);
+
+234 
+ESUTIL_API
+ 
+esRÙ©e
+(
+ESM©rix
+ *
+»suÉ
+, 
+GLæßt
+ 
+ªgË
+, GLæßˆ
+x
+, GLæßˆ
+y
+, GLæßˆ
+z
+);
+
+243 
+ESUTIL_API
+ 
+esFru¡um
+(
+ESM©rix
+ *
+»suÉ
+, 
+Ëá
+, 
+right
+, 
+bÙtom
+, 
+tİ
+, 
+Ã¬Z
+, 
+çrZ
+);
+
+253 
+ESUTIL_API
+ 
+esP”¥eùive
+(
+ESM©rix
+ *
+»suÉ
+, 
+fovy
+, 
+a¥eù
+, 
+Ã¬Z
+, 
+çrZ
+);
+
+262 
+ESUTIL_API
+ 
+esO¹ho
+(
+ESM©rix
+ *
+»suÉ
+, 
+Ëá
+, 
+right
+, 
+bÙtom
+, 
+tİ
+, 
+Ã¬Z
+, 
+çrZ
+);
+
+269 
+ESUTIL_API
+ 
+esM©rixMuÉly
+(
+ESM©rix
+ *
+»suÉ
+, ESM©rix *
+¤cA
+, ESM©rix *
+¤cB
+);
+
+275 
+ESUTIL_API
+ 
+esM©rixLßdId’t™y
+(
+ESM©rix
+ *
+»suÉ
+);
+
+277 #ifdeà
+__ılu¥lus
+
+
+	@
+1
+.
+0
+17
+2553
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_1/Vertex_Shader/Vertex_Shader.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_10/MultiTexture/MultiTexture.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_11/Multisample/Multisample.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_11/Stencil_Test/Stencil_Test.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_13/ParticleSystem/ParticleSystem.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_15/Hello_Triangle_KD/Hello_Triangle_KD.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_2/Hello_Triangle/Hello_Triangle.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_8/Simple_VertexShader/Simple_VertexShader.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/MipMap2D/MipMap2D.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/Simple_Texture2D/Simple_Texture2D.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/Simple_TextureCubemap/Simple_TextureCubemap.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Chapter_9/TextureWrap/TextureWrap.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esShader.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esShapes.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esTransform.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esUtil.c
+/home/jfeng/Project/comps/graphics/opengles/openGL.ES.2.Programming.Guide/opengles-book-samples-read-only/LinuxX11/Common/esUtil.h

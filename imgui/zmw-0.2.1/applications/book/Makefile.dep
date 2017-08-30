@@ -1,0 +1,24 @@
+book-menubar.o: book-menubar.c book.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ library.h
+book-preferences.o: book-preferences.c book.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ library.h
+book.o: book.c book.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ library.h
+filter.o: filter.c library.h
+library.o: library.c library.h
+loadsave.o: loadsave.c library.h
+sort.o: sort.c library.h
+strings.o: strings.c library.h
+utilities.o: utilities.c library.h

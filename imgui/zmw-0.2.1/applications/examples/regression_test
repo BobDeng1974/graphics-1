@@ -1,0 +1,271 @@
+#!/bin/sh
+# -*- ksh -*-
+#
+# This script is launched inside the directory containing the program.
+# This script always make the regression test even if it is not necessary.
+# This script creates "regtext.passed" or "regtest.failed" (execution logs)
+# The REPLACE variable may contains
+#   - ""    	  : Asks the user
+#   - "yes" 	  : Replace good image
+#   - "yesforall" : Replace good images for this one and the others
+#   - "yeshere"   : Replace good images for this application
+#   - "no"  	  : Do not replace good image
+#   - "noforall"  : Do not replace good images for this one and the others
+#   - "nohere"    : Do not replace good images for this application
+# It is stored in "xxx.replace" file.
+#
+# This script :
+#       - Loop on
+#               - Creates the application dumps (without cache)
+#               - Compare with the good files
+#                 (If the good file does not exists, it is created)
+#                 If there is a difference, asks the user if the good
+#                 file must be replaced.
+#         While they are not equals (if too long to create: regtest.fail)
+#       - Loop on
+#               - Creates the application dumps (with cache)
+#               - Compare with the good files
+#         While they are not equals (if too long to create: regtest.fail)
+#       - Make some cleaning
+#       - Creates "regtest.pass"
+
+if [ ! -f ../xxx.replace ]
+then
+  echo >../xxx.replace
+fi
+
+
+export REPLACE=`cat ../xxx.replace`
+export NAME=`basename $(pwd)`
+export ZMW_EXECUTION_ARGS="--mstimout=10 --debug=2046"
+export ZMW_EXECUTION_ARGS="--mstimout=10"
+
+for DISPLAY_IMAGE in xv eeyes display gthumb
+do
+  if [ "`which $DISPLAY_IMAGE`" != '' ]
+  then
+    break
+  fi
+done
+
+display_image() {
+  $DISPLAY_IMAGE $* &
+  PID="$PID $!" 
+}
+
+# If not empty, connect a debugger to given tty.
+# It is useful if the program makes core dump only on regression tests.
+GDBTTY="/dev/tty8"
+GDBTTY=""
+
+# Use valgrind if defined, not usable with gdb
+VALGRIND="valgrind"
+VALGRIND=""
+
+# Test if the test need to be done
+
+if [ -f "regteststatus" \
+     -a "regteststatus" -nt "$NAME.c" \
+     -a "regteststatus" -nt "../../../zmw.so" ]
+then
+  exit 0
+fi
+
+
+. ../utilities
+
+if [ "" = "$ZMW_XVFBN" ]
+then
+  echo "Xvfb is not running" >&2
+  exit 1
+fi
+
+if fgrep -c "DO_NOT_MAKE_REGRESSION_TEST"  "$NAME.c" >/dev/null
+then
+  echo "$NAME : No regression test on this one"
+  echo "pass" > "regteststatus"
+  exit 0
+fi
+
+if tty >/dev/null
+then
+  :
+else
+  REPLACE="noforall"
+fi
+
+rm -f regteststatus 2>/dev/null
+
+make -f ../Makefile $NAME.exe || exit
+
+make_dumps() {
+  (
+  export DISPLAY="$ZMW_XVFB"
+  # Move cursor always in the same place
+  zmw_move_cursor_to 1000 1000
+  # Run the application in background
+  if [ "$GDBTTY" != "" ]
+  then
+    echo "r $1 $ZMW_EXECUTION_ARGS" > "xxx.gdb"
+    gdb <"$GDBTTY" >"$GDBTTY" 2>&1 --command="xxx.gdb" $NAME.exe &
+  else
+    $VALGRIND $NAME.exe $1 $ZMW_EXECUTION_ARGS &
+  fi
+  # Take the pid to kill it after
+  ZMWPID=$!
+  # Wait the application start
+  zmw_sleep 0.1
+  # Make the dumps from the shell script inside the C source file
+  eval "`awk <$NAME.c 'BEGIN{I=0;}/REGRESSION TEST/{I=1-I;next;}I==1{print;}'`"
+  # Kill the application one the dumps are terminated
+  kill $ZMWPID 2>/dev/null
+  )
+}
+
+convert_ppm_to_png() { pnmtopng -compression 9 <$1 >$2 ; }
+convert_png_to_ppm() { convert $1 ppm:$2 ; }
+convert_pnm_to_ppm() { convert $1 ppm:$2 ; }
+
+
+# $1 is the dumped image (ppm)
+# $2 is the correct image (png)
+compare_two_images() {
+  if [ ! -f $2 ]
+  then
+    if [ -s $1 ]
+    then
+      convert_ppm_to_png $1 $2
+    else
+      cp $1 $2
+    fi
+    echo -n " creates"
+    RESULT="ok"
+  else
+    if [ ! -s $1 -a ! -s $2 ]
+    then
+      echo "$1 is OK (empty)" >&2
+      RESULT="ok"
+    else
+      convert_pnm_to_ppm $1 xxx.1.ppm
+      convert_png_to_ppm $2 xxx.2.ppm
+      if cmp xxx.1.ppm xxx.2.ppm >/dev/null
+      then
+	echo "$1 is OK" >&2
+	RESULT="ok"
+      else
+	echo "$1 is not equal to $2"
+	if [ "$REPLACE" = "" ]
+	then
+	  echo "Replace (yes|yesforall|yeshere|no|noforall|nohere)? :"
+	  PID=
+	  display_image $1
+	  display_image $2
+	  pnmarith -subtract xxx.1.ppm xxx.2.ppm | pnmhisteq > xxx_dif.ppm
+	  if [ -s xxx_dif.ppm ]
+	  then
+	    display_image xxx_dif.ppm
+	  fi
+	  read REPLACE
+	  kill $PID
+	  PID=
+	fi 2>/dev/null
+	    
+	case "$REPLACE" in
+	  "yesforall"|"yeshere"|"yes")
+				       convert_ppm_to_png $1 $2
+				       RESULT="ok"
+				       ;;
+	  *)
+	     RESULT="fail"
+	     ;;
+	esac
+	# Reset the answer if it applies only to one image
+	if [ "$REPLACE" = "yes" -o "$REPLACE" = "no" ]
+	then
+	  REPLACE=""
+	fi
+      fi
+      rm xxx.1.ppm xxx.2.ppm
+    fi
+  fi
+}
+
+compare_all_images() {
+  J=0
+  while [ -f "xxx.$NAME.$J.ppm" ]
+  do
+    compare_two_images "xxx.$NAME.$J.ppm" "$NAME.$J.png"
+    if [ "$RESULT" != "ok" ]
+    then
+      ALL_RESULTS="fail"
+      echo
+      echo "Failed test: xxx.$NAME.$J.ppm" >&2
+    else
+      echo -n "$J"
+      rm "xxx.$NAME.$J.ppm"
+    fi
+    J=`expr $J + 1`
+  done
+}
+
+(
+
+
+echo -n "$NAME"
+
+RETRIES="1 2 3 4 5 6 7 8 9 10"
+# RETRIES="1 2"
+
+
+for N in $RETRIES
+do
+  ALL_RESULTS="ok"
+  echo -n " [$N]"
+  make_dumps "--cache-size=10000 --pango-cache=1000"
+  echo -n "/"
+  compare_all_images
+  if [ "$ALL_RESULTS" = "ok" ]
+  then
+    break
+  fi
+done
+
+if [  "$ALL_RESULTS" = "ok" ]
+then
+  for N in $RETRIES
+  do
+    ALL_RESULTS="ok"
+    echo -n " {$N}"
+    make_dumps ""
+    echo -n "/"
+    compare_all_images
+    if [ "$ALL_RESULTS" = "ok" ]
+    then
+      break
+    fi
+  done
+fi
+
+echo
+
+if [ "$ALL_RESULTS" = "ok" ]
+then
+  echo "pass" >regteststatus
+else
+  echo "fail" >regteststatus
+fi
+
+
+if [ "$REPLACE" = "yesforall" -o "$REPLACE" = "noforall" ]
+then
+  echo "$REPLACE" >../xxx.replace
+fi
+
+
+) 2>xxx.logs
+
+
+
+
+
+

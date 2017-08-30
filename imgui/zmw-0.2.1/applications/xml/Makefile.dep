@@ -1,0 +1,7 @@
+xml_parser.o: xml_parser.c xml_parser.h
+xmlgui.o: xmlgui.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ xml_parser.h

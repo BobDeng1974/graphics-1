@@ -1,0 +1,12 @@
+http://processors.wiki.ti.com/index.php/OMAP3_DSS2_Architecture
+http://processors.wiki.ti.com/index.php/DSS2_SYSFS_Examples
+http://processors.wiki.ti.com/index.php/Display_Subsystem
+http://processors.wiki.ti.com/index.php/LCD_connectivity
+http://processors.wiki.ti.com/index.php/Adding_new_DVI_resolutions
+i2cset -y -f 1 0x4b 0x1c 0x0d
+i2cset -y -f 1 0x4b 0x1d 0x48
+
+echo "93600,1920/61/3/4,1280/3/5/1" > /sys/devices/platform/omapdss/display0/timings
+
+[ST][ID|CMD1_CMD2=DATES|ECC][ET]
+

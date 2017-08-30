@@ -1,0 +1,236 @@
+# ZMW Book example application
+# Copyright (C) 2003 Thierry EXCOFFIER
+# Thierry EXCOFFIER <exco@liris.univ-lyon1.fr>, 2003
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.0.0\n"
+"POT-Creation-Date: 2003-11-27 12:33+0100\n"
+"PO-Revision-Date: 2005-05-03 11:47+0200\n"
+"Last-Translator: Thierry EXCOFFIER <exco@liris.univ-lyon1.fr>\n"
+"Language-Team: Thierry EXCOFFIER <exco@liris.univ-lyon1.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "File"
+msgstr "Fichier"
+
+msgid "Load"
+msgstr "Charge"
+
+msgid "Save"
+msgstr "Sauve"
+
+msgid "Save As"
+msgstr "Sauve sous"
+
+msgid "Preference Save"
+msgstr "Sauvegarde des préférences"
+
+msgid "Quit"
+msgstr "Quitter"
+
+msgid "Library Load"
+msgstr "Charger une bibliothèque"
+
+msgid "Library Save As"
+msgstr "Sauver une bibliothèque sous"
+
+msgid "Quit confirmation"
+msgstr "Confirmation de sortie"
+
+msgid "Quit without save"
+msgstr "Quitter sans sauver"
+
+msgid "Save and Quit"
+msgstr "Sauver et quitter"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "View"
+msgstr "Voir"
+
+msgid "Debug window"
+msgstr "Fenêtre de débuggage"
+
+msgid "Interface colors"
+msgstr "Couleurs de l'interface"
+
+msgid "Edit colors"
+msgstr "Editer les couleurs"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Tip"
+msgstr "Bulles d'aide"
+
+msgid "Header"
+msgstr "Entête"
+
+msgid "Borrowed"
+msgstr "Emprunté"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "New book defaults"
+msgstr "Valeurs par défaut pour la création"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Edit"
+msgstr "Édite"
+
+msgid "Add a new book"
+msgstr "Ajouter un nouveau livre"
+
+msgid "THIS PROGRAM IS UNFINISHED: DO NOT USE ON YOUR LIBRARY"
+msgstr "CE PROGRAMME N'EST PAS TERMINÉ : IL NE FAUT PAS L'UTILISER"
+
+msgid "Set this as a new name"
+msgstr "Cette valeur est un nouveau nom"
+
+#, c-format
+msgid "XML TAG UNKNOWN: %s\n"
+msgstr "TAG XML INCONNU : %s\n"
+
+msgid "Filter on all the columns :"
+msgstr "Filtre à appliquer sur toute les colonnes :"
+
+msgid "Only books containing this filter are displayed"
+msgstr "Seul les livres vérifiant ce filtre sont affichés"
+
+msgid "Display only borrowed books"
+msgstr "Affiche seulement les livres prêtés"
+
+msgid "Display book borrowed and not yet given back"
+msgstr "Affiche seulement les livres non rendus"
+
+msgid "Display only modified books"
+msgstr "Affiche les livres modifiés"
+
+msgid "If true only modified books are displayed, it disables other filters"
+msgstr ""
+"Si c'est vrai les livres modifiés sont affichés, cela annule les autres "
+"filtres"
+
+msgid "Book title"
+msgstr "Titre du livre"
+
+msgid "Sort by book title"
+msgstr "Trie par titre de livre"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Firstname"
+msgstr "Prénom"
+
+msgid "Sort by author firstname"
+msgstr "Tri par prénom"
+
+msgid "Surname"
+msgstr "Nom"
+
+msgid "Sort by author surname"
+msgstr "Tri par nom d'auteur"
+
+msgid "Borrower"
+msgstr "Emprunteur"
+
+msgid "Sort by borrower firstname"
+msgstr "Tri par prénom d'emprunteur"
+
+msgid "Sort by borrower surname"
+msgstr "Tri par nom d'emprunteur"
+
+msgid "Collection"
+msgstr "Collection"
+
+msgid "Sort by collection"
+msgstr "Tri par collection"
+
+msgid "Number"
+msgstr "Numéro"
+
+msgid "Sort by book number in collection"
+msgstr "Tri par numéro de collection"
+
+msgid "Rate"
+msgstr "Qualité"
+
+msgid "Sort by book rate"
+msgstr "Tri par qualité"
+
+#, c-format
+msgid "Enter a filter for %s"
+msgstr "Entrez le filtre pour %s"
+
+msgid "Change author name for all the books"
+msgstr "Changer ce nom d'auteur pour tous les livres"
+
+msgid "Change book author"
+msgstr "Changer d'auteur"
+
+msgid "Change borrower name for all books"
+msgstr "Changer ce nom d'emprunteur pour tous les livres"
+
+msgid "Last borrower give back the book"
+msgstr "Ce livre a été rendu"
+
+msgid "This book is borrowed by..."
+msgstr "Ce livre est emprunté par..."
+
+msgid "Change collection name for all books"
+msgstr "Changer le nom de la collection pour tous les livres"
+
+msgid "Change collection"
+msgstr "Changer de collection pour ce livre"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Visible"
+msgstr "Visible"
+
+msgid "Width"
+msgstr "Largeur"
+
+msgid "Order"
+msgstr "Ordre"
+
+msgid "Start:"
+msgstr "Début :"
+
+msgid "#Row:"
+msgstr "#Lignes :"
+
+msgid "#Book:"
+msgstr "#Livres :"
+
+msgid "Title"
+msgstr "Titre"
+
+#, c-format
+msgid "Library: %s%s"
+msgstr "Bibliotheque : %s%s"
+
+msgid " (Modified)"
+msgstr " (Modifiee)"
+
+msgid "Error message for book"
+msgstr "Message d'erreur de ``book''"
+
+msgid "Close"
+msgstr "Ferme"
+
+msgid "FRENCH Semantic Len"
+msgstr "Loupe sémantique FRANCAIS"
+
+msgid "Clone last book"
+msgstr "Creation d'une copie du dernier livre"

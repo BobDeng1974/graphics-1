@@ -1,0 +1,49 @@
+===================================================================
+The API changed with release 0.0.12, 0.1.0, 0.2.0
+If you have developped some code using ZMW library
+you need to run "scripts/zmw-upgrade.py" to rename some functions
+in your programs.
+===================================================================
+
+To compile the library : "make"
+
+Top level goals just for take a look :
+	- run_circuit   to compile and launch a small logic circuit editor.
+	- run_book      to compile and launch a library administrator (ALPHA).
+	- run_tests     to compile and launch the widget testing program.
+	- run_xml	to compile and launch an XML GUI not using memory!
+
+Makefile goals (at all levels) are :
+	- lib      The library
+	- exe      All the executables
+	- test     Regression test (you need Xvfb, Xnee, eeyes)
+	- doc      Create documentation (needs docbook utilities)
+	- clean    Remove constructed files and backup
+	- dep      Compute dependencies
+
+Other top level goals
+	- TAGS	   Compute tags
+There is no install goal, it is intented.
+
+
+If you can not compile the documentation, it is browsable from :
+	http://www710.univ-lyon1.fr/~exco/ZMW/zmw
+The documentation examples are in "applications/examples" directory.
+
+
+To configure the compilation process, see "Makefile.config".
+The default option is to compile a slow library in order
+to have assertions and debug messages.
+
+
+To compile your own application, add a subdirectory in "applications"
+and copy/edit the "circuit/Makefile" for example.
+
+
+These sources are here to show that zero memory widget are a reality.
+They are :
+	- not commented
+	- not clean
+	- not optimized
+	- certainly bugged
+	- full of misnamed variables and functions

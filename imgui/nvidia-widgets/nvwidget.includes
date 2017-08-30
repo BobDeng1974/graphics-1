@@ -1,0 +1,4 @@
+extern/glew/include/GL
+extern/glut/include/GL
+src/nvglutils
+src/nvwidgets

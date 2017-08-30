@@ -1,0 +1,1820 @@
+
+kernel/zmw.c,1271
+#define ZMW_PRINTF ZMW_PRINTF29,1007
+int zmw_printf(const char *format, ...)zmw_printf39,1166
+#define ZMW_AC(ZMW_AC51,1388
+const char *zmw_action_name_fct_(int (*action)(void))zmw_action_name_fct_53,1439
+const char *zmw_action_name_fct()zmw_action_name_fct63,1712
+const char *zmw_action_name_(Zmw_Subaction sa)zmw_action_name_68,1801
+const char *zmw_action_name()zmw_action_name95,2562
+int zmw_event_in()zmw_event_in101,2649
+void zmw_focus(Zmw_Name *focus)zmw_focus136,3757
+void zmw_name(const char *s)zmw_name145,3911
+Zmw_Hash zmw_hash(Zmw_Hash start, const char *string)zmw_hash153,4111
+void zmw_string_copy(char **to, const char *from)zmw_string_copy169,4403
+void zmw_init_widget()zmw_init_widget207,5035
+int zmw_action_compute_required_size()zmw_action_compute_required_size319,8970
+int zmw_action_first_pass()zmw_action_first_pass397,11188
+void zmw_debug_trace()zmw_debug_trace423,11765
+void zmw_stack_print()zmw_stack_print436,12242
+int zmw_action_draw()zmw_action_draw447,12520
+int zmw_action_dispatch_accelerator()zmw_action_dispatch_accelerator479,13057
+int zmw_action_dispatch_event()zmw_action_dispatch_event507,13655
+int zmw_action_search()zmw_action_search564,15023
+int zmw_action_clean()zmw_action_clean596,15638
+
+kernel/zmw_child_cache.c,1176
+static int global_cache_test = 0 ;global_cache_test25,987
+static int global_cache_miss = 0 ;global_cache_miss26,1022
+static struct cached_data {cached_data28,1058
+  Zmw_Hash hash ;hash29,1086
+  Zmw_Child r ;r30,1104
+  char *name ;name31,1120
+  int age ;age32,1135
+} *global_cache_table = NULL ;global_cache_table33,1147
+static int global_cache_size = 0 ; global_cache_size35,1179
+static int global_cache_age = 0 ;global_cache_age36,1215
+#define ZMW_PRINTF ZMW_PRINTF38,1250
+const char* zmw_child_string(const Zmw_Child *s)zmw_child_string41,1289
+void zmw_child_cache_init(int size)zmw_child_cache_init75,2133
+int zmw_child_cache_size()zmw_child_cache_size95,2537
+void zmw_child_cache_free()zmw_child_cache_free100,2598
+int zmw_child_cache_get_size_real(Zmw_Child *r)zmw_child_cache_get_size_real119,2956
+int zmw_child_cache_get_size(Zmw_Child *r)zmw_child_cache_get_size143,3555
+void zmw_child_cache_set_size_real(const Zmw_Child *r)zmw_child_cache_set_size_real151,3711
+static void zmw_child_cache_check(const Zmw_Child *s)zmw_child_cache_check168,4161
+void zmw_child_cache_set_size(const Zmw_Child *r)zmw_child_cache_set_size213,5216
+
+kernel/zmw_device.c,2864
+static GdkVisual *global_visual = NULL ;global_visual25,949
+int zmw_rgb_to_int(Zmw_Float_0_1 r, Zmw_Float_0_1 g, Zmw_Float_0_1 b)zmw_rgb_to_int27,991
+void zmw_int_to_rgb(int c,Zmw_Float_0_1 *r, Zmw_Float_0_1 *g, Zmw_Float_0_1 *b)zmw_int_to_rgb53,1837
+Zmw_Boolean zmw_draw_set_gc(Zmw_Color c)zmw_draw_set_gc60,2132
+void zmw_draw_line(Zmw_Color c, Zmw_Position x1, Zmw_Position y1zmw_draw_line74,2395
+void zmw_draw_rectangle(Zmw_Color c, Zmw_Boolean filledzmw_draw_rectangle81,2603
+void zmw_pixbuf_render_to_drawable(GdkPixbuf *pbzmw_pixbuf_render_to_drawable89,2853
+void zmw_draw_clip_set()zmw_draw_clip_set103,3197
+static PangoContext *zmw_g_context = NULL ;zmw_g_context123,3590
+static PangoFontDescription *zmw_g_font_description ;zmw_g_font_description124,3634
+static PangoLayout *zmw_g_layout ;zmw_g_layout125,3688
+static char *zmw_g_text_old = NULL ;zmw_g_text_old127,3724
+static char *zmw_g_text_new = NULL ;zmw_g_text_new128,3761
+static Zmw_Font_Description zmw_g_font_description_old = {family: 2005} ;zmw_g_font_description_old129,3798
+static Zmw_Font_Description zmw_g_font_description_new ;zmw_g_font_description_new130,3872
+static void zmw_text_family_list()zmw_text_family_list132,3930
+void zmw_text_set_text(char *text, const Zmw_Font_Description *fd)zmw_text_set_text146,4219
+static void zmw_text_update_values()zmw_text_update_values152,4354
+unsigned long zmw_hash_key(Zmw_Font_Description *fd, const char * text)zmw_hash_key206,6060
+static struct hash_cell {hash_cell221,6378
+  unsigned long hash_key ;hash_key222,6404
+  char *text ;text223,6431
+  Zmw_Font_Description fd ;fd224,6446
+  Zmw_Size width, height ;width225,6474
+  Zmw_Size width, height ;height225,6474
+} *zmw_g_cache = NULL ;zmw_g_cache226,6501
+static int zmw_g_table_size ;zmw_g_table_size227,6525
+void zmw_text_get_size(Zmw_Size *width, Zmw_Size *height)zmw_text_get_size230,6557
+void zmw_text_init(int pango_cache)zmw_text_init275,7670
+void zmw_text_exit()zmw_text_exit308,8493
+void zmw_text_render(Zmw_Color c, Zmw_Position xx, Zmw_Position yy)zmw_text_render325,8812
+int zmw_text_xy_to_index(Zmw_Position x, Zmw_Position y)zmw_text_xy_to_index348,9176
+void zmw_text_get_grapheme_rectangle(int index, Zmw_Rectangle *rect)zmw_text_get_grapheme_rectangle379,9815
+int zmw_text_next_char(int cursor)zmw_text_next_char392,10134
+int zmw_text_previous_char(int cursor)zmw_text_previous_char399,10307
+int zmw_text_delete_char(int cursor)zmw_text_delete_char407,10468
+void zmw_text_cursor_position(int cursor_pos, Zmw_Rectangle *r)zmw_text_cursor_position417,10696
+int zmw_text_up_char(int cursor)zmw_text_up_char440,11061
+int zmw_text_home_char(int cursor)zmw_text_home_char457,11461
+int zmw_text_end_char(int cursor)zmw_text_end_char466,11603
+int zmw_text_down_char(int cursor)zmw_text_down_char474,11743
+
+kernel/zmw_drag.c,2594
+typedef enum zmw_drag_fromzmw_drag_from32,1046
+  { Zmw_Drag_From_No      // You are not draggedZmw_Drag_From_No33,1073
+    , Zmw_Drag_From_Begin // ! Start of your drag, call zmw_drag_data_set()Zmw_Drag_From_Begin34,1122
+    , Zmw_Drag_From_End   // ! End of your drag, call zmw_drag_is_accepted()Zmw_Drag_From_End35,1198
+    , Zmw_Drag_From_Running // You MUST display a drag window, you may call zmw_drag_is_accepted()Zmw_Drag_From_Running36,1275
+  } Zmw_Drag_From ;Zmw_Drag_From37,1374
+typedef enum zmw_drag_tozmw_drag_to39,1395
+  { Zmw_Drag_To_No_Change  // No state changeZmw_Drag_To_No_Change40,1420
+    , Zmw_Drag_To_Enter    // ! A drag is now over you, call zmw_drag_to_acceptZmw_Drag_To_Enter41,1466
+    , Zmw_Drag_To_Leave    // ! A drag leave youZmw_Drag_To_Leave42,1546
+    , Zmw_Drag_To_End      // ! The drag is deposited on youZmw_Drag_To_End43,1595
+  } Zmw_Drag_To ;Zmw_Drag_To44,1656
+static Zmw_Name *global_zmw_drag_from = NULL ;global_zmw_drag_from48,1677
+static Zmw_Name *global_zmw_drag_to = NULL ;global_zmw_drag_to49,1724
+static char * global_zmw_drag_data = NULL ;global_zmw_drag_data50,1769
+static Zmw_Boolean global_zmw_drag_accepted = Zmw_False;global_zmw_drag_accepted51,1813
+static Zmw_Boolean global_zmw_drag_drop = Zmw_False ;global_zmw_drag_drop52,1870
+void zmw_drag_printf(char *format, ...)zmw_drag_printf54,1925
+#define ZMW_DRAG_RETURN(ZMW_DRAG_RETURN79,2578
+void zmw_drag_debug(FILE *f)zmw_drag_debug81,2662
+void zmw_drag_cancel()zmw_drag_cancel90,3011
+Zmw_Drag_From zmw_drag_from_state_compute(Zmw_Boolean in_zmw_parameter)zmw_drag_from_state_compute121,3822
+Zmw_Boolean zmw_drag_from_started()zmw_drag_from_started190,5532
+Zmw_Boolean zmw_drag_from_stopped()zmw_drag_from_stopped194,5645
+Zmw_Boolean zmw_drag_from_running()zmw_drag_from_running198,5756
+void zmw_drag_data_set(const char *data)zmw_drag_data_set208,5944
+Zmw_Drag_To zmw_drag_to_state_compute()zmw_drag_to_state_compute227,6386
+Zmw_Boolean zmw_drag_to_enter()zmw_drag_to_enter321,8978
+Zmw_Boolean zmw_drag_to_leave()zmw_drag_to_leave326,9075
+Zmw_Boolean zmw_drag_to_dropped()zmw_drag_to_dropped331,9172
+void zmw_drag_to_nothing()zmw_drag_to_nothing336,9269
+void zmw_drag_accept_set(Zmw_Boolean bool)zmw_drag_accept_set346,9486
+Zmw_Boolean zmw_drag_accept_get()zmw_drag_accept_get353,9643
+char *zmw_drag_data_get()zmw_drag_data_get358,9722
+void zmw_drag_swap(int *p, int **current)zmw_drag_swap372,10049
+void zmw_drag_debug_window()zmw_drag_debug_window412,10670
+void zmw_drag_initialize()zmw_drag_initialize437,11348
+
+kernel/zmw_event.c,3442
+static Zmw_Name *global_zmw_selected = NULL ;global_zmw_selected29,1005
+static Zmw_Name *global_zmw_selection = NULL ;global_zmw_selection30,1051
+#define C(C32,1099
+void zmw_event_dump()zmw_event_dump33,1175
+#undef CC57,2063
+Zmw_Boolean zmw_cursor_in()zmw_cursor_in62,2101
+Zmw_Boolean zmw_event_to_process()zmw_event_to_process71,2271
+Zmw_Boolean zmw_state_change_allowed()zmw_state_change_allowed81,2496
+Zmw_Boolean zmw_focus_in()zmw_focus_in91,2703
+Zmw_Boolean zmw_focus_in_by_its_parents()zmw_focus_in_by_its_parents99,2834
+static int zmw_pass_through(int n)zmw_pass_through108,3073
+static void zmw_widget_is_tested_(int n)zmw_widget_is_tested_118,3231
+void zmw_widget_is_tested()zmw_widget_is_tested133,3491
+void zmw_widget_previous_is_tested()zmw_widget_previous_is_tested139,3603
+Zmw_Boolean zmw_key_pressed_unsensitive()zmw_key_pressed_unsensitive149,3805
+Zmw_Boolean zmw_key_pressed()zmw_key_pressed156,3982
+Zmw_Boolean zmw_key_string_unsensitive()zmw_key_string_unsensitive164,4158
+Zmw_Boolean zmw_button_pressed()zmw_button_pressed172,4337
+Zmw_Boolean zmw_button_released()zmw_button_released183,4549
+Zmw_Boolean zmw_button_released_anywhere()zmw_button_released_anywhere189,4681
+Zmw_Boolean zmw_activated()zmw_activated200,5023
+Zmw_Boolean zmw_activated_previous()zmw_activated_previous224,5584
+Zmw_Boolean zmw_event_in_rectangle_previous()zmw_event_in_rectangle_previous237,5934
+Zmw_Boolean zmw_changed()zmw_changed248,6179
+Zmw_Boolean zmw_cursor_in_and_pressed()zmw_cursor_in_and_pressed258,6470
+static Zmw_Name *global_zmw_cursor ;global_zmw_cursor276,6945
+Zmw_Boolean zmw_cursor_leave()zmw_cursor_leave278,6983
+Zmw_Boolean zmw_cursor_enter()zmw_cursor_enter305,7634
+void zmw_cursor_set(char *name)zmw_cursor_set323,8002
+#define ZMW_PRINTF ZMW_PRINTF347,8687
+void zmw_window_update_uppers(int action)zmw_window_update_uppers349,8810
+static Zmw_Name *global_inner_visible_menu = NULL ;global_inner_visible_menu374,9347
+Zmw_Boolean zmw_window_is_popped_with_detached(int *detached)zmw_window_is_popped_with_detached376,9400
+Zmw_Boolean zmw_window_is_popped()zmw_window_is_popped516,13283
+void zmw_window_unpop_all()zmw_window_unpop_all521,13377
+Zmw_Boolean zmw_selected()zmw_selected541,13910
+Zmw_Boolean zmw_selected_by_its_parents()zmw_selected_by_its_parents545,13988
+Zmw_Boolean zmw_focused_by_its_parents()zmw_focused_by_its_parents553,14170
+void zmw_focus_remove()zmw_focus_remove560,14289
+void zmw_event_remove()zmw_event_remove567,14393
+static void zmw_update_distance(int direction, int distancezmw_update_distance581,14850
+static void zmw_interval_distance(int pos1, int length1, int pos2, int length2zmw_interval_distance625,16043
+static void zmw_interval_distance_debug()zmw_interval_distance_debug652,16688
+void zmw_focusable()zmw_focusable686,17427
+Zmw_Boolean zmw_selection_have()zmw_selection_have801,21007
+void zmw_selection_take()zmw_selection_take806,21094
+void zmw_selection_clear()zmw_selection_clear811,21169
+void zmw_event_button_release()zmw_event_button_release821,21331
+void zmw_activable()zmw_activable826,21413
+Zmw_Boolean zmw_accelerator(GdkModifierType state, int character)zmw_accelerator860,22163
+Zmw_Boolean zmw_tip_visible()zmw_tip_visible885,22849
+void zmw_event_initialize()zmw_event_initialize940,23938
+#define C(C953,24243
+void zmw_event_debug_window()zmw_event_debug_window955,24279
+
+kernel/zmw_font.c,194
+Zmw_Font_Family zmw_font_family_index(const char *family)zmw_font_family_index26,981
+Zmw_Boolean zmw_font_description_equals(const Zmw_Font_Description *f1zmw_font_description_equals41,1320
+
+kernel/zmw_generated.c,121646
+Zmw zmw ;zmw9,140
+#undef zmw_action_getzmw_action_get11,151
+int (*zmw_action_get(void))(void) { return zmw.ptr->i.action ; }zmw_action_get12,173
+#undef zmw_action_get_ptrzmw_action_get_ptr13,238
+int (**zmw_action_get_ptr(void))(void) { return &zmw.ptr->i.action ; }zmw_action_get_ptr14,264
+#undef zmw_action_setzmw_action_set15,335
+void zmw_action_set(int (*x)(void)) { zmw.ptr->i.action = x ; }zmw_action_set16,357
+#undef zmw_parent__action_getzmw_parent__action_get17,421
+int (*zmw_parent__action_get(void))(void) { return (zmw.ptr-1)->i.action ; }zmw_parent__action_get18,451
+#undef zmw_parent__action_get_ptrzmw_parent__action_get_ptr19,528
+int (**zmw_parent__action_get_ptr(void))(void) { return &(zmw.ptr-1)->i.action ; }zmw_parent__action_get_ptr20,562
+#undef zmw_parent__action_setzmw_parent__action_set21,645
+void zmw_parent__action_set(int (*x)(void)) { (zmw.ptr-1)->i.action = x ; }zmw_parent__action_set22,675
+#undef zmw_debug_getzmw_debug_get23,751
+int zmw_debug_get(void) { return zmw.ptr->i.debug ; }zmw_debug_get24,772
+#undef zmw_debug_get_ptrzmw_debug_get_ptr25,826
+int *zmw_debug_get_ptr(void) { return &zmw.ptr->i.debug ; }zmw_debug_get_ptr26,851
+#undef zmw_debug_setzmw_debug_set27,911
+void zmw_debug_set(const int x) { zmw.ptr->i.debug = x ; }zmw_debug_set28,932
+#undef zmw_parent__debug_getzmw_parent__debug_get29,991
+int zmw_parent__debug_get(void) { return (zmw.ptr-1)->i.debug ; }zmw_parent__debug_get30,1020
+#undef zmw_parent__debug_get_ptrzmw_parent__debug_get_ptr31,1086
+int *zmw_parent__debug_get_ptr(void) { return &(zmw.ptr-1)->i.debug ; }zmw_parent__debug_get_ptr32,1119
+#undef zmw_parent__debug_setzmw_parent__debug_set33,1191
+void zmw_parent__debug_set(const int x) { (zmw.ptr-1)->i.debug = x ; }zmw_parent__debug_set34,1220
+#undef zmw_colors_getzmw_colors_get35,1291
+int* zmw_colors_get(void) { return zmw.ptr->i.colors ; }zmw_colors_get36,1313
+#undef zmw_parent__colors_getzmw_parent__colors_get37,1370
+int* zmw_parent__colors_get(void) { return (zmw.ptr-1)->i.colors ; }zmw_parent__colors_get38,1400
+#undef zmw_font_family_getzmw_font_family_get39,1469
+Zmw_Font_Family zmw_font_family_get(void) { return zmw.ptr->i.font.family ; }zmw_font_family_get40,1496
+#undef zmw_font_family_get_ptrzmw_font_family_get_ptr41,1574
+Zmw_Font_Family *zmw_font_family_get_ptr(void) { return &zmw.ptr->i.font.family ; }zmw_font_family_get_ptr42,1605
+#undef zmw_font_family_setzmw_font_family_set43,1689
+void zmw_font_family_set(const Zmw_Font_Family x) { zmw.ptr->i.font.family = x ; }zmw_font_family_set44,1716
+#undef zmw_parent__font_family_getzmw_parent__font_family_get45,1799
+Zmw_Font_Family zmw_parent__font_family_get(void) { return (zmw.ptr-1)->i.font.family ; }zmw_parent__font_family_get46,1834
+#undef zmw_parent__font_family_get_ptrzmw_parent__font_family_get_ptr47,1924
+Zmw_Font_Family *zmw_parent__font_family_get_ptr(void) { return &(zmw.ptr-1)->i.font.family ; }zmw_parent__font_family_get_ptr48,1963
+#undef zmw_parent__font_family_setzmw_parent__font_family_set49,2059
+void zmw_parent__font_family_set(const Zmw_Font_Family x) { (zmw.ptr-1)->i.font.family = x ; }zmw_parent__font_family_set50,2094
+#undef zmw_font_size_getzmw_font_size_get51,2189
+Zmw_Font_Size zmw_font_size_get(void) { return zmw.ptr->i.font.size ; }zmw_font_size_get52,2214
+#undef zmw_font_size_get_ptrzmw_font_size_get_ptr53,2286
+Zmw_Font_Size *zmw_font_size_get_ptr(void) { return &zmw.ptr->i.font.size ; }zmw_font_size_get_ptr54,2315
+#undef zmw_font_size_setzmw_font_size_set55,2393
+void zmw_font_size_set(const Zmw_Font_Size x) { zmw.ptr->i.font.size = x ; }zmw_font_size_set56,2418
+#undef zmw_parent__font_size_getzmw_parent__font_size_get57,2495
+Zmw_Font_Size zmw_parent__font_size_get(void) { return (zmw.ptr-1)->i.font.size ; }zmw_parent__font_size_get58,2528
+#undef zmw_parent__font_size_get_ptrzmw_parent__font_size_get_ptr59,2612
+Zmw_Font_Size *zmw_parent__font_size_get_ptr(void) { return &(zmw.ptr-1)->i.font.size ; }zmw_parent__font_size_get_ptr60,2649
+#undef zmw_parent__font_size_setzmw_parent__font_size_set61,2739
+void zmw_parent__font_size_set(const Zmw_Font_Size x) { (zmw.ptr-1)->i.font.size = x ; }zmw_parent__font_size_set62,2772
+#undef zmw_font_weight_getzmw_font_weight_get63,2861
+Zmw_Font_Weight zmw_font_weight_get(void) { return zmw.ptr->i.font.weight ; }zmw_font_weight_get64,2888
+#undef zmw_font_weight_get_ptrzmw_font_weight_get_ptr65,2966
+Zmw_Font_Weight *zmw_font_weight_get_ptr(void) { return &zmw.ptr->i.font.weight ; }zmw_font_weight_get_ptr66,2997
+#undef zmw_font_weight_setzmw_font_weight_set67,3081
+void zmw_font_weight_set(const Zmw_Font_Weight x) { zmw.ptr->i.font.weight = x ; }zmw_font_weight_set68,3108
+#undef zmw_parent__font_weight_getzmw_parent__font_weight_get69,3191
+Zmw_Font_Weight zmw_parent__font_weight_get(void) { return (zmw.ptr-1)->i.font.weight ; }zmw_parent__font_weight_get70,3226
+#undef zmw_parent__font_weight_get_ptrzmw_parent__font_weight_get_ptr71,3316
+Zmw_Font_Weight *zmw_parent__font_weight_get_ptr(void) { return &(zmw.ptr-1)->i.font.weight ; }zmw_parent__font_weight_get_ptr72,3355
+#undef zmw_parent__font_weight_setzmw_parent__font_weight_set73,3451
+void zmw_parent__font_weight_set(const Zmw_Font_Weight x) { (zmw.ptr-1)->i.font.weight = x ; }zmw_parent__font_weight_set74,3486
+#undef zmw_font_style_getzmw_font_style_get75,3581
+Zmw_Font_Style zmw_font_style_get(void) { return zmw.ptr->i.font.style ; }zmw_font_style_get76,3607
+#undef zmw_font_style_get_ptrzmw_font_style_get_ptr77,3682
+Zmw_Font_Style *zmw_font_style_get_ptr(void) { return &zmw.ptr->i.font.style ; }zmw_font_style_get_ptr78,3712
+#undef zmw_font_style_setzmw_font_style_set79,3793
+void zmw_font_style_set(const Zmw_Font_Style x) { zmw.ptr->i.font.style = x ; }zmw_font_style_set80,3819
+#undef zmw_parent__font_style_getzmw_parent__font_style_get81,3899
+Zmw_Font_Style zmw_parent__font_style_get(void) { return (zmw.ptr-1)->i.font.style ; }zmw_parent__font_style_get82,3933
+#undef zmw_parent__font_style_get_ptrzmw_parent__font_style_get_ptr83,4020
+Zmw_Font_Style *zmw_parent__font_style_get_ptr(void) { return &(zmw.ptr-1)->i.font.style ; }zmw_parent__font_style_get_ptr84,4058
+#undef zmw_parent__font_style_setzmw_parent__font_style_set85,4151
+void zmw_parent__font_style_set(const Zmw_Font_Style x) { (zmw.ptr-1)->i.font.style = x ; }zmw_parent__font_style_set86,4185
+#undef zmw_font_getzmw_font_get87,4277
+Zmw_Font_Description *zmw_font_get(void) { return &zmw.ptr->i.font ; }zmw_font_get88,4297
+#undef zmw_font_setzmw_font_set89,4368
+void zmw_font_set(const Zmw_Font_Description *x) { zmw.ptr->i.font = *x ; }zmw_font_set90,4388
+#undef zmw_parent__font_getzmw_parent__font_get91,4464
+Zmw_Font_Description *zmw_parent__font_get(void) { return &(zmw.ptr-1)->i.font ; }zmw_parent__font_get92,4492
+#undef zmw_parent__font_setzmw_parent__font_set93,4575
+void zmw_parent__font_set(const Zmw_Font_Description *x) { (zmw.ptr-1)->i.font = *x ; }zmw_parent__font_set94,4603
+#undef zmw_focus_value_getzmw_focus_value_get95,4691
+void* zmw_focus_value_get(void) { return zmw.ptr->i.focus->value ; }zmw_focus_value_get96,4718
+#undef zmw_focus_value_get_ptrzmw_focus_value_get_ptr97,4787
+void* *zmw_focus_value_get_ptr(void) { return &zmw.ptr->i.focus->value ; }zmw_focus_value_get_ptr98,4818
+#undef zmw_focus_value_setzmw_focus_value_set99,4893
+void zmw_focus_value_set(void* x) { zmw.ptr->i.focus->value = x ; }zmw_focus_value_set100,4920
+#undef zmw_parent__focus_value_getzmw_parent__focus_value_get101,4988
+void* zmw_parent__focus_value_get(void) { return (zmw.ptr-1)->i.focus->value ; }zmw_parent__focus_value_get102,5023
+#undef zmw_parent__focus_value_get_ptrzmw_parent__focus_value_get_ptr103,5104
+void* *zmw_parent__focus_value_get_ptr(void) { return &(zmw.ptr-1)->i.focus->value ; }zmw_parent__focus_value_get_ptr104,5143
+#undef zmw_parent__focus_value_setzmw_parent__focus_value_set105,5230
+void zmw_parent__focus_value_set(void* x) { (zmw.ptr-1)->i.focus->value = x ; }zmw_parent__focus_value_set106,5265
+#undef zmw_focus_getzmw_focus_get107,5345
+Zmw_Name* zmw_focus_get(void) { return zmw.ptr->i.focus ; }zmw_focus_get108,5366
+#undef zmw_focus_get_ptrzmw_focus_get_ptr109,5426
+Zmw_Name* *zmw_focus_get_ptr(void) { return &zmw.ptr->i.focus ; }zmw_focus_get_ptr110,5451
+#undef zmw_focus_setzmw_focus_set111,5517
+void zmw_focus_set(Zmw_Name* x) { zmw.ptr->i.focus = x ; }zmw_focus_set112,5538
+#undef zmw_parent__focus_getzmw_parent__focus_get113,5597
+Zmw_Name* zmw_parent__focus_get(void) { return (zmw.ptr-1)->i.focus ; }zmw_parent__focus_get114,5626
+#undef zmw_parent__focus_get_ptrzmw_parent__focus_get_ptr115,5698
+Zmw_Name* *zmw_parent__focus_get_ptr(void) { return &(zmw.ptr-1)->i.focus ; }zmw_parent__focus_get_ptr116,5731
+#undef zmw_parent__focus_setzmw_parent__focus_set117,5809
+void zmw_parent__focus_set(Zmw_Name* x) { (zmw.ptr-1)->i.focus = x ; }zmw_parent__focus_set118,5838
+#undef zmw_border_width_getzmw_border_width_get119,5909
+Zmw_Width zmw_border_width_get(void) { return zmw.ptr->i.border_width ; }zmw_border_width_get120,5937
+#undef zmw_border_width_get_ptrzmw_border_width_get_ptr121,6011
+Zmw_Width *zmw_border_width_get_ptr(void) { return &zmw.ptr->i.border_width ; }zmw_border_width_get_ptr122,6043
+#undef zmw_border_width_setzmw_border_width_set123,6123
+void zmw_border_width_set(const Zmw_Width x) { zmw.ptr->i.border_width = x ; }zmw_border_width_set124,6151
+#undef zmw_parent__border_width_getzmw_parent__border_width_get125,6230
+Zmw_Width zmw_parent__border_width_get(void) { return (zmw.ptr-1)->i.border_width ; }zmw_parent__border_width_get126,6266
+#undef zmw_parent__border_width_get_ptrzmw_parent__border_width_get_ptr127,6352
+Zmw_Width *zmw_parent__border_width_get_ptr(void) { return &(zmw.ptr-1)->i.border_width ; }zmw_parent__border_width_get_ptr128,6392
+#undef zmw_parent__border_width_setzmw_parent__border_width_set129,6484
+void zmw_parent__border_width_set(const Zmw_Width x) { (zmw.ptr-1)->i.border_width = x ; }zmw_parent__border_width_set130,6520
+#undef zmw_focus_width_getzmw_focus_width_get131,6611
+Zmw_Width zmw_focus_width_get(void) { return zmw.ptr->i.focus_width ; }zmw_focus_width_get132,6638
+#undef zmw_focus_width_get_ptrzmw_focus_width_get_ptr133,6710
+Zmw_Width *zmw_focus_width_get_ptr(void) { return &zmw.ptr->i.focus_width ; }zmw_focus_width_get_ptr134,6741
+#undef zmw_focus_width_setzmw_focus_width_set135,6819
+void zmw_focus_width_set(const Zmw_Width x) { zmw.ptr->i.focus_width = x ; }zmw_focus_width_set136,6846
+#undef zmw_parent__focus_width_getzmw_parent__focus_width_get137,6923
+Zmw_Width zmw_parent__focus_width_get(void) { return (zmw.ptr-1)->i.focus_width ; }zmw_parent__focus_width_get138,6958
+#undef zmw_parent__focus_width_get_ptrzmw_parent__focus_width_get_ptr139,7042
+Zmw_Width *zmw_parent__focus_width_get_ptr(void) { return &(zmw.ptr-1)->i.focus_width ; }zmw_parent__focus_width_get_ptr140,7081
+#undef zmw_parent__focus_width_setzmw_parent__focus_width_set141,7171
+void zmw_parent__focus_width_set(const Zmw_Width x) { (zmw.ptr-1)->i.focus_width = x ; }zmw_parent__focus_width_set142,7206
+#undef zmw_auto_resize_getzmw_auto_resize_get143,7295
+Zmw_Boolean zmw_auto_resize_get(void) { return zmw.ptr->i.auto_resize ; }zmw_auto_resize_get144,7322
+#undef zmw_auto_resize_setzmw_auto_resize_set145,7396
+void zmw_auto_resize_set(const Zmw_Boolean x) { zmw.ptr->i.auto_resize = x ; }zmw_auto_resize_set146,7423
+#undef zmw_parent__auto_resize_getzmw_parent__auto_resize_get147,7502
+Zmw_Boolean zmw_parent__auto_resize_get(void) { return (zmw.ptr-1)->i.auto_resize ; }zmw_parent__auto_resize_get148,7537
+#undef zmw_parent__auto_resize_setzmw_parent__auto_resize_set149,7623
+void zmw_parent__auto_resize_set(const Zmw_Boolean x) { (zmw.ptr-1)->i.auto_resize = x ; }zmw_parent__auto_resize_set150,7658
+#undef zmw_sensitive_getzmw_sensitive_get151,7749
+Zmw_Boolean zmw_sensitive_get(void) { return zmw.ptr->i.sensitive ; }zmw_sensitive_get152,7774
+#undef zmw_sensitive_setzmw_sensitive_set153,7844
+void zmw_sensitive_set(const Zmw_Boolean x) { zmw.ptr->i.sensitive = x ; }zmw_sensitive_set154,7869
+#undef zmw_parent__sensitive_getzmw_parent__sensitive_get155,7944
+Zmw_Boolean zmw_parent__sensitive_get(void) { return (zmw.ptr-1)->i.sensitive ; }zmw_parent__sensitive_get156,7977
+#undef zmw_parent__sensitive_setzmw_parent__sensitive_set157,8059
+void zmw_parent__sensitive_set(const Zmw_Boolean x) { (zmw.ptr-1)->i.sensitive = x ; }zmw_parent__sensitive_set158,8092
+#undef zmw_call_number_getzmw_call_number_get159,8179
+int zmw_call_number_get(void) { return zmw.ptr->u.call_number ; }zmw_call_number_get160,8206
+#undef zmw_call_number_get_ptrzmw_call_number_get_ptr161,8272
+int *zmw_call_number_get_ptr(void) { return &zmw.ptr->u.call_number ; }zmw_call_number_get_ptr162,8303
+#undef zmw_call_number_setzmw_call_number_set163,8375
+void zmw_call_number_set(const int x) { zmw.ptr->u.call_number = x ; }zmw_call_number_set164,8402
+#undef zmw_parent__call_number_getzmw_parent__call_number_get165,8473
+int zmw_parent__call_number_get(void) { return (zmw.ptr-1)->u.call_number ; }zmw_parent__call_number_get166,8508
+#undef zmw_parent__call_number_get_ptrzmw_parent__call_number_get_ptr167,8586
+int *zmw_parent__call_number_get_ptr(void) { return &(zmw.ptr-1)->u.call_number ; }zmw_parent__call_number_get_ptr168,8625
+#undef zmw_parent__call_number_setzmw_parent__call_number_set169,8709
+void zmw_parent__call_number_set(const int x) { (zmw.ptr-1)->u.call_number = x ; }zmw_parent__call_number_set170,8744
+#undef zmw_name_getzmw_name_get171,8827
+char* zmw_name_get(void) { return zmw.ptr->u.name ; }zmw_name_get172,8847
+#undef zmw_name_get_ptrzmw_name_get_ptr173,8901
+char* *zmw_name_get_ptr(void) { return &zmw.ptr->u.name ; }zmw_name_get_ptr174,8925
+#undef zmw_name_setzmw_name_set175,8985
+void zmw_name_set(char* x) { zmw.ptr->u.name = x ; }zmw_name_set176,9005
+#undef zmw_parent__name_getzmw_parent__name_get177,9058
+char* zmw_parent__name_get(void) { return (zmw.ptr-1)->u.name ; }zmw_parent__name_get178,9086
+#undef zmw_parent__name_get_ptrzmw_parent__name_get_ptr179,9152
+char* *zmw_parent__name_get_ptr(void) { return &(zmw.ptr-1)->u.name ; }zmw_parent__name_get_ptr180,9184
+#undef zmw_parent__name_setzmw_parent__name_set181,9256
+void zmw_parent__name_set(char* x) { (zmw.ptr-1)->u.name = x ; }zmw_parent__name_set182,9284
+#undef zmw_name_index_getzmw_name_index_get183,9349
+char* zmw_name_index_get(void) { return zmw.ptr->u.name_index ; }zmw_name_index_get184,9375
+#undef zmw_name_index_get_ptrzmw_name_index_get_ptr185,9441
+char* *zmw_name_index_get_ptr(void) { return &zmw.ptr->u.name_index ; }zmw_name_index_get_ptr186,9471
+#undef zmw_name_index_setzmw_name_index_set187,9543
+void zmw_name_index_set(char* x) { zmw.ptr->u.name_index = x ; }zmw_name_index_set188,9569
+#undef zmw_parent__name_index_getzmw_parent__name_index_get189,9634
+char* zmw_parent__name_index_get(void) { return (zmw.ptr-1)->u.name_index ; }zmw_parent__name_index_get190,9668
+#undef zmw_parent__name_index_get_ptrzmw_parent__name_index_get_ptr191,9746
+char* *zmw_parent__name_index_get_ptr(void) { return &(zmw.ptr-1)->u.name_index ; }zmw_parent__name_index_get_ptr192,9784
+#undef zmw_parent__name_index_setzmw_parent__name_index_set193,9868
+void zmw_parent__name_index_set(char* x) { (zmw.ptr-1)->u.name_index = x ; }zmw_parent__name_index_set194,9902
+#undef zmw_name_separator_getzmw_name_separator_get195,9979
+int zmw_name_separator_get(void) { return zmw.ptr->u.name_separator ; }zmw_name_separator_get196,10009
+#undef zmw_name_separator_get_ptrzmw_name_separator_get_ptr197,10081
+int *zmw_name_separator_get_ptr(void) { return &zmw.ptr->u.name_separator ; }zmw_name_separator_get_ptr198,10115
+#undef zmw_name_separator_setzmw_name_separator_set199,10193
+void zmw_name_separator_set(const int x) { zmw.ptr->u.name_separator = x ; }zmw_name_separator_set200,10223
+#undef zmw_parent__name_separator_getzmw_parent__name_separator_get201,10300
+int zmw_parent__name_separator_get(void) { return (zmw.ptr-1)->u.name_separator ; }zmw_parent__name_separator_get202,10338
+#undef zmw_parent__name_separator_get_ptrzmw_parent__name_separator_get_ptr203,10422
+int *zmw_parent__name_separator_get_ptr(void) { return &(zmw.ptr-1)->u.name_separator ; }zmw_parent__name_separator_get_ptr204,10464
+#undef zmw_parent__name_separator_setzmw_parent__name_separator_set205,10554
+void zmw_parent__name_separator_set(const int x) { (zmw.ptr-1)->u.name_separator = x ; }zmw_parent__name_separator_set206,10592
+#undef zmw_nb_of_children_getzmw_nb_of_children_get207,10681
+int zmw_nb_of_children_get(void) { return zmw.ptr->u.nb_of_children ; }zmw_nb_of_children_get208,10711
+#undef zmw_nb_of_children_get_ptrzmw_nb_of_children_get_ptr209,10783
+int *zmw_nb_of_children_get_ptr(void) { return &zmw.ptr->u.nb_of_children ; }zmw_nb_of_children_get_ptr210,10817
+#undef zmw_nb_of_children_setzmw_nb_of_children_set211,10895
+void zmw_nb_of_children_set(const int x) { zmw.ptr->u.nb_of_children = x ; }zmw_nb_of_children_set212,10925
+#undef zmw_parent__nb_of_children_getzmw_parent__nb_of_children_get213,11002
+int zmw_parent__nb_of_children_get(void) { return (zmw.ptr-1)->u.nb_of_children ; }zmw_parent__nb_of_children_get214,11040
+#undef zmw_parent__nb_of_children_get_ptrzmw_parent__nb_of_children_get_ptr215,11124
+int *zmw_parent__nb_of_children_get_ptr(void) { return &(zmw.ptr-1)->u.nb_of_children ; }zmw_parent__nb_of_children_get_ptr216,11166
+#undef zmw_parent__nb_of_children_setzmw_parent__nb_of_children_set217,11256
+void zmw_parent__nb_of_children_set(const int x) { (zmw.ptr-1)->u.nb_of_children = x ; }zmw_parent__nb_of_children_set218,11294
+#undef zmw_nb_of_children_max_getzmw_nb_of_children_max_get219,11383
+int zmw_nb_of_children_max_get(void) { return zmw.ptr->u.nb_of_children_max ; }zmw_nb_of_children_max_get220,11417
+#undef zmw_nb_of_children_max_get_ptrzmw_nb_of_children_max_get_ptr221,11497
+int *zmw_nb_of_children_max_get_ptr(void) { return &zmw.ptr->u.nb_of_children_max ; }zmw_nb_of_children_max_get_ptr222,11535
+#undef zmw_nb_of_children_max_setzmw_nb_of_children_max_set223,11621
+void zmw_nb_of_children_max_set(const int x) { zmw.ptr->u.nb_of_children_max = x ; }zmw_nb_of_children_max_set224,11655
+#undef zmw_parent__nb_of_children_max_getzmw_parent__nb_of_children_max_get225,11740
+int zmw_parent__nb_of_children_max_get(void) { return (zmw.ptr-1)->u.nb_of_children_max ; }zmw_parent__nb_of_children_max_get226,11782
+#undef zmw_parent__nb_of_children_max_get_ptrzmw_parent__nb_of_children_max_get_ptr227,11874
+int *zmw_parent__nb_of_children_max_get_ptr(void) { return &(zmw.ptr-1)->u.nb_of_children_max ; }zmw_parent__nb_of_children_max_get_ptr228,11920
+#undef zmw_parent__nb_of_children_max_setzmw_parent__nb_of_children_max_set229,12018
+void zmw_parent__nb_of_children_max_set(const int x) { (zmw.ptr-1)->u.nb_of_children_max = x ; }zmw_parent__nb_of_children_max_set230,12060
+#undef zmw_children_getzmw_children_get231,12157
+Zmw_Child* zmw_children_get(void) { return zmw.ptr->u.children ; }zmw_children_get232,12181
+#undef zmw_children_get_ptrzmw_children_get_ptr233,12248
+Zmw_Child* *zmw_children_get_ptr(void) { return &zmw.ptr->u.children ; }zmw_children_get_ptr234,12276
+#undef zmw_children_setzmw_children_set235,12349
+void zmw_children_set(Zmw_Child* x) { zmw.ptr->u.children = x ; }zmw_children_set236,12373
+#undef zmw_parent__children_getzmw_parent__children_get237,12439
+Zmw_Child* zmw_parent__children_get(void) { return (zmw.ptr-1)->u.children ; }zmw_parent__children_get238,12471
+#undef zmw_parent__children_get_ptrzmw_parent__children_get_ptr239,12550
+Zmw_Child* *zmw_parent__children_get_ptr(void) { return &(zmw.ptr-1)->u.children ; }zmw_parent__children_get_ptr240,12586
+#undef zmw_parent__children_setzmw_parent__children_set241,12671
+void zmw_parent__children_set(Zmw_Child* x) { (zmw.ptr-1)->u.children = x ; }zmw_parent__children_set242,12703
+#undef zmw_do_not_execute_pop_getzmw_do_not_execute_pop_get243,12781
+Zmw_Boolean zmw_do_not_execute_pop_get(void) { return zmw.ptr->u.do_not_execute_pop ; }zmw_do_not_execute_pop_get244,12815
+#undef zmw_do_not_execute_pop_setzmw_do_not_execute_pop_set245,12903
+void zmw_do_not_execute_pop_set(const Zmw_Boolean x) { zmw.ptr->u.do_not_execute_pop = x ; }zmw_do_not_execute_pop_set246,12937
+#undef zmw_parent__do_not_execute_pop_getzmw_parent__do_not_execute_pop_get247,13030
+Zmw_Boolean zmw_parent__do_not_execute_pop_get(void) { return (zmw.ptr-1)->u.do_not_execute_pop ; }zmw_parent__do_not_execute_pop_get248,13072
+#undef zmw_parent__do_not_execute_pop_setzmw_parent__do_not_execute_pop_set249,13172
+void zmw_parent__do_not_execute_pop_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.do_not_execute_pop = x ; }zmw_parent__do_not_execute_pop_set250,13214
+#undef zmw_external_state_getzmw_external_state_get251,13319
+Zmw_External_State zmw_external_state_get(void) { return zmw.ptr->u.external_state ; }zmw_external_state_get252,13349
+#undef zmw_external_state_get_ptrzmw_external_state_get_ptr253,13436
+Zmw_External_State *zmw_external_state_get_ptr(void) { return &zmw.ptr->u.external_state ; }zmw_external_state_get_ptr254,13470
+#undef zmw_external_state_setzmw_external_state_set255,13563
+void zmw_external_state_set(const Zmw_External_State x) { zmw.ptr->u.external_state = x ; }zmw_external_state_set256,13593
+#undef zmw_parent__external_state_getzmw_parent__external_state_get257,13685
+Zmw_External_State zmw_parent__external_state_get(void) { return (zmw.ptr-1)->u.external_state ; }zmw_parent__external_state_get258,13723
+#undef zmw_parent__external_state_get_ptrzmw_parent__external_state_get_ptr259,13822
+Zmw_External_State *zmw_parent__external_state_get_ptr(void) { return &(zmw.ptr-1)->u.external_state ; }zmw_parent__external_state_get_ptr260,13864
+#undef zmw_parent__external_state_setzmw_parent__external_state_set261,13969
+void zmw_parent__external_state_set(const Zmw_External_State x) { (zmw.ptr-1)->u.external_state = x ; }zmw_parent__external_state_set262,14007
+#undef zmw_asked_width_getzmw_asked_width_get263,14111
+Zmw_Size zmw_asked_width_get(void) { return zmw.ptr->u.asked.width ; }zmw_asked_width_get264,14138
+#undef zmw_asked_width_get_ptrzmw_asked_width_get_ptr265,14209
+Zmw_Size *zmw_asked_width_get_ptr(void) { return &zmw.ptr->u.asked.width ; }zmw_asked_width_get_ptr266,14240
+#undef zmw_asked_width_setzmw_asked_width_set267,14317
+void zmw_asked_width_set(const Zmw_Size x) { zmw.ptr->u.asked.width = x ; }zmw_asked_width_set268,14344
+#undef zmw_parent__asked_width_getzmw_parent__asked_width_get269,14420
+Zmw_Size zmw_parent__asked_width_get(void) { return (zmw.ptr-1)->u.asked.width ; }zmw_parent__asked_width_get270,14455
+#undef zmw_parent__asked_width_get_ptrzmw_parent__asked_width_get_ptr271,14538
+Zmw_Size *zmw_parent__asked_width_get_ptr(void) { return &(zmw.ptr-1)->u.asked.width ; }zmw_parent__asked_width_get_ptr272,14577
+#undef zmw_parent__asked_width_setzmw_parent__asked_width_set273,14666
+void zmw_parent__asked_width_set(const Zmw_Size x) { (zmw.ptr-1)->u.asked.width = x ; }zmw_parent__asked_width_set274,14701
+#undef zmw_asked_height_getzmw_asked_height_get275,14789
+Zmw_Size zmw_asked_height_get(void) { return zmw.ptr->u.asked.height ; }zmw_asked_height_get276,14817
+#undef zmw_asked_height_get_ptrzmw_asked_height_get_ptr277,14890
+Zmw_Size *zmw_asked_height_get_ptr(void) { return &zmw.ptr->u.asked.height ; }zmw_asked_height_get_ptr278,14922
+#undef zmw_asked_height_setzmw_asked_height_set279,15001
+void zmw_asked_height_set(const Zmw_Size x) { zmw.ptr->u.asked.height = x ; }zmw_asked_height_set280,15029
+#undef zmw_parent__asked_height_getzmw_parent__asked_height_get281,15107
+Zmw_Size zmw_parent__asked_height_get(void) { return (zmw.ptr-1)->u.asked.height ; }zmw_parent__asked_height_get282,15143
+#undef zmw_parent__asked_height_get_ptrzmw_parent__asked_height_get_ptr283,15228
+Zmw_Size *zmw_parent__asked_height_get_ptr(void) { return &(zmw.ptr-1)->u.asked.height ; }zmw_parent__asked_height_get_ptr284,15268
+#undef zmw_parent__asked_height_setzmw_parent__asked_height_set285,15359
+void zmw_parent__asked_height_set(const Zmw_Size x) { (zmw.ptr-1)->u.asked.height = x ; }zmw_parent__asked_height_set286,15395
+#undef zmw_asked_x_getzmw_asked_x_get287,15485
+Zmw_Position zmw_asked_x_get(void) { return zmw.ptr->u.asked.x ; }zmw_asked_x_get288,15508
+#undef zmw_asked_x_get_ptrzmw_asked_x_get_ptr289,15575
+Zmw_Position *zmw_asked_x_get_ptr(void) { return &zmw.ptr->u.asked.x ; }zmw_asked_x_get_ptr290,15602
+#undef zmw_asked_x_setzmw_asked_x_set291,15675
+void zmw_asked_x_set(const Zmw_Position x) { zmw.ptr->u.asked.x = x ; }zmw_asked_x_set292,15698
+#undef zmw_parent__asked_x_getzmw_parent__asked_x_get293,15770
+Zmw_Position zmw_parent__asked_x_get(void) { return (zmw.ptr-1)->u.asked.x ; }zmw_parent__asked_x_get294,15801
+#undef zmw_parent__asked_x_get_ptrzmw_parent__asked_x_get_ptr295,15880
+Zmw_Position *zmw_parent__asked_x_get_ptr(void) { return &(zmw.ptr-1)->u.asked.x ; }zmw_parent__asked_x_get_ptr296,15915
+#undef zmw_parent__asked_x_setzmw_parent__asked_x_set297,16000
+void zmw_parent__asked_x_set(const Zmw_Position x) { (zmw.ptr-1)->u.asked.x = x ; }zmw_parent__asked_x_set298,16031
+#undef zmw_asked_y_getzmw_asked_y_get299,16115
+Zmw_Position zmw_asked_y_get(void) { return zmw.ptr->u.asked.y ; }zmw_asked_y_get300,16138
+#undef zmw_asked_y_get_ptrzmw_asked_y_get_ptr301,16205
+Zmw_Position *zmw_asked_y_get_ptr(void) { return &zmw.ptr->u.asked.y ; }zmw_asked_y_get_ptr302,16232
+#undef zmw_asked_y_setzmw_asked_y_set303,16305
+void zmw_asked_y_set(const Zmw_Position x) { zmw.ptr->u.asked.y = x ; }zmw_asked_y_set304,16328
+#undef zmw_parent__asked_y_getzmw_parent__asked_y_get305,16400
+Zmw_Position zmw_parent__asked_y_get(void) { return (zmw.ptr-1)->u.asked.y ; }zmw_parent__asked_y_get306,16431
+#undef zmw_parent__asked_y_get_ptrzmw_parent__asked_y_get_ptr307,16510
+Zmw_Position *zmw_parent__asked_y_get_ptr(void) { return &(zmw.ptr-1)->u.asked.y ; }zmw_parent__asked_y_get_ptr308,16545
+#undef zmw_parent__asked_y_setzmw_parent__asked_y_set309,16630
+void zmw_parent__asked_y_set(const Zmw_Position x) { (zmw.ptr-1)->u.asked.y = x ; }zmw_parent__asked_y_set310,16661
+#undef zmw_asked_getzmw_asked_get311,16745
+Zmw_Rectangle *zmw_asked_get(void) { return &zmw.ptr->u.asked ; }zmw_asked_get312,16766
+#undef zmw_asked_setzmw_asked_set313,16832
+void zmw_asked_set(const Zmw_Rectangle *x) { zmw.ptr->u.asked = *x ; }zmw_asked_set314,16853
+#undef zmw_parent__asked_getzmw_parent__asked_get315,16924
+Zmw_Rectangle *zmw_parent__asked_get(void) { return &(zmw.ptr-1)->u.asked ; }zmw_parent__asked_get316,16953
+#undef zmw_parent__asked_setzmw_parent__asked_set317,17031
+void zmw_parent__asked_set(const Zmw_Rectangle *x) { (zmw.ptr-1)->u.asked = *x ; }zmw_parent__asked_set318,17060
+#undef zmw_type_getzmw_type_get319,17143
+const char* zmw_type_get(void) { return zmw.ptr->u.type ; }zmw_type_get320,17163
+#undef zmw_type_get_ptrzmw_type_get_ptr321,17223
+const char* *zmw_type_get_ptr(void) { return &zmw.ptr->u.type ; }zmw_type_get_ptr322,17247
+#undef zmw_type_setzmw_type_set323,17313
+void zmw_type_set(const char* x) { zmw.ptr->u.type = x ; }zmw_type_set324,17333
+#undef zmw_parent__type_getzmw_parent__type_get325,17392
+const char* zmw_parent__type_get(void) { return (zmw.ptr-1)->u.type ; }zmw_parent__type_get326,17420
+#undef zmw_parent__type_get_ptrzmw_parent__type_get_ptr327,17492
+const char* *zmw_parent__type_get_ptr(void) { return &(zmw.ptr-1)->u.type ; }zmw_parent__type_get_ptr328,17524
+#undef zmw_parent__type_setzmw_parent__type_set329,17602
+void zmw_parent__type_set(const char* x) { (zmw.ptr-1)->u.type = x ; }zmw_parent__type_set330,17630
+#undef zmw_file_getzmw_file_get331,17701
+const char* zmw_file_get(void) { return zmw.ptr->u.file ; }zmw_file_get332,17721
+#undef zmw_file_get_ptrzmw_file_get_ptr333,17781
+const char* *zmw_file_get_ptr(void) { return &zmw.ptr->u.file ; }zmw_file_get_ptr334,17805
+#undef zmw_file_setzmw_file_set335,17871
+void zmw_file_set(const char* x) { zmw.ptr->u.file = x ; }zmw_file_set336,17891
+#undef zmw_parent__file_getzmw_parent__file_get337,17950
+const char* zmw_parent__file_get(void) { return (zmw.ptr-1)->u.file ; }zmw_parent__file_get338,17978
+#undef zmw_parent__file_get_ptrzmw_parent__file_get_ptr339,18050
+const char* *zmw_parent__file_get_ptr(void) { return &(zmw.ptr-1)->u.file ; }zmw_parent__file_get_ptr340,18082
+#undef zmw_parent__file_setzmw_parent__file_set341,18160
+void zmw_parent__file_set(const char* x) { (zmw.ptr-1)->u.file = x ; }zmw_parent__file_set342,18188
+#undef zmw_line_getzmw_line_get343,18259
+int zmw_line_get(void) { return zmw.ptr->u.line ; }zmw_line_get344,18279
+#undef zmw_line_get_ptrzmw_line_get_ptr345,18331
+int *zmw_line_get_ptr(void) { return &zmw.ptr->u.line ; }zmw_line_get_ptr346,18355
+#undef zmw_line_setzmw_line_set347,18413
+void zmw_line_set(const int x) { zmw.ptr->u.line = x ; }zmw_line_set348,18433
+#undef zmw_parent__line_getzmw_parent__line_get349,18490
+int zmw_parent__line_get(void) { return (zmw.ptr-1)->u.line ; }zmw_parent__line_get350,18518
+#undef zmw_parent__line_get_ptrzmw_parent__line_get_ptr351,18582
+int *zmw_parent__line_get_ptr(void) { return &(zmw.ptr-1)->u.line ; }zmw_parent__line_get_ptr352,18614
+#undef zmw_parent__line_setzmw_parent__line_set353,18684
+void zmw_parent__line_set(const int x) { (zmw.ptr-1)->u.line = x ; }zmw_parent__line_set354,18712
+#undef zmw_subaction_getzmw_subaction_get355,18781
+Zmw_Subaction zmw_subaction_get(void) { return zmw.ptr->u.subaction ; }zmw_subaction_get356,18806
+#undef zmw_subaction_get_ptrzmw_subaction_get_ptr357,18878
+Zmw_Subaction *zmw_subaction_get_ptr(void) { return &zmw.ptr->u.subaction ; }zmw_subaction_get_ptr358,18907
+#undef zmw_subaction_setzmw_subaction_set359,18985
+void zmw_subaction_set(const Zmw_Subaction x) { zmw.ptr->u.subaction = x ; }zmw_subaction_set360,19010
+#undef zmw_parent__subaction_getzmw_parent__subaction_get361,19087
+Zmw_Subaction zmw_parent__subaction_get(void) { return (zmw.ptr-1)->u.subaction ; }zmw_parent__subaction_get362,19120
+#undef zmw_parent__subaction_get_ptrzmw_parent__subaction_get_ptr363,19204
+Zmw_Subaction *zmw_parent__subaction_get_ptr(void) { return &(zmw.ptr-1)->u.subaction ; }zmw_parent__subaction_get_ptr364,19241
+#undef zmw_parent__subaction_setzmw_parent__subaction_set365,19331
+void zmw_parent__subaction_set(const Zmw_Subaction x) { (zmw.ptr-1)->u.subaction = x ; }zmw_parent__subaction_set366,19364
+#undef zmw_menu_state_getzmw_menu_state_get367,19453
+int* zmw_menu_state_get(void) { return zmw.ptr->u.menu_state ; }zmw_menu_state_get368,19479
+#undef zmw_menu_state_get_ptrzmw_menu_state_get_ptr369,19544
+int* *zmw_menu_state_get_ptr(void) { return &zmw.ptr->u.menu_state ; }zmw_menu_state_get_ptr370,19574
+#undef zmw_menu_state_setzmw_menu_state_set371,19645
+void zmw_menu_state_set(int* x) { zmw.ptr->u.menu_state = x ; }zmw_menu_state_set372,19671
+#undef zmw_parent__menu_state_getzmw_parent__menu_state_get373,19735
+int* zmw_parent__menu_state_get(void) { return (zmw.ptr-1)->u.menu_state ; }zmw_parent__menu_state_get374,19769
+#undef zmw_parent__menu_state_get_ptrzmw_parent__menu_state_get_ptr375,19846
+int* *zmw_parent__menu_state_get_ptr(void) { return &(zmw.ptr-1)->u.menu_state ; }zmw_parent__menu_state_get_ptr376,19884
+#undef zmw_parent__menu_state_setzmw_parent__menu_state_set377,19967
+void zmw_parent__menu_state_set(int* x) { (zmw.ptr-1)->u.menu_state = x ; }zmw_parent__menu_state_set378,20001
+#undef zmw_child_number_getzmw_child_number_get379,20077
+int zmw_child_number_get(void) { return zmw.ptr->u.child_number ; }zmw_child_number_get380,20105
+#undef zmw_child_number_get_ptrzmw_child_number_get_ptr381,20173
+int *zmw_child_number_get_ptr(void) { return &zmw.ptr->u.child_number ; }zmw_child_number_get_ptr382,20205
+#undef zmw_child_number_setzmw_child_number_set383,20279
+void zmw_child_number_set(const int x) { zmw.ptr->u.child_number = x ; }zmw_child_number_set384,20307
+#undef zmw_parent__child_number_getzmw_parent__child_number_get385,20380
+int zmw_parent__child_number_get(void) { return (zmw.ptr-1)->u.child_number ; }zmw_parent__child_number_get386,20416
+#undef zmw_parent__child_number_get_ptrzmw_parent__child_number_get_ptr387,20496
+int *zmw_parent__child_number_get_ptr(void) { return &(zmw.ptr-1)->u.child_number ; }zmw_parent__child_number_get_ptr388,20536
+#undef zmw_parent__child_number_setzmw_parent__child_number_set389,20622
+void zmw_parent__child_number_set(const int x) { (zmw.ptr-1)->u.child_number = x ; }zmw_parent__child_number_set390,20658
+#undef zmw_window_getzmw_window_get391,20743
+GdkWindow** zmw_window_get(void) { return zmw.ptr->u.parent_to_child.window ; }zmw_window_get392,20765
+#undef zmw_window_get_ptrzmw_window_get_ptr393,20845
+GdkWindow** *zmw_window_get_ptr(void) { return &zmw.ptr->u.parent_to_child.window ; }zmw_window_get_ptr394,20871
+#undef zmw_window_setzmw_window_set395,20957
+void zmw_window_set(GdkWindow** x) { zmw.ptr->u.parent_to_child.window = x ; }zmw_window_set396,20979
+#undef zmw_parent__window_getzmw_parent__window_get397,21058
+GdkWindow** zmw_parent__window_get(void) { return (zmw.ptr-1)->u.parent_to_child.window ; }zmw_parent__window_get398,21088
+#undef zmw_parent__window_get_ptrzmw_parent__window_get_ptr399,21180
+GdkWindow** *zmw_parent__window_get_ptr(void) { return &(zmw.ptr-1)->u.parent_to_child.window ; }zmw_parent__window_get_ptr400,21214
+#undef zmw_parent__window_setzmw_parent__window_set401,21312
+void zmw_parent__window_set(GdkWindow** x) { (zmw.ptr-1)->u.parent_to_child.window = x ; }zmw_parent__window_set402,21342
+#undef zmw_gc_getzmw_gc_get403,21433
+GdkGC* zmw_gc_get(void) { return zmw.ptr->u.parent_to_child.gc ; }zmw_gc_get404,21451
+#undef zmw_gc_get_ptrzmw_gc_get_ptr405,21518
+GdkGC* *zmw_gc_get_ptr(void) { return &zmw.ptr->u.parent_to_child.gc ; }zmw_gc_get_ptr406,21540
+#undef zmw_gc_setzmw_gc_set407,21613
+void zmw_gc_set(GdkGC* x) { zmw.ptr->u.parent_to_child.gc = x ; }zmw_gc_set408,21631
+#undef zmw_parent__gc_getzmw_parent__gc_get409,21697
+GdkGC* zmw_parent__gc_get(void) { return (zmw.ptr-1)->u.parent_to_child.gc ; }zmw_parent__gc_get410,21723
+#undef zmw_parent__gc_get_ptrzmw_parent__gc_get_ptr411,21802
+GdkGC* *zmw_parent__gc_get_ptr(void) { return &(zmw.ptr-1)->u.parent_to_child.gc ; }zmw_parent__gc_get_ptr412,21832
+#undef zmw_parent__gc_setzmw_parent__gc_set413,21917
+void zmw_parent__gc_set(GdkGC* x) { (zmw.ptr-1)->u.parent_to_child.gc = x ; }zmw_parent__gc_set414,21943
+#undef zmw_clipping_x_getzmw_clipping_x_get415,22021
+Zmw_Position zmw_clipping_x_get(void) { return zmw.ptr->u.parent_to_child.clipping.x ; }zmw_clipping_x_get416,22047
+#undef zmw_clipping_x_get_ptrzmw_clipping_x_get_ptr417,22136
+Zmw_Position *zmw_clipping_x_get_ptr(void) { return &zmw.ptr->u.parent_to_child.clipping.x ; }zmw_clipping_x_get_ptr418,22166
+#undef zmw_clipping_x_setzmw_clipping_x_set419,22261
+void zmw_clipping_x_set(const Zmw_Position x) { zmw.ptr->u.parent_to_child.clipping.x = x ; }zmw_clipping_x_set420,22287
+#undef zmw_parent__clipping_x_getzmw_parent__clipping_x_get421,22381
+Zmw_Position zmw_parent__clipping_x_get(void) { return (zmw.ptr-1)->u.parent_to_child.clipping.x ; }zmw_parent__clipping_x_get422,22415
+#undef zmw_parent__clipping_x_get_ptrzmw_parent__clipping_x_get_ptr423,22516
+Zmw_Position *zmw_parent__clipping_x_get_ptr(void) { return &(zmw.ptr-1)->u.parent_to_child.clipping.x ; }zmw_parent__clipping_x_get_ptr424,22554
+#undef zmw_parent__clipping_x_setzmw_parent__clipping_x_set425,22661
+void zmw_parent__clipping_x_set(const Zmw_Position x) { (zmw.ptr-1)->u.parent_to_child.clipping.x = x ; }zmw_parent__clipping_x_set426,22695
+#undef zmw_clipping_y_getzmw_clipping_y_get427,22801
+Zmw_Position zmw_clipping_y_get(void) { return zmw.ptr->u.parent_to_child.clipping.y ; }zmw_clipping_y_get428,22827
+#undef zmw_clipping_y_get_ptrzmw_clipping_y_get_ptr429,22916
+Zmw_Position *zmw_clipping_y_get_ptr(void) { return &zmw.ptr->u.parent_to_child.clipping.y ; }zmw_clipping_y_get_ptr430,22946
+#undef zmw_clipping_y_setzmw_clipping_y_set431,23041
+void zmw_clipping_y_set(const Zmw_Position x) { zmw.ptr->u.parent_to_child.clipping.y = x ; }zmw_clipping_y_set432,23067
+#undef zmw_parent__clipping_y_getzmw_parent__clipping_y_get433,23161
+Zmw_Position zmw_parent__clipping_y_get(void) { return (zmw.ptr-1)->u.parent_to_child.clipping.y ; }zmw_parent__clipping_y_get434,23195
+#undef zmw_parent__clipping_y_get_ptrzmw_parent__clipping_y_get_ptr435,23296
+Zmw_Position *zmw_parent__clipping_y_get_ptr(void) { return &(zmw.ptr-1)->u.parent_to_child.clipping.y ; }zmw_parent__clipping_y_get_ptr436,23334
+#undef zmw_parent__clipping_y_setzmw_parent__clipping_y_set437,23441
+void zmw_parent__clipping_y_set(const Zmw_Position x) { (zmw.ptr-1)->u.parent_to_child.clipping.y = x ; }zmw_parent__clipping_y_set438,23475
+#undef zmw_clipping_width_getzmw_clipping_width_get439,23581
+Zmw_Size zmw_clipping_width_get(void) { return zmw.ptr->u.parent_to_child.clipping.width ; }zmw_clipping_width_get440,23611
+#undef zmw_clipping_width_get_ptrzmw_clipping_width_get_ptr441,23704
+Zmw_Size *zmw_clipping_width_get_ptr(void) { return &zmw.ptr->u.parent_to_child.clipping.width ; }zmw_clipping_width_get_ptr442,23738
+#undef zmw_clipping_width_setzmw_clipping_width_set443,23837
+void zmw_clipping_width_set(const Zmw_Size x) { zmw.ptr->u.parent_to_child.clipping.width = x ; }zmw_clipping_width_set444,23867
+#undef zmw_parent__clipping_width_getzmw_parent__clipping_width_get445,23965
+Zmw_Size zmw_parent__clipping_width_get(void) { return (zmw.ptr-1)->u.parent_to_child.clipping.width ; }zmw_parent__clipping_width_get446,24003
+#undef zmw_parent__clipping_width_get_ptrzmw_parent__clipping_width_get_ptr447,24108
+Zmw_Size *zmw_parent__clipping_width_get_ptr(void) { return &(zmw.ptr-1)->u.parent_to_child.clipping.width ; }zmw_parent__clipping_width_get_ptr448,24150
+#undef zmw_parent__clipping_width_setzmw_parent__clipping_width_set449,24261
+void zmw_parent__clipping_width_set(const Zmw_Size x) { (zmw.ptr-1)->u.parent_to_child.clipping.width = x ; }zmw_parent__clipping_width_set450,24299
+#undef zmw_clipping_height_getzmw_clipping_height_get451,24409
+Zmw_Size zmw_clipping_height_get(void) { return zmw.ptr->u.parent_to_child.clipping.height ; }zmw_clipping_height_get452,24440
+#undef zmw_clipping_height_get_ptrzmw_clipping_height_get_ptr453,24535
+Zmw_Size *zmw_clipping_height_get_ptr(void) { return &zmw.ptr->u.parent_to_child.clipping.height ; }zmw_clipping_height_get_ptr454,24570
+#undef zmw_clipping_height_setzmw_clipping_height_set455,24671
+void zmw_clipping_height_set(const Zmw_Size x) { zmw.ptr->u.parent_to_child.clipping.height = x ; }zmw_clipping_height_set456,24702
+#undef zmw_parent__clipping_height_getzmw_parent__clipping_height_get457,24802
+Zmw_Size zmw_parent__clipping_height_get(void) { return (zmw.ptr-1)->u.parent_to_child.clipping.height ; }zmw_parent__clipping_height_get458,24841
+#undef zmw_parent__clipping_height_get_ptrzmw_parent__clipping_height_get_ptr459,24948
+Zmw_Size *zmw_parent__clipping_height_get_ptr(void) { return &(zmw.ptr-1)->u.parent_to_child.clipping.height ; }zmw_parent__clipping_height_get_ptr460,24991
+#undef zmw_parent__clipping_height_setzmw_parent__clipping_height_set461,25104
+void zmw_parent__clipping_height_set(const Zmw_Size x) { (zmw.ptr-1)->u.parent_to_child.clipping.height = x ; }zmw_parent__clipping_height_set462,25143
+#undef zmw_clipping_getzmw_clipping_get463,25255
+Zmw_Rectangle *zmw_clipping_get(void) { return &zmw.ptr->u.parent_to_child.clipping ; }zmw_clipping_get464,25279
+#undef zmw_clipping_setzmw_clipping_set465,25367
+void zmw_clipping_set(const Zmw_Rectangle *x) { zmw.ptr->u.parent_to_child.clipping = *x ; }zmw_clipping_set466,25391
+#undef zmw_parent__clipping_getzmw_parent__clipping_get467,25484
+Zmw_Rectangle *zmw_parent__clipping_get(void) { return &(zmw.ptr-1)->u.parent_to_child.clipping ; }zmw_parent__clipping_get468,25516
+#undef zmw_parent__clipping_setzmw_parent__clipping_set469,25616
+void zmw_parent__clipping_set(const Zmw_Rectangle *x) { (zmw.ptr-1)->u.parent_to_child.clipping = *x ; }zmw_parent__clipping_set470,25648
+#undef zmw_parent_to_child_getzmw_parent_to_child_get471,25753
+Zmw_Parent_To_Child *zmw_parent_to_child_get(void) { return &zmw.ptr->u.parent_to_child ; }zmw_parent_to_child_get472,25784
+#undef zmw_parent_to_child_setzmw_parent_to_child_set473,25876
+void zmw_parent_to_child_set(const Zmw_Parent_To_Child *x) { zmw.ptr->u.parent_to_child = *x ; }zmw_parent_to_child_set474,25907
+#undef zmw_parent__parent_to_child_getzmw_parent__parent_to_child_get475,26004
+Zmw_Parent_To_Child *zmw_parent__parent_to_child_get(void) { return &(zmw.ptr-1)->u.parent_to_child ; }zmw_parent__parent_to_child_get476,26043
+#undef zmw_parent__parent_to_child_setzmw_parent__parent_to_child_set477,26147
+void zmw_parent__parent_to_child_set(const Zmw_Parent_To_Child *x) { (zmw.ptr-1)->u.parent_to_child = *x ; }zmw_parent__parent_to_child_set478,26186
+#undef zmw_size_getzmw_size_get479,26295
+Zmw_Child *zmw_size_get(void) { return zmw.ptr->u.size ; }zmw_size_get480,26315
+#undef zmw_size_setzmw_size_set481,26374
+void zmw_size_set(Zmw_Child *x) { *zmw.ptr->u.size = *x ; }zmw_size_set482,26394
+#undef zmw_parent__size_getzmw_parent__size_get483,26454
+Zmw_Child *zmw_parent__size_get(void) { return (zmw.ptr-1)->u.size ; }zmw_parent__size_get484,26482
+#undef zmw_parent__size_setzmw_parent__size_set485,26553
+void zmw_parent__size_set(Zmw_Child *x) { *(zmw.ptr-1)->u.size = *x ; }zmw_parent__size_set486,26581
+#undef zmw_child__size_getzmw_child__size_get487,26653
+Zmw_Child *zmw_child__size_get(int i) { return (&zmw.ptr->u.children[i]) ; }zmw_child__size_get488,26680
+#undef zmw_child__size_setzmw_child__size_set489,26757
+void zmw_child__size_set(int i, Zmw_Child *x) { *(&zmw.ptr->u.children[i]) = *x ; }zmw_child__size_set490,26784
+#undef zmw_invisible_getzmw_invisible_get491,26868
+Zmw_Boolean zmw_invisible_get(void) { return zmw.ptr->u.size->invisible ; }zmw_invisible_get492,26893
+#undef zmw_invisible_setzmw_invisible_set493,26969
+void zmw_invisible_set(const Zmw_Boolean x) { zmw.ptr->u.size->invisible = x ; }zmw_invisible_set494,26994
+#undef zmw_parent__invisible_getzmw_parent__invisible_get495,27075
+Zmw_Boolean zmw_parent__invisible_get(void) { return (zmw.ptr-1)->u.size->invisible ; }zmw_parent__invisible_get496,27108
+#undef zmw_parent__invisible_setzmw_parent__invisible_set497,27196
+void zmw_parent__invisible_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->invisible = x ; }zmw_parent__invisible_set498,27229
+#undef zmw_child__invisible_getzmw_child__invisible_get499,27322
+Zmw_Boolean zmw_child__invisible_get(int i) { return (&zmw.ptr->u.children[i])->invisible ; }zmw_child__invisible_get500,27354
+#undef zmw_child__invisible_setzmw_child__invisible_set501,27448
+void zmw_child__invisible_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->invisible = x ; }zmw_child__invisible_set502,27480
+#undef zmw_sensitived_getzmw_sensitived_get503,27585
+Zmw_Boolean zmw_sensitived_get(void) { return zmw.ptr->u.size->sensitived ; }zmw_sensitived_get504,27611
+#undef zmw_sensitived_setzmw_sensitived_set505,27689
+void zmw_sensitived_set(const Zmw_Boolean x) { zmw.ptr->u.size->sensitived = x ; }zmw_sensitived_set506,27715
+#undef zmw_parent__sensitived_getzmw_parent__sensitived_get507,27798
+Zmw_Boolean zmw_parent__sensitived_get(void) { return (zmw.ptr-1)->u.size->sensitived ; }zmw_parent__sensitived_get508,27832
+#undef zmw_parent__sensitived_setzmw_parent__sensitived_set509,27922
+void zmw_parent__sensitived_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->sensitived = x ; }zmw_parent__sensitived_set510,27956
+#undef zmw_child__sensitived_getzmw_child__sensitived_get511,28051
+Zmw_Boolean zmw_child__sensitived_get(int i) { return (&zmw.ptr->u.children[i])->sensitived ; }zmw_child__sensitived_get512,28084
+#undef zmw_child__sensitived_setzmw_child__sensitived_set513,28180
+void zmw_child__sensitived_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->sensitived = x ; }zmw_child__sensitived_set514,28213
+#undef zmw_pass_through_getzmw_pass_through_get515,28320
+Zmw_Boolean zmw_pass_through_get(void) { return zmw.ptr->u.size->pass_through ; }zmw_pass_through_get516,28348
+#undef zmw_pass_through_setzmw_pass_through_set517,28430
+void zmw_pass_through_set(const Zmw_Boolean x) { zmw.ptr->u.size->pass_through = x ; }zmw_pass_through_set518,28458
+#undef zmw_parent__pass_through_getzmw_parent__pass_through_get519,28545
+Zmw_Boolean zmw_parent__pass_through_get(void) { return (zmw.ptr-1)->u.size->pass_through ; }zmw_parent__pass_through_get520,28581
+#undef zmw_parent__pass_through_setzmw_parent__pass_through_set521,28675
+void zmw_parent__pass_through_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->pass_through = x ; }zmw_parent__pass_through_set522,28711
+#undef zmw_child__pass_through_getzmw_child__pass_through_get523,28810
+Zmw_Boolean zmw_child__pass_through_get(int i) { return (&zmw.ptr->u.children[i])->pass_through ; }zmw_child__pass_through_get524,28845
+#undef zmw_child__pass_through_setzmw_child__pass_through_set525,28945
+void zmw_child__pass_through_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->pass_through = x ; }zmw_child__pass_through_set526,28980
+#undef zmw_event_in_rectangle_getzmw_event_in_rectangle_get527,29091
+Zmw_Boolean zmw_event_in_rectangle_get(void) { return zmw.ptr->u.size->event_in_rectangle ; }zmw_event_in_rectangle_get528,29125
+#undef zmw_event_in_rectangle_setzmw_event_in_rectangle_set529,29219
+void zmw_event_in_rectangle_set(const Zmw_Boolean x) { zmw.ptr->u.size->event_in_rectangle = x ; }zmw_event_in_rectangle_set530,29253
+#undef zmw_parent__event_in_rectangle_getzmw_parent__event_in_rectangle_get531,29352
+Zmw_Boolean zmw_parent__event_in_rectangle_get(void) { return (zmw.ptr-1)->u.size->event_in_rectangle ; }zmw_parent__event_in_rectangle_get532,29394
+#undef zmw_parent__event_in_rectangle_setzmw_parent__event_in_rectangle_set533,29500
+void zmw_parent__event_in_rectangle_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->event_in_rectangle = x ; }zmw_parent__event_in_rectangle_set534,29542
+#undef zmw_child__event_in_rectangle_getzmw_child__event_in_rectangle_get535,29653
+Zmw_Boolean zmw_child__event_in_rectangle_get(int i) { return (&zmw.ptr->u.children[i])->event_in_rectangle ; }zmw_child__event_in_rectangle_get536,29694
+#undef zmw_child__event_in_rectangle_setzmw_child__event_in_rectangle_set537,29806
+void zmw_child__event_in_rectangle_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->event_in_rectangle = x ; }zmw_child__event_in_rectangle_set538,29847
+#undef zmw_event_in_children_getzmw_event_in_children_get539,29970
+Zmw_Boolean zmw_event_in_children_get(void) { return zmw.ptr->u.size->event_in_children ; }zmw_event_in_children_get540,30003
+#undef zmw_event_in_children_setzmw_event_in_children_set541,30095
+void zmw_event_in_children_set(const Zmw_Boolean x) { zmw.ptr->u.size->event_in_children = x ; }zmw_event_in_children_set542,30128
+#undef zmw_parent__event_in_children_getzmw_parent__event_in_children_get543,30225
+Zmw_Boolean zmw_parent__event_in_children_get(void) { return (zmw.ptr-1)->u.size->event_in_children ; }zmw_parent__event_in_children_get544,30266
+#undef zmw_parent__event_in_children_setzmw_parent__event_in_children_set545,30370
+void zmw_parent__event_in_children_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->event_in_children = x ; }zmw_parent__event_in_children_set546,30411
+#undef zmw_child__event_in_children_getzmw_child__event_in_children_get547,30520
+Zmw_Boolean zmw_child__event_in_children_get(int i) { return (&zmw.ptr->u.children[i])->event_in_children ; }zmw_child__event_in_children_get548,30560
+#undef zmw_child__event_in_children_setzmw_child__event_in_children_set549,30670
+void zmw_child__event_in_children_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->event_in_children = x ; }zmw_child__event_in_children_set550,30710
+#undef zmw_allocated_x_getzmw_allocated_x_get551,30831
+Zmw_Position zmw_allocated_x_get(void) { return zmw.ptr->u.size->allocated.x ; }zmw_allocated_x_get552,30858
+#undef zmw_allocated_x_get_ptrzmw_allocated_x_get_ptr553,30939
+Zmw_Position *zmw_allocated_x_get_ptr(void) { return &zmw.ptr->u.size->allocated.x ; }zmw_allocated_x_get_ptr554,30970
+#undef zmw_allocated_x_setzmw_allocated_x_set555,31057
+void zmw_allocated_x_set(const Zmw_Position x) { zmw.ptr->u.size->allocated.x = x ; }zmw_allocated_x_set556,31084
+#undef zmw_parent__allocated_x_getzmw_parent__allocated_x_get557,31170
+Zmw_Position zmw_parent__allocated_x_get(void) { return (zmw.ptr-1)->u.size->allocated.x ; }zmw_parent__allocated_x_get558,31205
+#undef zmw_parent__allocated_x_get_ptrzmw_parent__allocated_x_get_ptr559,31298
+Zmw_Position *zmw_parent__allocated_x_get_ptr(void) { return &(zmw.ptr-1)->u.size->allocated.x ; }zmw_parent__allocated_x_get_ptr560,31337
+#undef zmw_parent__allocated_x_setzmw_parent__allocated_x_set561,31436
+void zmw_parent__allocated_x_set(const Zmw_Position x) { (zmw.ptr-1)->u.size->allocated.x = x ; }zmw_parent__allocated_x_set562,31471
+#undef zmw_child__allocated_x_getzmw_child__allocated_x_get563,31569
+Zmw_Position zmw_child__allocated_x_get(int i) { return (&zmw.ptr->u.children[i])->allocated.x ; }zmw_child__allocated_x_get564,31603
+#undef zmw_child__allocated_x_get_ptrzmw_child__allocated_x_get_ptr565,31702
+Zmw_Position *zmw_child__allocated_x_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->allocated.x ; }zmw_child__allocated_x_get_ptr566,31740
+#undef zmw_child__allocated_x_setzmw_child__allocated_x_set567,31845
+void zmw_child__allocated_x_set(int i, const Zmw_Position x) { (&zmw.ptr->u.children[i])->allocated.x = x ; }zmw_child__allocated_x_set568,31879
+#undef zmw_allocated_y_getzmw_allocated_y_get569,31989
+Zmw_Position zmw_allocated_y_get(void) { return zmw.ptr->u.size->allocated.y ; }zmw_allocated_y_get570,32016
+#undef zmw_allocated_y_get_ptrzmw_allocated_y_get_ptr571,32097
+Zmw_Position *zmw_allocated_y_get_ptr(void) { return &zmw.ptr->u.size->allocated.y ; }zmw_allocated_y_get_ptr572,32128
+#undef zmw_allocated_y_setzmw_allocated_y_set573,32215
+void zmw_allocated_y_set(const Zmw_Position x) { zmw.ptr->u.size->allocated.y = x ; }zmw_allocated_y_set574,32242
+#undef zmw_parent__allocated_y_getzmw_parent__allocated_y_get575,32328
+Zmw_Position zmw_parent__allocated_y_get(void) { return (zmw.ptr-1)->u.size->allocated.y ; }zmw_parent__allocated_y_get576,32363
+#undef zmw_parent__allocated_y_get_ptrzmw_parent__allocated_y_get_ptr577,32456
+Zmw_Position *zmw_parent__allocated_y_get_ptr(void) { return &(zmw.ptr-1)->u.size->allocated.y ; }zmw_parent__allocated_y_get_ptr578,32495
+#undef zmw_parent__allocated_y_setzmw_parent__allocated_y_set579,32594
+void zmw_parent__allocated_y_set(const Zmw_Position x) { (zmw.ptr-1)->u.size->allocated.y = x ; }zmw_parent__allocated_y_set580,32629
+#undef zmw_child__allocated_y_getzmw_child__allocated_y_get581,32727
+Zmw_Position zmw_child__allocated_y_get(int i) { return (&zmw.ptr->u.children[i])->allocated.y ; }zmw_child__allocated_y_get582,32761
+#undef zmw_child__allocated_y_get_ptrzmw_child__allocated_y_get_ptr583,32860
+Zmw_Position *zmw_child__allocated_y_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->allocated.y ; }zmw_child__allocated_y_get_ptr584,32898
+#undef zmw_child__allocated_y_setzmw_child__allocated_y_set585,33003
+void zmw_child__allocated_y_set(int i, const Zmw_Position x) { (&zmw.ptr->u.children[i])->allocated.y = x ; }zmw_child__allocated_y_set586,33037
+#undef zmw_allocated_width_getzmw_allocated_width_get587,33147
+Zmw_Size zmw_allocated_width_get(void) { return zmw.ptr->u.size->allocated.width ; }zmw_allocated_width_get588,33178
+#undef zmw_allocated_width_get_ptrzmw_allocated_width_get_ptr589,33263
+Zmw_Size *zmw_allocated_width_get_ptr(void) { return &zmw.ptr->u.size->allocated.width ; }zmw_allocated_width_get_ptr590,33298
+#undef zmw_allocated_width_setzmw_allocated_width_set591,33389
+void zmw_allocated_width_set(const Zmw_Size x) { zmw.ptr->u.size->allocated.width = x ; }zmw_allocated_width_set592,33420
+#undef zmw_parent__allocated_width_getzmw_parent__allocated_width_get593,33510
+Zmw_Size zmw_parent__allocated_width_get(void) { return (zmw.ptr-1)->u.size->allocated.width ; }zmw_parent__allocated_width_get594,33549
+#undef zmw_parent__allocated_width_get_ptrzmw_parent__allocated_width_get_ptr595,33646
+Zmw_Size *zmw_parent__allocated_width_get_ptr(void) { return &(zmw.ptr-1)->u.size->allocated.width ; }zmw_parent__allocated_width_get_ptr596,33689
+#undef zmw_parent__allocated_width_setzmw_parent__allocated_width_set597,33792
+void zmw_parent__allocated_width_set(const Zmw_Size x) { (zmw.ptr-1)->u.size->allocated.width = x ; }zmw_parent__allocated_width_set598,33831
+#undef zmw_child__allocated_width_getzmw_child__allocated_width_get599,33933
+Zmw_Size zmw_child__allocated_width_get(int i) { return (&zmw.ptr->u.children[i])->allocated.width ; }zmw_child__allocated_width_get600,33971
+#undef zmw_child__allocated_width_get_ptrzmw_child__allocated_width_get_ptr601,34074
+Zmw_Size *zmw_child__allocated_width_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->allocated.width ; }zmw_child__allocated_width_get_ptr602,34116
+#undef zmw_child__allocated_width_setzmw_child__allocated_width_set603,34225
+void zmw_child__allocated_width_set(int i, const Zmw_Size x) { (&zmw.ptr->u.children[i])->allocated.width = x ; }zmw_child__allocated_width_set604,34263
+#undef zmw_allocated_height_getzmw_allocated_height_get605,34377
+Zmw_Size zmw_allocated_height_get(void) { return zmw.ptr->u.size->allocated.height ; }zmw_allocated_height_get606,34409
+#undef zmw_allocated_height_get_ptrzmw_allocated_height_get_ptr607,34496
+Zmw_Size *zmw_allocated_height_get_ptr(void) { return &zmw.ptr->u.size->allocated.height ; }zmw_allocated_height_get_ptr608,34532
+#undef zmw_allocated_height_setzmw_allocated_height_set609,34625
+void zmw_allocated_height_set(const Zmw_Size x) { zmw.ptr->u.size->allocated.height = x ; }zmw_allocated_height_set610,34657
+#undef zmw_parent__allocated_height_getzmw_parent__allocated_height_get611,34749
+Zmw_Size zmw_parent__allocated_height_get(void) { return (zmw.ptr-1)->u.size->allocated.height ; }zmw_parent__allocated_height_get612,34789
+#undef zmw_parent__allocated_height_get_ptrzmw_parent__allocated_height_get_ptr613,34888
+Zmw_Size *zmw_parent__allocated_height_get_ptr(void) { return &(zmw.ptr-1)->u.size->allocated.height ; }zmw_parent__allocated_height_get_ptr614,34932
+#undef zmw_parent__allocated_height_setzmw_parent__allocated_height_set615,35037
+void zmw_parent__allocated_height_set(const Zmw_Size x) { (zmw.ptr-1)->u.size->allocated.height = x ; }zmw_parent__allocated_height_set616,35077
+#undef zmw_child__allocated_height_getzmw_child__allocated_height_get617,35181
+Zmw_Size zmw_child__allocated_height_get(int i) { return (&zmw.ptr->u.children[i])->allocated.height ; }zmw_child__allocated_height_get618,35220
+#undef zmw_child__allocated_height_get_ptrzmw_child__allocated_height_get_ptr619,35325
+Zmw_Size *zmw_child__allocated_height_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->allocated.height ; }zmw_child__allocated_height_get_ptr620,35368
+#undef zmw_child__allocated_height_setzmw_child__allocated_height_set621,35479
+void zmw_child__allocated_height_set(int i, const Zmw_Size x) { (&zmw.ptr->u.children[i])->allocated.height = x ; }zmw_child__allocated_height_set622,35518
+#undef zmw_allocated_getzmw_allocated_get623,35634
+Zmw_Rectangle *zmw_allocated_get(void) { return &zmw.ptr->u.size->allocated ; }zmw_allocated_get624,35659
+#undef zmw_allocated_setzmw_allocated_set625,35739
+void zmw_allocated_set(const Zmw_Rectangle *x) { zmw.ptr->u.size->allocated = *x ; }zmw_allocated_set626,35764
+#undef zmw_parent__allocated_getzmw_parent__allocated_get627,35849
+Zmw_Rectangle *zmw_parent__allocated_get(void) { return &(zmw.ptr-1)->u.size->allocated ; }zmw_parent__allocated_get628,35882
+#undef zmw_parent__allocated_setzmw_parent__allocated_set629,35974
+void zmw_parent__allocated_set(const Zmw_Rectangle *x) { (zmw.ptr-1)->u.size->allocated = *x ; }zmw_parent__allocated_set630,36007
+#undef zmw_child__allocated_getzmw_child__allocated_get631,36104
+Zmw_Rectangle *zmw_child__allocated_get(int i) { return &(&zmw.ptr->u.children[i])->allocated ; }zmw_child__allocated_get632,36136
+#undef zmw_child__allocated_setzmw_child__allocated_set633,36234
+void zmw_child__allocated_set(int i, const Zmw_Rectangle *x) { (&zmw.ptr->u.children[i])->allocated = *x ; }zmw_child__allocated_set634,36266
+#undef zmw_required_x_getzmw_required_x_get635,36375
+Zmw_Position zmw_required_x_get(void) { return zmw.ptr->u.size->required.x ; }zmw_required_x_get636,36401
+#undef zmw_required_x_get_ptrzmw_required_x_get_ptr637,36480
+Zmw_Position *zmw_required_x_get_ptr(void) { return &zmw.ptr->u.size->required.x ; }zmw_required_x_get_ptr638,36510
+#undef zmw_required_x_setzmw_required_x_set639,36595
+void zmw_required_x_set(const Zmw_Position x) { zmw.ptr->u.size->required.x = x ; }zmw_required_x_set640,36621
+#undef zmw_parent__required_x_getzmw_parent__required_x_get641,36705
+Zmw_Position zmw_parent__required_x_get(void) { return (zmw.ptr-1)->u.size->required.x ; }zmw_parent__required_x_get642,36739
+#undef zmw_parent__required_x_get_ptrzmw_parent__required_x_get_ptr643,36830
+Zmw_Position *zmw_parent__required_x_get_ptr(void) { return &(zmw.ptr-1)->u.size->required.x ; }zmw_parent__required_x_get_ptr644,36868
+#undef zmw_parent__required_x_setzmw_parent__required_x_set645,36965
+void zmw_parent__required_x_set(const Zmw_Position x) { (zmw.ptr-1)->u.size->required.x = x ; }zmw_parent__required_x_set646,36999
+#undef zmw_child__required_x_getzmw_child__required_x_get647,37095
+Zmw_Position zmw_child__required_x_get(int i) { return (&zmw.ptr->u.children[i])->required.x ; }zmw_child__required_x_get648,37128
+#undef zmw_child__required_x_get_ptrzmw_child__required_x_get_ptr649,37225
+Zmw_Position *zmw_child__required_x_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->required.x ; }zmw_child__required_x_get_ptr650,37262
+#undef zmw_child__required_x_setzmw_child__required_x_set651,37365
+void zmw_child__required_x_set(int i, const Zmw_Position x) { (&zmw.ptr->u.children[i])->required.x = x ; }zmw_child__required_x_set652,37398
+#undef zmw_required_y_getzmw_required_y_get653,37506
+Zmw_Position zmw_required_y_get(void) { return zmw.ptr->u.size->required.y ; }zmw_required_y_get654,37532
+#undef zmw_required_y_get_ptrzmw_required_y_get_ptr655,37611
+Zmw_Position *zmw_required_y_get_ptr(void) { return &zmw.ptr->u.size->required.y ; }zmw_required_y_get_ptr656,37641
+#undef zmw_required_y_setzmw_required_y_set657,37726
+void zmw_required_y_set(const Zmw_Position x) { zmw.ptr->u.size->required.y = x ; }zmw_required_y_set658,37752
+#undef zmw_parent__required_y_getzmw_parent__required_y_get659,37836
+Zmw_Position zmw_parent__required_y_get(void) { return (zmw.ptr-1)->u.size->required.y ; }zmw_parent__required_y_get660,37870
+#undef zmw_parent__required_y_get_ptrzmw_parent__required_y_get_ptr661,37961
+Zmw_Position *zmw_parent__required_y_get_ptr(void) { return &(zmw.ptr-1)->u.size->required.y ; }zmw_parent__required_y_get_ptr662,37999
+#undef zmw_parent__required_y_setzmw_parent__required_y_set663,38096
+void zmw_parent__required_y_set(const Zmw_Position x) { (zmw.ptr-1)->u.size->required.y = x ; }zmw_parent__required_y_set664,38130
+#undef zmw_child__required_y_getzmw_child__required_y_get665,38226
+Zmw_Position zmw_child__required_y_get(int i) { return (&zmw.ptr->u.children[i])->required.y ; }zmw_child__required_y_get666,38259
+#undef zmw_child__required_y_get_ptrzmw_child__required_y_get_ptr667,38356
+Zmw_Position *zmw_child__required_y_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->required.y ; }zmw_child__required_y_get_ptr668,38393
+#undef zmw_child__required_y_setzmw_child__required_y_set669,38496
+void zmw_child__required_y_set(int i, const Zmw_Position x) { (&zmw.ptr->u.children[i])->required.y = x ; }zmw_child__required_y_set670,38529
+#undef zmw_required_width_getzmw_required_width_get671,38637
+Zmw_Size zmw_required_width_get(void) { return zmw.ptr->u.size->required.width ; }zmw_required_width_get672,38667
+#undef zmw_required_width_get_ptrzmw_required_width_get_ptr673,38750
+Zmw_Size *zmw_required_width_get_ptr(void) { return &zmw.ptr->u.size->required.width ; }zmw_required_width_get_ptr674,38784
+#undef zmw_required_width_setzmw_required_width_set675,38873
+void zmw_required_width_set(const Zmw_Size x) { zmw.ptr->u.size->required.width = x ; }zmw_required_width_set676,38903
+#undef zmw_parent__required_width_getzmw_parent__required_width_get677,38991
+Zmw_Size zmw_parent__required_width_get(void) { return (zmw.ptr-1)->u.size->required.width ; }zmw_parent__required_width_get678,39029
+#undef zmw_parent__required_width_get_ptrzmw_parent__required_width_get_ptr679,39124
+Zmw_Size *zmw_parent__required_width_get_ptr(void) { return &(zmw.ptr-1)->u.size->required.width ; }zmw_parent__required_width_get_ptr680,39166
+#undef zmw_parent__required_width_setzmw_parent__required_width_set681,39267
+void zmw_parent__required_width_set(const Zmw_Size x) { (zmw.ptr-1)->u.size->required.width = x ; }zmw_parent__required_width_set682,39305
+#undef zmw_child__required_width_getzmw_child__required_width_get683,39405
+Zmw_Size zmw_child__required_width_get(int i) { return (&zmw.ptr->u.children[i])->required.width ; }zmw_child__required_width_get684,39442
+#undef zmw_child__required_width_get_ptrzmw_child__required_width_get_ptr685,39543
+Zmw_Size *zmw_child__required_width_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->required.width ; }zmw_child__required_width_get_ptr686,39584
+#undef zmw_child__required_width_setzmw_child__required_width_set687,39691
+void zmw_child__required_width_set(int i, const Zmw_Size x) { (&zmw.ptr->u.children[i])->required.width = x ; }zmw_child__required_width_set688,39728
+#undef zmw_required_height_getzmw_required_height_get689,39840
+Zmw_Size zmw_required_height_get(void) { return zmw.ptr->u.size->required.height ; }zmw_required_height_get690,39871
+#undef zmw_required_height_get_ptrzmw_required_height_get_ptr691,39956
+Zmw_Size *zmw_required_height_get_ptr(void) { return &zmw.ptr->u.size->required.height ; }zmw_required_height_get_ptr692,39991
+#undef zmw_required_height_setzmw_required_height_set693,40082
+void zmw_required_height_set(const Zmw_Size x) { zmw.ptr->u.size->required.height = x ; }zmw_required_height_set694,40113
+#undef zmw_parent__required_height_getzmw_parent__required_height_get695,40203
+Zmw_Size zmw_parent__required_height_get(void) { return (zmw.ptr-1)->u.size->required.height ; }zmw_parent__required_height_get696,40242
+#undef zmw_parent__required_height_get_ptrzmw_parent__required_height_get_ptr697,40339
+Zmw_Size *zmw_parent__required_height_get_ptr(void) { return &(zmw.ptr-1)->u.size->required.height ; }zmw_parent__required_height_get_ptr698,40382
+#undef zmw_parent__required_height_setzmw_parent__required_height_set699,40485
+void zmw_parent__required_height_set(const Zmw_Size x) { (zmw.ptr-1)->u.size->required.height = x ; }zmw_parent__required_height_set700,40524
+#undef zmw_child__required_height_getzmw_child__required_height_get701,40626
+Zmw_Size zmw_child__required_height_get(int i) { return (&zmw.ptr->u.children[i])->required.height ; }zmw_child__required_height_get702,40664
+#undef zmw_child__required_height_get_ptrzmw_child__required_height_get_ptr703,40767
+Zmw_Size *zmw_child__required_height_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->required.height ; }zmw_child__required_height_get_ptr704,40809
+#undef zmw_child__required_height_setzmw_child__required_height_set705,40918
+void zmw_child__required_height_set(int i, const Zmw_Size x) { (&zmw.ptr->u.children[i])->required.height = x ; }zmw_child__required_height_set706,40956
+#undef zmw_required_getzmw_required_get707,41070
+Zmw_Rectangle *zmw_required_get(void) { return &zmw.ptr->u.size->required ; }zmw_required_get708,41094
+#undef zmw_required_setzmw_required_set709,41172
+void zmw_required_set(const Zmw_Rectangle *x) { zmw.ptr->u.size->required = *x ; }zmw_required_set710,41196
+#undef zmw_parent__required_getzmw_parent__required_get711,41279
+Zmw_Rectangle *zmw_parent__required_get(void) { return &(zmw.ptr-1)->u.size->required ; }zmw_parent__required_get712,41311
+#undef zmw_parent__required_setzmw_parent__required_set713,41401
+void zmw_parent__required_set(const Zmw_Rectangle *x) { (zmw.ptr-1)->u.size->required = *x ; }zmw_parent__required_set714,41433
+#undef zmw_child__required_getzmw_child__required_get715,41528
+Zmw_Rectangle *zmw_child__required_get(int i) { return &(&zmw.ptr->u.children[i])->required ; }zmw_child__required_get716,41559
+#undef zmw_child__required_setzmw_child__required_set717,41655
+void zmw_child__required_set(int i, const Zmw_Rectangle *x) { (&zmw.ptr->u.children[i])->required = *x ; }zmw_child__required_set718,41686
+#undef zmw_min_x_getzmw_min_x_get719,41793
+Zmw_Position zmw_min_x_get(void) { return zmw.ptr->u.size->min.x ; }zmw_min_x_get720,41814
+#undef zmw_min_x_get_ptrzmw_min_x_get_ptr721,41883
+Zmw_Position *zmw_min_x_get_ptr(void) { return &zmw.ptr->u.size->min.x ; }zmw_min_x_get_ptr722,41908
+#undef zmw_min_x_setzmw_min_x_set723,41983
+void zmw_min_x_set(const Zmw_Position x) { zmw.ptr->u.size->min.x = x ; }zmw_min_x_set724,42004
+#undef zmw_parent__min_x_getzmw_parent__min_x_get725,42078
+Zmw_Position zmw_parent__min_x_get(void) { return (zmw.ptr-1)->u.size->min.x ; }zmw_parent__min_x_get726,42107
+#undef zmw_parent__min_x_get_ptrzmw_parent__min_x_get_ptr727,42188
+Zmw_Position *zmw_parent__min_x_get_ptr(void) { return &(zmw.ptr-1)->u.size->min.x ; }zmw_parent__min_x_get_ptr728,42221
+#undef zmw_parent__min_x_setzmw_parent__min_x_set729,42308
+void zmw_parent__min_x_set(const Zmw_Position x) { (zmw.ptr-1)->u.size->min.x = x ; }zmw_parent__min_x_set730,42337
+#undef zmw_child__min_x_getzmw_child__min_x_get731,42423
+Zmw_Position zmw_child__min_x_get(int i) { return (&zmw.ptr->u.children[i])->min.x ; }zmw_child__min_x_get732,42451
+#undef zmw_child__min_x_get_ptrzmw_child__min_x_get_ptr733,42538
+Zmw_Position *zmw_child__min_x_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->min.x ; }zmw_child__min_x_get_ptr734,42570
+#undef zmw_child__min_x_setzmw_child__min_x_set735,42663
+void zmw_child__min_x_set(int i, const Zmw_Position x) { (&zmw.ptr->u.children[i])->min.x = x ; }zmw_child__min_x_set736,42691
+#undef zmw_min_y_getzmw_min_y_get737,42789
+Zmw_Position zmw_min_y_get(void) { return zmw.ptr->u.size->min.y ; }zmw_min_y_get738,42810
+#undef zmw_min_y_get_ptrzmw_min_y_get_ptr739,42879
+Zmw_Position *zmw_min_y_get_ptr(void) { return &zmw.ptr->u.size->min.y ; }zmw_min_y_get_ptr740,42904
+#undef zmw_min_y_setzmw_min_y_set741,42979
+void zmw_min_y_set(const Zmw_Position x) { zmw.ptr->u.size->min.y = x ; }zmw_min_y_set742,43000
+#undef zmw_parent__min_y_getzmw_parent__min_y_get743,43074
+Zmw_Position zmw_parent__min_y_get(void) { return (zmw.ptr-1)->u.size->min.y ; }zmw_parent__min_y_get744,43103
+#undef zmw_parent__min_y_get_ptrzmw_parent__min_y_get_ptr745,43184
+Zmw_Position *zmw_parent__min_y_get_ptr(void) { return &(zmw.ptr-1)->u.size->min.y ; }zmw_parent__min_y_get_ptr746,43217
+#undef zmw_parent__min_y_setzmw_parent__min_y_set747,43304
+void zmw_parent__min_y_set(const Zmw_Position x) { (zmw.ptr-1)->u.size->min.y = x ; }zmw_parent__min_y_set748,43333
+#undef zmw_child__min_y_getzmw_child__min_y_get749,43419
+Zmw_Position zmw_child__min_y_get(int i) { return (&zmw.ptr->u.children[i])->min.y ; }zmw_child__min_y_get750,43447
+#undef zmw_child__min_y_get_ptrzmw_child__min_y_get_ptr751,43534
+Zmw_Position *zmw_child__min_y_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->min.y ; }zmw_child__min_y_get_ptr752,43566
+#undef zmw_child__min_y_setzmw_child__min_y_set753,43659
+void zmw_child__min_y_set(int i, const Zmw_Position x) { (&zmw.ptr->u.children[i])->min.y = x ; }zmw_child__min_y_set754,43687
+#undef zmw_min_width_getzmw_min_width_get755,43785
+Zmw_Size zmw_min_width_get(void) { return zmw.ptr->u.size->min.width ; }zmw_min_width_get756,43810
+#undef zmw_min_width_get_ptrzmw_min_width_get_ptr757,43883
+Zmw_Size *zmw_min_width_get_ptr(void) { return &zmw.ptr->u.size->min.width ; }zmw_min_width_get_ptr758,43912
+#undef zmw_min_width_setzmw_min_width_set759,43991
+void zmw_min_width_set(const Zmw_Size x) { zmw.ptr->u.size->min.width = x ; }zmw_min_width_set760,44016
+#undef zmw_parent__min_width_getzmw_parent__min_width_get761,44094
+Zmw_Size zmw_parent__min_width_get(void) { return (zmw.ptr-1)->u.size->min.width ; }zmw_parent__min_width_get762,44127
+#undef zmw_parent__min_width_get_ptrzmw_parent__min_width_get_ptr763,44212
+Zmw_Size *zmw_parent__min_width_get_ptr(void) { return &(zmw.ptr-1)->u.size->min.width ; }zmw_parent__min_width_get_ptr764,44249
+#undef zmw_parent__min_width_setzmw_parent__min_width_set765,44340
+void zmw_parent__min_width_set(const Zmw_Size x) { (zmw.ptr-1)->u.size->min.width = x ; }zmw_parent__min_width_set766,44373
+#undef zmw_child__min_width_getzmw_child__min_width_get767,44463
+Zmw_Size zmw_child__min_width_get(int i) { return (&zmw.ptr->u.children[i])->min.width ; }zmw_child__min_width_get768,44495
+#undef zmw_child__min_width_get_ptrzmw_child__min_width_get_ptr769,44586
+Zmw_Size *zmw_child__min_width_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->min.width ; }zmw_child__min_width_get_ptr770,44622
+#undef zmw_child__min_width_setzmw_child__min_width_set771,44719
+void zmw_child__min_width_set(int i, const Zmw_Size x) { (&zmw.ptr->u.children[i])->min.width = x ; }zmw_child__min_width_set772,44751
+#undef zmw_min_height_getzmw_min_height_get773,44853
+Zmw_Size zmw_min_height_get(void) { return zmw.ptr->u.size->min.height ; }zmw_min_height_get774,44879
+#undef zmw_min_height_get_ptrzmw_min_height_get_ptr775,44954
+Zmw_Size *zmw_min_height_get_ptr(void) { return &zmw.ptr->u.size->min.height ; }zmw_min_height_get_ptr776,44984
+#undef zmw_min_height_setzmw_min_height_set777,45065
+void zmw_min_height_set(const Zmw_Size x) { zmw.ptr->u.size->min.height = x ; }zmw_min_height_set778,45091
+#undef zmw_parent__min_height_getzmw_parent__min_height_get779,45171
+Zmw_Size zmw_parent__min_height_get(void) { return (zmw.ptr-1)->u.size->min.height ; }zmw_parent__min_height_get780,45205
+#undef zmw_parent__min_height_get_ptrzmw_parent__min_height_get_ptr781,45292
+Zmw_Size *zmw_parent__min_height_get_ptr(void) { return &(zmw.ptr-1)->u.size->min.height ; }zmw_parent__min_height_get_ptr782,45330
+#undef zmw_parent__min_height_setzmw_parent__min_height_set783,45423
+void zmw_parent__min_height_set(const Zmw_Size x) { (zmw.ptr-1)->u.size->min.height = x ; }zmw_parent__min_height_set784,45457
+#undef zmw_child__min_height_getzmw_child__min_height_get785,45549
+Zmw_Size zmw_child__min_height_get(int i) { return (&zmw.ptr->u.children[i])->min.height ; }zmw_child__min_height_get786,45582
+#undef zmw_child__min_height_get_ptrzmw_child__min_height_get_ptr787,45675
+Zmw_Size *zmw_child__min_height_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->min.height ; }zmw_child__min_height_get_ptr788,45712
+#undef zmw_child__min_height_setzmw_child__min_height_set789,45811
+void zmw_child__min_height_set(int i, const Zmw_Size x) { (&zmw.ptr->u.children[i])->min.height = x ; }zmw_child__min_height_set790,45844
+#undef zmw_min_getzmw_min_get791,45948
+Zmw_Rectangle *zmw_min_get(void) { return &zmw.ptr->u.size->min ; }zmw_min_get792,45967
+#undef zmw_min_setzmw_min_set793,46035
+void zmw_min_set(const Zmw_Rectangle *x) { zmw.ptr->u.size->min = *x ; }zmw_min_set794,46054
+#undef zmw_parent__min_getzmw_parent__min_get795,46127
+Zmw_Rectangle *zmw_parent__min_get(void) { return &(zmw.ptr-1)->u.size->min ; }zmw_parent__min_get796,46154
+#undef zmw_parent__min_setzmw_parent__min_set797,46234
+void zmw_parent__min_set(const Zmw_Rectangle *x) { (zmw.ptr-1)->u.size->min = *x ; }zmw_parent__min_set798,46261
+#undef zmw_child__min_getzmw_child__min_get799,46346
+Zmw_Rectangle *zmw_child__min_get(int i) { return &(&zmw.ptr->u.children[i])->min ; }zmw_child__min_get800,46372
+#undef zmw_child__min_setzmw_child__min_set801,46458
+void zmw_child__min_set(int i, const Zmw_Rectangle *x) { (&zmw.ptr->u.children[i])->min = *x ; }zmw_child__min_set802,46484
+#undef zmw_focused_getzmw_focused_get803,46581
+Zmw_Boolean zmw_focused_get(void) { return zmw.ptr->u.size->focused ; }zmw_focused_get804,46604
+#undef zmw_focused_setzmw_focused_set805,46676
+void zmw_focused_set(const Zmw_Boolean x) { zmw.ptr->u.size->focused = x ; }zmw_focused_set806,46699
+#undef zmw_parent__focused_getzmw_parent__focused_get807,46776
+Zmw_Boolean zmw_parent__focused_get(void) { return (zmw.ptr-1)->u.size->focused ; }zmw_parent__focused_get808,46807
+#undef zmw_parent__focused_setzmw_parent__focused_set809,46891
+void zmw_parent__focused_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->focused = x ; }zmw_parent__focused_set810,46922
+#undef zmw_child__focused_getzmw_child__focused_get811,47011
+Zmw_Boolean zmw_child__focused_get(int i) { return (&zmw.ptr->u.children[i])->focused ; }zmw_child__focused_get812,47041
+#undef zmw_child__focused_setzmw_child__focused_set813,47131
+void zmw_child__focused_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->focused = x ; }zmw_child__focused_set814,47161
+#undef zmw_activated_getzmw_activated_get815,47262
+Zmw_Boolean zmw_activated_get(void) { return zmw.ptr->u.size->activated ; }zmw_activated_get816,47287
+#undef zmw_activated_setzmw_activated_set817,47363
+void zmw_activated_set(const Zmw_Boolean x) { zmw.ptr->u.size->activated = x ; }zmw_activated_set818,47388
+#undef zmw_parent__activated_getzmw_parent__activated_get819,47469
+Zmw_Boolean zmw_parent__activated_get(void) { return (zmw.ptr-1)->u.size->activated ; }zmw_parent__activated_get820,47502
+#undef zmw_parent__activated_setzmw_parent__activated_set821,47590
+void zmw_parent__activated_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->activated = x ; }zmw_parent__activated_set822,47623
+#undef zmw_child__activated_getzmw_child__activated_get823,47716
+Zmw_Boolean zmw_child__activated_get(int i) { return (&zmw.ptr->u.children[i])->activated ; }zmw_child__activated_get824,47748
+#undef zmw_child__activated_setzmw_child__activated_set825,47842
+void zmw_child__activated_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->activated = x ; }zmw_child__activated_set826,47874
+#undef zmw_children_activated_getzmw_children_activated_get827,47979
+Zmw_Boolean zmw_children_activated_get(void) { return zmw.ptr->u.size->children_activated ; }zmw_children_activated_get828,48013
+#undef zmw_children_activated_setzmw_children_activated_set829,48107
+void zmw_children_activated_set(const Zmw_Boolean x) { zmw.ptr->u.size->children_activated = x ; }zmw_children_activated_set830,48141
+#undef zmw_parent__children_activated_getzmw_parent__children_activated_get831,48240
+Zmw_Boolean zmw_parent__children_activated_get(void) { return (zmw.ptr-1)->u.size->children_activated ; }zmw_parent__children_activated_get832,48282
+#undef zmw_parent__children_activated_setzmw_parent__children_activated_set833,48388
+void zmw_parent__children_activated_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->children_activated = x ; }zmw_parent__children_activated_set834,48430
+#undef zmw_child__children_activated_getzmw_child__children_activated_get835,48541
+Zmw_Boolean zmw_child__children_activated_get(int i) { return (&zmw.ptr->u.children[i])->children_activated ; }zmw_child__children_activated_get836,48582
+#undef zmw_child__children_activated_setzmw_child__children_activated_set837,48694
+void zmw_child__children_activated_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->children_activated = x ; }zmw_child__children_activated_set838,48735
+#undef zmw_changed_getzmw_changed_get839,48858
+Zmw_Boolean zmw_changed_get(void) { return zmw.ptr->u.size->changed ; }zmw_changed_get840,48881
+#undef zmw_changed_setzmw_changed_set841,48953
+void zmw_changed_set(const Zmw_Boolean x) { zmw.ptr->u.size->changed = x ; }zmw_changed_set842,48976
+#undef zmw_parent__changed_getzmw_parent__changed_get843,49053
+Zmw_Boolean zmw_parent__changed_get(void) { return (zmw.ptr-1)->u.size->changed ; }zmw_parent__changed_get844,49084
+#undef zmw_parent__changed_setzmw_parent__changed_set845,49168
+void zmw_parent__changed_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->changed = x ; }zmw_parent__changed_set846,49199
+#undef zmw_child__changed_getzmw_child__changed_get847,49288
+Zmw_Boolean zmw_child__changed_get(int i) { return (&zmw.ptr->u.children[i])->changed ; }zmw_child__changed_get848,49318
+#undef zmw_child__changed_setzmw_child__changed_set849,49408
+void zmw_child__changed_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->changed = x ; }zmw_child__changed_set850,49438
+#undef zmw_tip_visible_getzmw_tip_visible_get851,49539
+Zmw_Boolean zmw_tip_visible_get(void) { return zmw.ptr->u.size->tip_visible ; }zmw_tip_visible_get852,49566
+#undef zmw_tip_visible_setzmw_tip_visible_set853,49646
+void zmw_tip_visible_set(const Zmw_Boolean x) { zmw.ptr->u.size->tip_visible = x ; }zmw_tip_visible_set854,49673
+#undef zmw_parent__tip_visible_getzmw_parent__tip_visible_get855,49758
+Zmw_Boolean zmw_parent__tip_visible_get(void) { return (zmw.ptr-1)->u.size->tip_visible ; }zmw_parent__tip_visible_get856,49793
+#undef zmw_parent__tip_visible_setzmw_parent__tip_visible_set857,49885
+void zmw_parent__tip_visible_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->tip_visible = x ; }zmw_parent__tip_visible_set858,49920
+#undef zmw_child__tip_visible_getzmw_child__tip_visible_get859,50017
+Zmw_Boolean zmw_child__tip_visible_get(int i) { return (&zmw.ptr->u.children[i])->tip_visible ; }zmw_child__tip_visible_get860,50051
+#undef zmw_child__tip_visible_setzmw_child__tip_visible_set861,50149
+void zmw_child__tip_visible_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->tip_visible = x ; }zmw_child__tip_visible_set862,50183
+#undef zmw_hash_key_getzmw_hash_key_get863,50292
+Zmw_Hash zmw_hash_key_get(void) { return zmw.ptr->u.size->hash_key ; }zmw_hash_key_get864,50316
+#undef zmw_hash_key_get_ptrzmw_hash_key_get_ptr865,50387
+Zmw_Hash *zmw_hash_key_get_ptr(void) { return &zmw.ptr->u.size->hash_key ; }zmw_hash_key_get_ptr866,50415
+#undef zmw_hash_key_setzmw_hash_key_set867,50492
+void zmw_hash_key_set(const Zmw_Hash x) { zmw.ptr->u.size->hash_key = x ; }zmw_hash_key_set868,50516
+#undef zmw_parent__hash_key_getzmw_parent__hash_key_get869,50592
+Zmw_Hash zmw_parent__hash_key_get(void) { return (zmw.ptr-1)->u.size->hash_key ; }zmw_parent__hash_key_get870,50624
+#undef zmw_parent__hash_key_get_ptrzmw_parent__hash_key_get_ptr871,50707
+Zmw_Hash *zmw_parent__hash_key_get_ptr(void) { return &(zmw.ptr-1)->u.size->hash_key ; }zmw_parent__hash_key_get_ptr872,50743
+#undef zmw_parent__hash_key_setzmw_parent__hash_key_set873,50832
+void zmw_parent__hash_key_set(const Zmw_Hash x) { (zmw.ptr-1)->u.size->hash_key = x ; }zmw_parent__hash_key_set874,50864
+#undef zmw_child__hash_key_getzmw_child__hash_key_get875,50952
+Zmw_Hash zmw_child__hash_key_get(int i) { return (&zmw.ptr->u.children[i])->hash_key ; }zmw_child__hash_key_get876,50983
+#undef zmw_child__hash_key_get_ptrzmw_child__hash_key_get_ptr877,51072
+Zmw_Hash *zmw_child__hash_key_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->hash_key ; }zmw_child__hash_key_get_ptr878,51107
+#undef zmw_child__hash_key_setzmw_child__hash_key_set879,51202
+void zmw_child__hash_key_set(int i, const Zmw_Hash x) { (&zmw.ptr->u.children[i])->hash_key = x ; }zmw_child__hash_key_set880,51233
+#undef zmw_do_not_map_window_getzmw_do_not_map_window_get881,51333
+Zmw_Boolean zmw_do_not_map_window_get(void) { return zmw.ptr->u.size->do_not_map_window ; }zmw_do_not_map_window_get882,51366
+#undef zmw_do_not_map_window_setzmw_do_not_map_window_set883,51458
+void zmw_do_not_map_window_set(const Zmw_Boolean x) { zmw.ptr->u.size->do_not_map_window = x ; }zmw_do_not_map_window_set884,51491
+#undef zmw_parent__do_not_map_window_getzmw_parent__do_not_map_window_get885,51588
+Zmw_Boolean zmw_parent__do_not_map_window_get(void) { return (zmw.ptr-1)->u.size->do_not_map_window ; }zmw_parent__do_not_map_window_get886,51629
+#undef zmw_parent__do_not_map_window_setzmw_parent__do_not_map_window_set887,51733
+void zmw_parent__do_not_map_window_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->do_not_map_window = x ; }zmw_parent__do_not_map_window_set888,51774
+#undef zmw_child__do_not_map_window_getzmw_child__do_not_map_window_get889,51883
+Zmw_Boolean zmw_child__do_not_map_window_get(int i) { return (&zmw.ptr->u.children[i])->do_not_map_window ; }zmw_child__do_not_map_window_get890,51923
+#undef zmw_child__do_not_map_window_setzmw_child__do_not_map_window_set891,52033
+void zmw_child__do_not_map_window_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->do_not_map_window = x ; }zmw_child__do_not_map_window_set892,52073
+#undef zmw_used_by_parent_getzmw_used_by_parent_get893,52194
+Zmw_Boolean zmw_used_by_parent_get(void) { return zmw.ptr->u.size->used_by_parent ; }zmw_used_by_parent_get894,52224
+#undef zmw_used_by_parent_setzmw_used_by_parent_set895,52310
+void zmw_used_by_parent_set(const Zmw_Boolean x) { zmw.ptr->u.size->used_by_parent = x ; }zmw_used_by_parent_set896,52340
+#undef zmw_parent__used_by_parent_getzmw_parent__used_by_parent_get897,52431
+Zmw_Boolean zmw_parent__used_by_parent_get(void) { return (zmw.ptr-1)->u.size->used_by_parent ; }zmw_parent__used_by_parent_get898,52469
+#undef zmw_parent__used_by_parent_setzmw_parent__used_by_parent_set899,52567
+void zmw_parent__used_by_parent_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->used_by_parent = x ; }zmw_parent__used_by_parent_set900,52605
+#undef zmw_child__used_by_parent_getzmw_child__used_by_parent_get901,52708
+Zmw_Boolean zmw_child__used_by_parent_get(int i) { return (&zmw.ptr->u.children[i])->used_by_parent ; }zmw_child__used_by_parent_get902,52745
+#undef zmw_child__used_by_parent_setzmw_child__used_by_parent_set903,52849
+void zmw_child__used_by_parent_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->used_by_parent = x ; }zmw_child__used_by_parent_set904,52886
+#undef zmw_horizontaly_expanded_getzmw_horizontaly_expanded_get905,53001
+Zmw_Boolean zmw_horizontaly_expanded_get(void) { return zmw.ptr->u.size->horizontaly_expanded ; }zmw_horizontaly_expanded_get906,53037
+#undef zmw_horizontaly_expanded_setzmw_horizontaly_expanded_set907,53135
+void zmw_horizontaly_expanded_set(const Zmw_Boolean x) { zmw.ptr->u.size->horizontaly_expanded = x ; }zmw_horizontaly_expanded_set908,53171
+#undef zmw_parent__horizontaly_expanded_getzmw_parent__horizontaly_expanded_get909,53274
+Zmw_Boolean zmw_parent__horizontaly_expanded_get(void) { return (zmw.ptr-1)->u.size->horizontaly_expanded ; }zmw_parent__horizontaly_expanded_get910,53318
+#undef zmw_parent__horizontaly_expanded_setzmw_parent__horizontaly_expanded_set911,53428
+void zmw_parent__horizontaly_expanded_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->horizontaly_expanded = x ; }zmw_parent__horizontaly_expanded_set912,53472
+#undef zmw_child__horizontaly_expanded_getzmw_child__horizontaly_expanded_get913,53587
+Zmw_Boolean zmw_child__horizontaly_expanded_get(int i) { return (&zmw.ptr->u.children[i])->horizontaly_expanded ; }zmw_child__horizontaly_expanded_get914,53630
+#undef zmw_child__horizontaly_expanded_setzmw_child__horizontaly_expanded_set915,53746
+void zmw_child__horizontaly_expanded_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->horizontaly_expanded = x ; }zmw_child__horizontaly_expanded_set916,53789
+#undef zmw_verticaly_expanded_getzmw_verticaly_expanded_get917,53916
+Zmw_Boolean zmw_verticaly_expanded_get(void) { return zmw.ptr->u.size->verticaly_expanded ; }zmw_verticaly_expanded_get918,53950
+#undef zmw_verticaly_expanded_setzmw_verticaly_expanded_set919,54044
+void zmw_verticaly_expanded_set(const Zmw_Boolean x) { zmw.ptr->u.size->verticaly_expanded = x ; }zmw_verticaly_expanded_set920,54078
+#undef zmw_parent__verticaly_expanded_getzmw_parent__verticaly_expanded_get921,54177
+Zmw_Boolean zmw_parent__verticaly_expanded_get(void) { return (zmw.ptr-1)->u.size->verticaly_expanded ; }zmw_parent__verticaly_expanded_get922,54219
+#undef zmw_parent__verticaly_expanded_setzmw_parent__verticaly_expanded_set923,54325
+void zmw_parent__verticaly_expanded_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->verticaly_expanded = x ; }zmw_parent__verticaly_expanded_set924,54367
+#undef zmw_child__verticaly_expanded_getzmw_child__verticaly_expanded_get925,54478
+Zmw_Boolean zmw_child__verticaly_expanded_get(int i) { return (&zmw.ptr->u.children[i])->verticaly_expanded ; }zmw_child__verticaly_expanded_get926,54519
+#undef zmw_child__verticaly_expanded_setzmw_child__verticaly_expanded_set927,54631
+void zmw_child__verticaly_expanded_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->verticaly_expanded = x ; }zmw_child__verticaly_expanded_set928,54672
+#undef zmw_horizontal_expand_getzmw_horizontal_expand_get929,54795
+Zmw_Boolean zmw_horizontal_expand_get(void) { return zmw.ptr->u.size->current_state.horizontal_expand ; }zmw_horizontal_expand_get930,54828
+#undef zmw_horizontal_expand_setzmw_horizontal_expand_set931,54934
+void zmw_horizontal_expand_set(const Zmw_Boolean x) { zmw.ptr->u.size->current_state.horizontal_expand = x ; }zmw_horizontal_expand_set932,54967
+#undef zmw_parent__horizontal_expand_getzmw_parent__horizontal_expand_get933,55078
+Zmw_Boolean zmw_parent__horizontal_expand_get(void) { return (zmw.ptr-1)->u.size->current_state.horizontal_expand ; }zmw_parent__horizontal_expand_get934,55119
+#undef zmw_parent__horizontal_expand_setzmw_parent__horizontal_expand_set935,55237
+void zmw_parent__horizontal_expand_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->current_state.horizontal_expand = x ; }zmw_parent__horizontal_expand_set936,55278
+#undef zmw_child__horizontal_expand_getzmw_child__horizontal_expand_get937,55401
+Zmw_Boolean zmw_child__horizontal_expand_get(int i) { return (&zmw.ptr->u.children[i])->current_state.horizontal_expand ; }zmw_child__horizontal_expand_get938,55441
+#undef zmw_child__horizontal_expand_setzmw_child__horizontal_expand_set939,55565
+void zmw_child__horizontal_expand_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->current_state.horizontal_expand = x ; }zmw_child__horizontal_expand_set940,55605
+#undef zmw_vertical_expand_getzmw_vertical_expand_get941,55740
+Zmw_Boolean zmw_vertical_expand_get(void) { return zmw.ptr->u.size->current_state.vertical_expand ; }zmw_vertical_expand_get942,55771
+#undef zmw_vertical_expand_setzmw_vertical_expand_set943,55873
+void zmw_vertical_expand_set(const Zmw_Boolean x) { zmw.ptr->u.size->current_state.vertical_expand = x ; }zmw_vertical_expand_set944,55904
+#undef zmw_parent__vertical_expand_getzmw_parent__vertical_expand_get945,56011
+Zmw_Boolean zmw_parent__vertical_expand_get(void) { return (zmw.ptr-1)->u.size->current_state.vertical_expand ; }zmw_parent__vertical_expand_get946,56050
+#undef zmw_parent__vertical_expand_setzmw_parent__vertical_expand_set947,56164
+void zmw_parent__vertical_expand_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size->current_state.vertical_expand = x ; }zmw_parent__vertical_expand_set948,56203
+#undef zmw_child__vertical_expand_getzmw_child__vertical_expand_get949,56322
+Zmw_Boolean zmw_child__vertical_expand_get(int i) { return (&zmw.ptr->u.children[i])->current_state.vertical_expand ; }zmw_child__vertical_expand_get950,56360
+#undef zmw_child__vertical_expand_setzmw_child__vertical_expand_set951,56480
+void zmw_child__vertical_expand_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])->current_state.vertical_expand = x ; }zmw_child__vertical_expand_set952,56518
+#undef zmw_padding_width_getzmw_padding_width_get953,56649
+Zmw_Width zmw_padding_width_get(void) { return zmw.ptr->u.size->current_state.padding_width ; }zmw_padding_width_get954,56678
+#undef zmw_padding_width_get_ptrzmw_padding_width_get_ptr955,56774
+Zmw_Width *zmw_padding_width_get_ptr(void) { return &zmw.ptr->u.size->current_state.padding_width ; }zmw_padding_width_get_ptr956,56807
+#undef zmw_padding_width_setzmw_padding_width_set957,56909
+void zmw_padding_width_set(const Zmw_Width x) { zmw.ptr->u.size->current_state.padding_width = x ; }zmw_padding_width_set958,56938
+#undef zmw_parent__padding_width_getzmw_parent__padding_width_get959,57039
+Zmw_Width zmw_parent__padding_width_get(void) { return (zmw.ptr-1)->u.size->current_state.padding_width ; }zmw_parent__padding_width_get960,57076
+#undef zmw_parent__padding_width_get_ptrzmw_parent__padding_width_get_ptr961,57184
+Zmw_Width *zmw_parent__padding_width_get_ptr(void) { return &(zmw.ptr-1)->u.size->current_state.padding_width ; }zmw_parent__padding_width_get_ptr962,57225
+#undef zmw_parent__padding_width_setzmw_parent__padding_width_set963,57339
+void zmw_parent__padding_width_set(const Zmw_Width x) { (zmw.ptr-1)->u.size->current_state.padding_width = x ; }zmw_parent__padding_width_set964,57376
+#undef zmw_child__padding_width_getzmw_child__padding_width_get965,57489
+Zmw_Width zmw_child__padding_width_get(int i) { return (&zmw.ptr->u.children[i])->current_state.padding_width ; }zmw_child__padding_width_get966,57525
+#undef zmw_child__padding_width_get_ptrzmw_child__padding_width_get_ptr967,57639
+Zmw_Width *zmw_child__padding_width_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->current_state.padding_width ; }zmw_child__padding_width_get_ptr968,57679
+#undef zmw_child__padding_width_setzmw_child__padding_width_set969,57799
+void zmw_child__padding_width_set(int i, const Zmw_Width x) { (&zmw.ptr->u.children[i])->current_state.padding_width = x ; }zmw_child__padding_width_set970,57835
+#undef zmw_horizontal_alignment_getzmw_horizontal_alignment_get971,57960
+Zmw_Alignment zmw_horizontal_alignment_get(void) { return zmw.ptr->u.size->current_state.horizontal_alignment ; }zmw_horizontal_alignment_get972,57996
+#undef zmw_horizontal_alignment_get_ptrzmw_horizontal_alignment_get_ptr973,58110
+Zmw_Alignment *zmw_horizontal_alignment_get_ptr(void) { return &zmw.ptr->u.size->current_state.horizontal_alignment ; }zmw_horizontal_alignment_get_ptr974,58150
+#undef zmw_horizontal_alignment_setzmw_horizontal_alignment_set975,58270
+void zmw_horizontal_alignment_set(const Zmw_Alignment x) { zmw.ptr->u.size->current_state.horizontal_alignment = x ; }zmw_horizontal_alignment_set976,58306
+#undef zmw_parent__horizontal_alignment_getzmw_parent__horizontal_alignment_get977,58425
+Zmw_Alignment zmw_parent__horizontal_alignment_get(void) { return (zmw.ptr-1)->u.size->current_state.horizontal_alignment ; }zmw_parent__horizontal_alignment_get978,58469
+#undef zmw_parent__horizontal_alignment_get_ptrzmw_parent__horizontal_alignment_get_ptr979,58595
+Zmw_Alignment *zmw_parent__horizontal_alignment_get_ptr(void) { return &(zmw.ptr-1)->u.size->current_state.horizontal_alignment ; }zmw_parent__horizontal_alignment_get_ptr980,58643
+#undef zmw_parent__horizontal_alignment_setzmw_parent__horizontal_alignment_set981,58775
+void zmw_parent__horizontal_alignment_set(const Zmw_Alignment x) { (zmw.ptr-1)->u.size->current_state.horizontal_alignment = x ; }zmw_parent__horizontal_alignment_set982,58819
+#undef zmw_child__horizontal_alignment_getzmw_child__horizontal_alignment_get983,58950
+Zmw_Alignment zmw_child__horizontal_alignment_get(int i) { return (&zmw.ptr->u.children[i])->current_state.horizontal_alignment ; }zmw_child__horizontal_alignment_get984,58993
+#undef zmw_child__horizontal_alignment_get_ptrzmw_child__horizontal_alignment_get_ptr985,59125
+Zmw_Alignment *zmw_child__horizontal_alignment_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->current_state.horizontal_alignment ; }zmw_child__horizontal_alignment_get_ptr986,59172
+#undef zmw_child__horizontal_alignment_setzmw_child__horizontal_alignment_set987,59310
+void zmw_child__horizontal_alignment_set(int i, const Zmw_Alignment x) { (&zmw.ptr->u.children[i])->current_state.horizontal_alignment = x ; }zmw_child__horizontal_alignment_set988,59353
+#undef zmw_vertical_alignment_getzmw_vertical_alignment_get989,59496
+Zmw_Alignment zmw_vertical_alignment_get(void) { return zmw.ptr->u.size->current_state.vertical_alignment ; }zmw_vertical_alignment_get990,59530
+#undef zmw_vertical_alignment_get_ptrzmw_vertical_alignment_get_ptr991,59640
+Zmw_Alignment *zmw_vertical_alignment_get_ptr(void) { return &zmw.ptr->u.size->current_state.vertical_alignment ; }zmw_vertical_alignment_get_ptr992,59678
+#undef zmw_vertical_alignment_setzmw_vertical_alignment_set993,59794
+void zmw_vertical_alignment_set(const Zmw_Alignment x) { zmw.ptr->u.size->current_state.vertical_alignment = x ; }zmw_vertical_alignment_set994,59828
+#undef zmw_parent__vertical_alignment_getzmw_parent__vertical_alignment_get995,59943
+Zmw_Alignment zmw_parent__vertical_alignment_get(void) { return (zmw.ptr-1)->u.size->current_state.vertical_alignment ; }zmw_parent__vertical_alignment_get996,59985
+#undef zmw_parent__vertical_alignment_get_ptrzmw_parent__vertical_alignment_get_ptr997,60107
+Zmw_Alignment *zmw_parent__vertical_alignment_get_ptr(void) { return &(zmw.ptr-1)->u.size->current_state.vertical_alignment ; }zmw_parent__vertical_alignment_get_ptr998,60153
+#undef zmw_parent__vertical_alignment_setzmw_parent__vertical_alignment_set999,60281
+void zmw_parent__vertical_alignment_set(const Zmw_Alignment x) { (zmw.ptr-1)->u.size->current_state.vertical_alignment = x ; }zmw_parent__vertical_alignment_set1000,60323
+#undef zmw_child__vertical_alignment_getzmw_child__vertical_alignment_get1001,60450
+Zmw_Alignment zmw_child__vertical_alignment_get(int i) { return (&zmw.ptr->u.children[i])->current_state.vertical_alignment ; }zmw_child__vertical_alignment_get1002,60491
+#undef zmw_child__vertical_alignment_get_ptrzmw_child__vertical_alignment_get_ptr1003,60619
+Zmw_Alignment *zmw_child__vertical_alignment_get_ptr(int i) { return &(&zmw.ptr->u.children[i])->current_state.vertical_alignment ; }zmw_child__vertical_alignment_get_ptr1004,60664
+#undef zmw_child__vertical_alignment_setzmw_child__vertical_alignment_set1005,60798
+void zmw_child__vertical_alignment_set(int i, const Zmw_Alignment x) { (&zmw.ptr->u.children[i])->current_state.vertical_alignment = x ; }zmw_child__vertical_alignment_set1006,60839
+#undef zmw_current_state_getzmw_current_state_get1007,60978
+Zmw_Child_Current_State *zmw_current_state_get(void) { return &zmw.ptr->u.size->current_state ; }zmw_current_state_get1008,61007
+#undef zmw_current_state_setzmw_current_state_set1009,61105
+void zmw_current_state_set(const Zmw_Child_Current_State *x) { zmw.ptr->u.size->current_state = *x ; }zmw_current_state_set1010,61134
+#undef zmw_parent__current_state_getzmw_parent__current_state_get1011,61237
+Zmw_Child_Current_State *zmw_parent__current_state_get(void) { return &(zmw.ptr-1)->u.size->current_state ; }zmw_parent__current_state_get1012,61274
+#undef zmw_parent__current_state_setzmw_parent__current_state_set1013,61384
+void zmw_parent__current_state_set(const Zmw_Child_Current_State *x) { (zmw.ptr-1)->u.size->current_state = *x ; }zmw_parent__current_state_set1014,61421
+#undef zmw_child__current_state_getzmw_child__current_state_get1015,61536
+Zmw_Child_Current_State *zmw_child__current_state_get(int i) { return &(&zmw.ptr->u.children[i])->current_state ; }zmw_child__current_state_get1016,61572
+#undef zmw_child__current_state_setzmw_child__current_state_set1017,61688
+void zmw_child__current_state_set(int i, const Zmw_Child_Current_State *x) { (&zmw.ptr->u.children[i])->current_state = *x ; }zmw_child__current_state_set1018,61724
+#undef zmw_cs_horizontal_expand_getzmw_cs_horizontal_expand_get1019,61851
+Zmw_Boolean zmw_cs_horizontal_expand_get(void) { return zmw.ptr->u.size[1].current_state.horizontal_expand ; }zmw_cs_horizontal_expand_get1020,61887
+#undef zmw_cs_horizontal_expand_setzmw_cs_horizontal_expand_set1021,61998
+void zmw_cs_horizontal_expand_set(const Zmw_Boolean x) { zmw.ptr->u.size[1].current_state.horizontal_expand = x ; }zmw_cs_horizontal_expand_set1022,62034
+#undef zmw_parent__cs_horizontal_expand_getzmw_parent__cs_horizontal_expand_get1023,62150
+Zmw_Boolean zmw_parent__cs_horizontal_expand_get(void) { return (zmw.ptr-1)->u.size[1].current_state.horizontal_expand ; }zmw_parent__cs_horizontal_expand_get1024,62194
+#undef zmw_parent__cs_horizontal_expand_setzmw_parent__cs_horizontal_expand_set1025,62317
+void zmw_parent__cs_horizontal_expand_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size[1].current_state.horizontal_expand = x ; }zmw_parent__cs_horizontal_expand_set1026,62361
+#undef zmw_child__cs_horizontal_expand_getzmw_child__cs_horizontal_expand_get1027,62489
+Zmw_Boolean zmw_child__cs_horizontal_expand_get(int i) { return (&zmw.ptr->u.children[i])[1].current_state.horizontal_expand ; }zmw_child__cs_horizontal_expand_get1028,62532
+#undef zmw_child__cs_horizontal_expand_setzmw_child__cs_horizontal_expand_set1029,62661
+void zmw_child__cs_horizontal_expand_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])[1].current_state.horizontal_expand = x ; }zmw_child__cs_horizontal_expand_set1030,62704
+#undef zmw_cs_vertical_expand_getzmw_cs_vertical_expand_get1031,62844
+Zmw_Boolean zmw_cs_vertical_expand_get(void) { return zmw.ptr->u.size[1].current_state.vertical_expand ; }zmw_cs_vertical_expand_get1032,62878
+#undef zmw_cs_vertical_expand_setzmw_cs_vertical_expand_set1033,62985
+void zmw_cs_vertical_expand_set(const Zmw_Boolean x) { zmw.ptr->u.size[1].current_state.vertical_expand = x ; }zmw_cs_vertical_expand_set1034,63019
+#undef zmw_parent__cs_vertical_expand_getzmw_parent__cs_vertical_expand_get1035,63131
+Zmw_Boolean zmw_parent__cs_vertical_expand_get(void) { return (zmw.ptr-1)->u.size[1].current_state.vertical_expand ; }zmw_parent__cs_vertical_expand_get1036,63173
+#undef zmw_parent__cs_vertical_expand_setzmw_parent__cs_vertical_expand_set1037,63292
+void zmw_parent__cs_vertical_expand_set(const Zmw_Boolean x) { (zmw.ptr-1)->u.size[1].current_state.vertical_expand = x ; }zmw_parent__cs_vertical_expand_set1038,63334
+#undef zmw_child__cs_vertical_expand_getzmw_child__cs_vertical_expand_get1039,63458
+Zmw_Boolean zmw_child__cs_vertical_expand_get(int i) { return (&zmw.ptr->u.children[i])[1].current_state.vertical_expand ; }zmw_child__cs_vertical_expand_get1040,63499
+#undef zmw_child__cs_vertical_expand_setzmw_child__cs_vertical_expand_set1041,63624
+void zmw_child__cs_vertical_expand_set(int i, const Zmw_Boolean x) { (&zmw.ptr->u.children[i])[1].current_state.vertical_expand = x ; }zmw_child__cs_vertical_expand_set1042,63665
+#undef zmw_cs_padding_width_getzmw_cs_padding_width_get1043,63801
+Zmw_Width zmw_cs_padding_width_get(void) { return zmw.ptr->u.size[1].current_state.padding_width ; }zmw_cs_padding_width_get1044,63833
+#undef zmw_cs_padding_width_get_ptrzmw_cs_padding_width_get_ptr1045,63934
+Zmw_Width *zmw_cs_padding_width_get_ptr(void) { return &zmw.ptr->u.size[1].current_state.padding_width ; }zmw_cs_padding_width_get_ptr1046,63970
+#undef zmw_cs_padding_width_setzmw_cs_padding_width_set1047,64077
+void zmw_cs_padding_width_set(const Zmw_Width x) { zmw.ptr->u.size[1].current_state.padding_width = x ; }zmw_cs_padding_width_set1048,64109
+#undef zmw_parent__cs_padding_width_getzmw_parent__cs_padding_width_get1049,64215
+Zmw_Width zmw_parent__cs_padding_width_get(void) { return (zmw.ptr-1)->u.size[1].current_state.padding_width ; }zmw_parent__cs_padding_width_get1050,64255
+#undef zmw_parent__cs_padding_width_get_ptrzmw_parent__cs_padding_width_get_ptr1051,64368
+Zmw_Width *zmw_parent__cs_padding_width_get_ptr(void) { return &(zmw.ptr-1)->u.size[1].current_state.padding_width ; }zmw_parent__cs_padding_width_get_ptr1052,64412
+#undef zmw_parent__cs_padding_width_setzmw_parent__cs_padding_width_set1053,64531
+void zmw_parent__cs_padding_width_set(const Zmw_Width x) { (zmw.ptr-1)->u.size[1].current_state.padding_width = x ; }zmw_parent__cs_padding_width_set1054,64571
+#undef zmw_child__cs_padding_width_getzmw_child__cs_padding_width_get1055,64689
+Zmw_Width zmw_child__cs_padding_width_get(int i) { return (&zmw.ptr->u.children[i])[1].current_state.padding_width ; }zmw_child__cs_padding_width_get1056,64728
+#undef zmw_child__cs_padding_width_get_ptrzmw_child__cs_padding_width_get_ptr1057,64847
+Zmw_Width *zmw_child__cs_padding_width_get_ptr(int i) { return &(&zmw.ptr->u.children[i])[1].current_state.padding_width ; }zmw_child__cs_padding_width_get_ptr1058,64890
+#undef zmw_child__cs_padding_width_setzmw_child__cs_padding_width_set1059,65015
+void zmw_child__cs_padding_width_set(int i, const Zmw_Width x) { (&zmw.ptr->u.children[i])[1].current_state.padding_width = x ; }zmw_child__cs_padding_width_set1060,65054
+#undef zmw_cs_horizontal_alignment_getzmw_cs_horizontal_alignment_get1061,65184
+Zmw_Alignment zmw_cs_horizontal_alignment_get(void) { return zmw.ptr->u.size[1].current_state.horizontal_alignment ; }zmw_cs_horizontal_alignment_get1062,65223
+#undef zmw_cs_horizontal_alignment_get_ptrzmw_cs_horizontal_alignment_get_ptr1063,65342
+Zmw_Alignment *zmw_cs_horizontal_alignment_get_ptr(void) { return &zmw.ptr->u.size[1].current_state.horizontal_alignment ; }zmw_cs_horizontal_alignment_get_ptr1064,65385
+#undef zmw_cs_horizontal_alignment_setzmw_cs_horizontal_alignment_set1065,65510
+void zmw_cs_horizontal_alignment_set(const Zmw_Alignment x) { zmw.ptr->u.size[1].current_state.horizontal_alignment = x ; }zmw_cs_horizontal_alignment_set1066,65549
+#undef zmw_parent__cs_horizontal_alignment_getzmw_parent__cs_horizontal_alignment_get1067,65673
+Zmw_Alignment zmw_parent__cs_horizontal_alignment_get(void) { return (zmw.ptr-1)->u.size[1].current_state.horizontal_alignment ; }zmw_parent__cs_horizontal_alignment_get1068,65720
+#undef zmw_parent__cs_horizontal_alignment_get_ptrzmw_parent__cs_horizontal_alignment_get_ptr1069,65851
+Zmw_Alignment *zmw_parent__cs_horizontal_alignment_get_ptr(void) { return &(zmw.ptr-1)->u.size[1].current_state.horizontal_alignment ; }zmw_parent__cs_horizontal_alignment_get_ptr1070,65902
+#undef zmw_parent__cs_horizontal_alignment_setzmw_parent__cs_horizontal_alignment_set1071,66039
+void zmw_parent__cs_horizontal_alignment_set(const Zmw_Alignment x) { (zmw.ptr-1)->u.size[1].current_state.horizontal_alignment = x ; }zmw_parent__cs_horizontal_alignment_set1072,66086
+#undef zmw_child__cs_horizontal_alignment_getzmw_child__cs_horizontal_alignment_get1073,66222
+Zmw_Alignment zmw_child__cs_horizontal_alignment_get(int i) { return (&zmw.ptr->u.children[i])[1].current_state.horizontal_alignment ; }zmw_child__cs_horizontal_alignment_get1074,66268
+#undef zmw_child__cs_horizontal_alignment_get_ptrzmw_child__cs_horizontal_alignment_get_ptr1075,66405
+Zmw_Alignment *zmw_child__cs_horizontal_alignment_get_ptr(int i) { return &(&zmw.ptr->u.children[i])[1].current_state.horizontal_alignment ; }zmw_child__cs_horizontal_alignment_get_ptr1076,66455
+#undef zmw_child__cs_horizontal_alignment_setzmw_child__cs_horizontal_alignment_set1077,66598
+void zmw_child__cs_horizontal_alignment_set(int i, const Zmw_Alignment x) { (&zmw.ptr->u.children[i])[1].current_state.horizontal_alignment = x ; }zmw_child__cs_horizontal_alignment_set1078,66644
+#undef zmw_cs_vertical_alignment_getzmw_cs_vertical_alignment_get1079,66792
+Zmw_Alignment zmw_cs_vertical_alignment_get(void) { return zmw.ptr->u.size[1].current_state.vertical_alignment ; }zmw_cs_vertical_alignment_get1080,66829
+#undef zmw_cs_vertical_alignment_get_ptrzmw_cs_vertical_alignment_get_ptr1081,66944
+Zmw_Alignment *zmw_cs_vertical_alignment_get_ptr(void) { return &zmw.ptr->u.size[1].current_state.vertical_alignment ; }zmw_cs_vertical_alignment_get_ptr1082,66985
+#undef zmw_cs_vertical_alignment_setzmw_cs_vertical_alignment_set1083,67106
+void zmw_cs_vertical_alignment_set(const Zmw_Alignment x) { zmw.ptr->u.size[1].current_state.vertical_alignment = x ; }zmw_cs_vertical_alignment_set1084,67143
+#undef zmw_parent__cs_vertical_alignment_getzmw_parent__cs_vertical_alignment_get1085,67263
+Zmw_Alignment zmw_parent__cs_vertical_alignment_get(void) { return (zmw.ptr-1)->u.size[1].current_state.vertical_alignment ; }zmw_parent__cs_vertical_alignment_get1086,67308
+#undef zmw_parent__cs_vertical_alignment_get_ptrzmw_parent__cs_vertical_alignment_get_ptr1087,67435
+Zmw_Alignment *zmw_parent__cs_vertical_alignment_get_ptr(void) { return &(zmw.ptr-1)->u.size[1].current_state.vertical_alignment ; }zmw_parent__cs_vertical_alignment_get_ptr1088,67484
+#undef zmw_parent__cs_vertical_alignment_setzmw_parent__cs_vertical_alignment_set1089,67617
+void zmw_parent__cs_vertical_alignment_set(const Zmw_Alignment x) { (zmw.ptr-1)->u.size[1].current_state.vertical_alignment = x ; }zmw_parent__cs_vertical_alignment_set1090,67662
+#undef zmw_child__cs_vertical_alignment_getzmw_child__cs_vertical_alignment_get1091,67794
+Zmw_Alignment zmw_child__cs_vertical_alignment_get(int i) { return (&zmw.ptr->u.children[i])[1].current_state.vertical_alignment ; }zmw_child__cs_vertical_alignment_get1092,67838
+#undef zmw_child__cs_vertical_alignment_get_ptrzmw_child__cs_vertical_alignment_get_ptr1093,67971
+Zmw_Alignment *zmw_child__cs_vertical_alignment_get_ptr(int i) { return &(&zmw.ptr->u.children[i])[1].current_state.vertical_alignment ; }zmw_child__cs_vertical_alignment_get_ptr1094,68019
+#undef zmw_child__cs_vertical_alignment_setzmw_child__cs_vertical_alignment_set1095,68158
+void zmw_child__cs_vertical_alignment_set(int i, const Zmw_Alignment x) { (&zmw.ptr->u.children[i])[1].current_state.vertical_alignment = x ; }zmw_child__cs_vertical_alignment_set1096,68202
+#undef zmw_cs_current_state_getzmw_cs_current_state_get1097,68346
+Zmw_Child_Current_State *zmw_cs_current_state_get(void) { return &zmw.ptr->u.size[1].current_state ; }zmw_cs_current_state_get1098,68378
+#undef zmw_cs_current_state_setzmw_cs_current_state_set1099,68481
+void zmw_cs_current_state_set(const Zmw_Child_Current_State *x) { zmw.ptr->u.size[1].current_state = *x ; }zmw_cs_current_state_set1100,68513
+#undef zmw_parent__cs_current_state_getzmw_parent__cs_current_state_get1101,68621
+Zmw_Child_Current_State *zmw_parent__cs_current_state_get(void) { return &(zmw.ptr-1)->u.size[1].current_state ; }zmw_parent__cs_current_state_get1102,68661
+#undef zmw_parent__cs_current_state_setzmw_parent__cs_current_state_set1103,68776
+void zmw_parent__cs_current_state_set(const Zmw_Child_Current_State *x) { (zmw.ptr-1)->u.size[1].current_state = *x ; }zmw_parent__cs_current_state_set1104,68816
+#undef zmw_child__cs_current_state_getzmw_child__cs_current_state_get1105,68936
+Zmw_Child_Current_State *zmw_child__cs_current_state_get(int i) { return &(&zmw.ptr->u.children[i])[1].current_state ; }zmw_child__cs_current_state_get1106,68975
+#undef zmw_child__cs_current_state_setzmw_child__cs_current_state_set1107,69096
+void zmw_child__cs_current_state_set(int i, const Zmw_Child_Current_State *x) { (&zmw.ptr->u.children[i])[1].current_state = *x ; }zmw_child__cs_current_state_set1108,69135
+#undef zmw_state_getzmw_state_get1109,69267
+Zmw_State* zmw_state_get(void) { return zmw.ptr ; }zmw_state_get1110,69288
+#undef zmw_state_get_ptrzmw_state_get_ptr1111,69340
+Zmw_State* *zmw_state_get_ptr(void) { return &zmw.ptr ; }zmw_state_get_ptr1112,69365
+#undef zmw_state_setzmw_state_set1113,69423
+void zmw_state_set(Zmw_State* x) { zmw.ptr = x ; }zmw_state_set1114,69444
+#undef zmw_zmw_full_name_getzmw_zmw_full_name_get1115,69495
+char* zmw_zmw_full_name_get(void) { return zmw.full_name ; }zmw_zmw_full_name_get1116,69524
+#undef zmw_zmw_table_getzmw_zmw_table_get1117,69585
+Zmw_State* zmw_zmw_table_get(void) { return zmw.table ; }zmw_zmw_table_get1118,69610
+#undef zmw_zmw_table_get_ptrzmw_zmw_table_get_ptr1119,69668
+Zmw_State* *zmw_zmw_table_get_ptr(void) { return &zmw.table ; }zmw_zmw_table_get_ptr1120,69697
+#undef zmw_zmw_table_setzmw_zmw_table_set1121,69761
+void zmw_zmw_table_set(Zmw_State* x) { zmw.table = x ; }zmw_zmw_table_set1122,69786
+#undef zmw_zmw_inside_zmw_parameter_getzmw_zmw_inside_zmw_parameter_get1124,69878
+Zmw_Boolean zmw_zmw_inside_zmw_parameter_get(void) { return zmw.inside_zmw_parameter ; }zmw_zmw_inside_zmw_parameter_get1125,69918
+#undef zmw_zmw_inside_zmw_parameter_setzmw_zmw_inside_zmw_parameter_set1129,70055
+void zmw_zmw_inside_zmw_parameter_set(const Zmw_Boolean x) { zmw.inside_zmw_parameter = x ; }zmw_zmw_inside_zmw_parameter_set1130,70095
+#undef zmw_zmw_profiling_displayed_getzmw_zmw_profiling_displayed_get1134,70220
+Zmw_Boolean zmw_zmw_profiling_displayed_get(void) { return zmw.profiling_displayed ; }zmw_zmw_profiling_displayed_get1135,70259
+#undef zmw_zmw_profiling_displayed_setzmw_zmw_profiling_displayed_set1139,70377
+void zmw_zmw_profiling_displayed_set(const Zmw_Boolean x) { zmw.profiling_displayed = x ; }zmw_zmw_profiling_displayed_set1140,70416
+#undef zmw_zmw_event_getzmw_zmw_event_get1143,70521
+GdkEvent* zmw_zmw_event_get(void) { return zmw.event ; }zmw_zmw_event_get1144,70546
+#undef zmw_zmw_event_get_ptrzmw_zmw_event_get_ptr1145,70603
+GdkEvent* *zmw_zmw_event_get_ptr(void) { return &zmw.event ; }zmw_zmw_event_get_ptr1146,70632
+#undef zmw_zmw_event_setzmw_zmw_event_set1147,70695
+void zmw_zmw_event_set(GdkEvent* x) { zmw.event = x ; }zmw_zmw_event_set1148,70720
+#undef zmw_zmw_x_getzmw_zmw_x_get1149,70776
+Zmw_Position zmw_zmw_x_get(void) { return zmw.x ; }zmw_zmw_x_get1150,70797
+#undef zmw_zmw_x_get_ptrzmw_zmw_x_get_ptr1151,70849
+Zmw_Position *zmw_zmw_x_get_ptr(void) { return &zmw.x ; }zmw_zmw_x_get_ptr1152,70874
+#undef zmw_zmw_x_setzmw_zmw_x_set1153,70932
+void zmw_zmw_x_set(const Zmw_Position x) { zmw.x = x ; }zmw_zmw_x_set1154,70953
+#undef zmw_zmw_y_getzmw_zmw_y_get1155,71010
+Zmw_Position zmw_zmw_y_get(void) { return zmw.y ; }zmw_zmw_y_get1156,71031
+#undef zmw_zmw_y_get_ptrzmw_zmw_y_get_ptr1157,71083
+Zmw_Position *zmw_zmw_y_get_ptr(void) { return &zmw.y ; }zmw_zmw_y_get_ptr1158,71108
+#undef zmw_zmw_y_setzmw_zmw_y_set1159,71166
+void zmw_zmw_y_set(const Zmw_Position x) { zmw.y = x ; }zmw_zmw_y_set1160,71187
+#undef zmw_zmw_x_root_getzmw_zmw_x_root_get1161,71244
+Zmw_Position zmw_zmw_x_root_get(void) { return zmw.x_root ; }zmw_zmw_x_root_get1162,71270
+#undef zmw_zmw_x_root_get_ptrzmw_zmw_x_root_get_ptr1163,71332
+Zmw_Position *zmw_zmw_x_root_get_ptr(void) { return &zmw.x_root ; }zmw_zmw_x_root_get_ptr1164,71362
+#undef zmw_zmw_x_root_setzmw_zmw_x_root_set1165,71430
+void zmw_zmw_x_root_set(const Zmw_Position x) { zmw.x_root = x ; }zmw_zmw_x_root_set1166,71456
+#undef zmw_zmw_y_root_getzmw_zmw_y_root_get1167,71523
+Zmw_Position zmw_zmw_y_root_get(void) { return zmw.y_root ; }zmw_zmw_y_root_get1168,71549
+#undef zmw_zmw_y_root_get_ptrzmw_zmw_y_root_get_ptr1169,71611
+Zmw_Position *zmw_zmw_y_root_get_ptr(void) { return &zmw.y_root ; }zmw_zmw_y_root_get_ptr1170,71641
+#undef zmw_zmw_y_root_setzmw_zmw_y_root_set1171,71709
+void zmw_zmw_y_root_set(const Zmw_Position x) { zmw.y_root = x ; }zmw_zmw_y_root_set1172,71735
+#undef zmw_zmw_found_getzmw_zmw_found_get1173,71802
+Zmw_Name *zmw_zmw_found_get(void) { return &zmw.found ; }zmw_zmw_found_get1174,71827
+#undef zmw_zmw_found_setzmw_zmw_found_set1175,71885
+void zmw_zmw_found_set(const Zmw_Name *x) { zmw.found = *x ; }zmw_zmw_found_set1176,71910
+#undef zmw_zmw_widget_to_trace_getzmw_zmw_widget_to_trace_get1177,71973
+Zmw_Name *zmw_zmw_widget_to_trace_get(void) { return &zmw.widget_to_trace ; }zmw_zmw_widget_to_trace_get1178,72008
+#undef zmw_zmw_widget_to_trace_setzmw_zmw_widget_to_trace_set1179,72086
+void zmw_zmw_widget_to_trace_set(const Zmw_Name *x) { zmw.widget_to_trace = *x ; }zmw_zmw_widget_to_trace_set1180,72121
+#undef zmw_zmw_windows_getzmw_zmw_windows_get1181,72204
+GdkWindow **zmw_zmw_windows_get(void) { return zmw.windows ; }zmw_zmw_windows_get1182,72231
+#undef zmw_zmw_windows_get_ptrzmw_zmw_windows_get_ptr1183,72294
+GdkWindow ***zmw_zmw_windows_get_ptr(void) { return &zmw.windows ; }zmw_zmw_windows_get_ptr1184,72325
+#undef zmw_zmw_windows_setzmw_zmw_windows_set1185,72394
+void zmw_zmw_windows_set(GdkWindow **x) { zmw.windows = x ; }zmw_zmw_windows_set1186,72421
+#undef zmw_zmw_nb_windows_getzmw_zmw_nb_windows_get1187,72483
+int zmw_zmw_nb_windows_get(void) { return zmw.nb_windows ; }zmw_zmw_nb_windows_get1188,72513
+#undef zmw_zmw_nb_windows_get_ptrzmw_zmw_nb_windows_get_ptr1189,72574
+int *zmw_zmw_nb_windows_get_ptr(void) { return &zmw.nb_windows ; }zmw_zmw_nb_windows_get_ptr1190,72608
+#undef zmw_zmw_nb_windows_setzmw_zmw_nb_windows_set1191,72675
+void zmw_zmw_nb_windows_set(const int x) { zmw.nb_windows = x ; }zmw_zmw_nb_windows_set1192,72705
+#undef zmw_zmw_window_getzmw_zmw_window_get1193,72771
+GdkWindow *zmw_zmw_window_get(void) { return zmw.window ; }zmw_zmw_window_get1194,72797
+#undef zmw_zmw_window_get_ptrzmw_zmw_window_get_ptr1195,72857
+GdkWindow **zmw_zmw_window_get_ptr(void) { return &zmw.window ; }zmw_zmw_window_get_ptr1196,72887
+#undef zmw_zmw_window_setzmw_zmw_window_set1197,72953
+void zmw_zmw_window_set(GdkWindow *x) { zmw.window = x ; }zmw_zmw_window_set1198,72979
+#undef zmw_zmw_raised_getzmw_zmw_raised_get1199,73038
+GdkWindow *zmw_zmw_raised_get(void) { return zmw.raised ; }zmw_zmw_raised_get1200,73064
+#undef zmw_zmw_raised_get_ptrzmw_zmw_raised_get_ptr1201,73124
+GdkWindow **zmw_zmw_raised_get_ptr(void) { return &zmw.raised ; }zmw_zmw_raised_get_ptr1202,73154
+#undef zmw_zmw_raised_setzmw_zmw_raised_set1203,73220
+void zmw_zmw_raised_set(GdkWindow *x) { zmw.raised = x ; }zmw_zmw_raised_set1204,73246
+#undef zmw_zmw_event_removed_getzmw_zmw_event_removed_get1205,73305
+Zmw_Boolean zmw_zmw_event_removed_get(void) { return zmw.event_removed ; }zmw_zmw_event_removed_get1206,73338
+#undef zmw_zmw_event_removed_setzmw_zmw_event_removed_set1207,73413
+void zmw_zmw_event_removed_set(const Zmw_Boolean x) { zmw.event_removed = x ; }zmw_zmw_event_removed_set1208,73446
+#undef zmw_zmw_focus_with_cursor_value_getzmw_zmw_focus_with_cursor_value_get1209,73526
+void *zmw_zmw_focus_with_cursor_value_get(void) { return zmw.focus_with_cursor->value ; }zmw_zmw_focus_with_cursor_value_get1210,73569
+#undef zmw_zmw_focus_with_cursor_value_get_ptrzmw_zmw_focus_with_cursor_value_get_ptr1211,73659
+void **zmw_zmw_focus_with_cursor_value_get_ptr(void) { return &zmw.focus_with_cursor->value ; }zmw_zmw_focus_with_cursor_value_get_ptr1212,73706
+#undef zmw_zmw_focus_with_cursor_value_setzmw_zmw_focus_with_cursor_value_set1213,73802
+void zmw_zmw_focus_with_cursor_value_set(void *x) { zmw.focus_with_cursor->value = x ; }zmw_zmw_focus_with_cursor_value_set1214,73845
+#undef zmw_zmw_focus_with_cursor_getzmw_zmw_focus_with_cursor_get1215,73934
+Zmw_Name *zmw_zmw_focus_with_cursor_get(void) { return zmw.focus_with_cursor ; }zmw_zmw_focus_with_cursor_get1216,73971
+#undef zmw_zmw_focus_with_cursor_get_ptrzmw_zmw_focus_with_cursor_get_ptr1217,74052
+Zmw_Name **zmw_zmw_focus_with_cursor_get_ptr(void) { return &zmw.focus_with_cursor ; }zmw_zmw_focus_with_cursor_get_ptr1218,74093
+#undef zmw_zmw_focus_with_cursor_setzmw_zmw_focus_with_cursor_set1219,74180
+void zmw_zmw_focus_with_cursor_set(Zmw_Name *x) { zmw.focus_with_cursor = x ; }zmw_zmw_focus_with_cursor_set1220,74217
+#undef zmw_zmw_focused_x_getzmw_zmw_focused_x_get1221,74297
+Zmw_Position zmw_zmw_focused_x_get(void) { return zmw.focused.x ; }zmw_zmw_focused_x_get1222,74326
+#undef zmw_zmw_focused_x_get_ptrzmw_zmw_focused_x_get_ptr1223,74394
+Zmw_Position *zmw_zmw_focused_x_get_ptr(void) { return &zmw.focused.x ; }zmw_zmw_focused_x_get_ptr1224,74427
+#undef zmw_zmw_focused_x_setzmw_zmw_focused_x_set1225,74501
+void zmw_zmw_focused_x_set(const Zmw_Position x) { zmw.focused.x = x ; }zmw_zmw_focused_x_set1226,74530
+#undef zmw_zmw_focused_y_getzmw_zmw_focused_y_get1227,74603
+Zmw_Position zmw_zmw_focused_y_get(void) { return zmw.focused.y ; }zmw_zmw_focused_y_get1228,74632
+#undef zmw_zmw_focused_y_get_ptrzmw_zmw_focused_y_get_ptr1229,74700
+Zmw_Position *zmw_zmw_focused_y_get_ptr(void) { return &zmw.focused.y ; }zmw_zmw_focused_y_get_ptr1230,74733
+#undef zmw_zmw_focused_y_setzmw_zmw_focused_y_set1231,74807
+void zmw_zmw_focused_y_set(const Zmw_Position x) { zmw.focused.y = x ; }zmw_zmw_focused_y_set1232,74836
+#undef zmw_zmw_focused_width_getzmw_zmw_focused_width_get1233,74909
+Zmw_Size zmw_zmw_focused_width_get(void) { return zmw.focused.width ; }zmw_zmw_focused_width_get1234,74942
+#undef zmw_zmw_focused_width_get_ptrzmw_zmw_focused_width_get_ptr1235,75014
+Zmw_Size *zmw_zmw_focused_width_get_ptr(void) { return &zmw.focused.width ; }zmw_zmw_focused_width_get_ptr1236,75051
+#undef zmw_zmw_focused_width_setzmw_zmw_focused_width_set1237,75129
+void zmw_zmw_focused_width_set(const Zmw_Size x) { zmw.focused.width = x ; }zmw_zmw_focused_width_set1238,75162
+#undef zmw_zmw_focused_height_getzmw_zmw_focused_height_get1239,75239
+Zmw_Size zmw_zmw_focused_height_get(void) { return zmw.focused.height ; }zmw_zmw_focused_height_get1240,75273
+#undef zmw_zmw_focused_height_get_ptrzmw_zmw_focused_height_get_ptr1241,75347
+Zmw_Size *zmw_zmw_focused_height_get_ptr(void) { return &zmw.focused.height ; }zmw_zmw_focused_height_get_ptr1242,75385
+#undef zmw_zmw_focused_height_setzmw_zmw_focused_height_set1243,75465
+void zmw_zmw_focused_height_set(const Zmw_Size x) { zmw.focused.height = x ; }zmw_zmw_focused_height_set1244,75499
+#undef zmw_zmw_focused_getzmw_zmw_focused_get1245,75578
+Zmw_Rectangle *zmw_zmw_focused_get(void) { return &zmw.focused ; }zmw_zmw_focused_get1246,75605
+#undef zmw_zmw_focused_setzmw_zmw_focused_set1247,75672
+void zmw_zmw_focused_set(const Zmw_Rectangle *x) { zmw.focused = *x ; }zmw_zmw_focused_set1248,75699
+#undef zmw_zmw_still_yet_displayed_getzmw_zmw_still_yet_displayed_get1249,75771
+Zmw_Boolean zmw_zmw_still_yet_displayed_get(void) { return zmw.still_yet_displayed ; }zmw_zmw_still_yet_displayed_get1250,75810
+#undef zmw_zmw_still_yet_displayed_setzmw_zmw_still_yet_displayed_set1251,75897
+void zmw_zmw_still_yet_displayed_set(const Zmw_Boolean x) { zmw.still_yet_displayed = x ; }zmw_zmw_still_yet_displayed_set1252,75936
+#undef zmw_zmw_button_pressed_getzmw_zmw_button_pressed_get1253,76028
+Zmw_Boolean zmw_zmw_button_pressed_get(void) { return zmw.button_pressed ; }zmw_zmw_button_pressed_get1254,76062
+#undef zmw_zmw_button_pressed_setzmw_zmw_button_pressed_set1255,76139
+void zmw_zmw_button_pressed_set(const Zmw_Boolean x) { zmw.button_pressed = x ; }zmw_zmw_button_pressed_set1256,76173
+#undef zmw_zmw_key_pressed_getzmw_zmw_key_pressed_get1257,76255
+Zmw_Boolean zmw_zmw_key_pressed_get(void) { return zmw.key_pressed ; }zmw_zmw_key_pressed_get1258,76286
+#undef zmw_zmw_key_pressed_setzmw_zmw_key_pressed_set1259,76357
+void zmw_zmw_key_pressed_set(const Zmw_Boolean x) { zmw.key_pressed = x ; }zmw_zmw_key_pressed_set1260,76388
+#undef zmw_zmw_tip_displayed_getzmw_zmw_tip_displayed_get1261,76464
+Zmw_Name *zmw_zmw_tip_displayed_get(void) { return &zmw.tip_displayed ; }zmw_zmw_tip_displayed_get1262,76497
+#undef zmw_zmw_tip_displayed_setzmw_zmw_tip_displayed_set1263,76571
+void zmw_zmw_tip_displayed_set(const Zmw_Name *x) { zmw.tip_displayed = *x ; }zmw_zmw_tip_displayed_set1264,76604
+#undef zmw_zmw_tips_yet_displayed_getzmw_zmw_tips_yet_displayed_get1265,76683
+Zmw_Boolean zmw_zmw_tips_yet_displayed_get(void) { return zmw.tips_yet_displayed ; }zmw_zmw_tips_yet_displayed_get1266,76721
+#undef zmw_zmw_tips_yet_displayed_setzmw_zmw_tips_yet_displayed_set1267,76806
+void zmw_zmw_tips_yet_displayed_set(const Zmw_Boolean x) { zmw.tips_yet_displayed = x ; }zmw_zmw_tips_yet_displayed_set1268,76844
+#undef zmw_zmw_external_do_not_make_init_getzmw_zmw_external_do_not_make_init_get1269,76934
+Zmw_Boolean zmw_zmw_external_do_not_make_init_get(void) { return zmw.external_do_not_make_init ; }zmw_zmw_external_do_not_make_init_get1270,76979
+#undef zmw_zmw_external_do_not_make_init_setzmw_zmw_external_do_not_make_init_set1271,77078
+void zmw_zmw_external_do_not_make_init_set(const Zmw_Boolean x) { zmw.external_do_not_make_init = x ; }zmw_zmw_external_do_not_make_init_set1272,77123
+
+kernel/zmw_graphic.c,903
+static void rectangle_draw(const Zmw_Rectangle *r, int irectangle_draw29,1020
+void zmw_border_draw_with_rectangle(int options, const Zmw_Rectangle *rr)zmw_border_draw_with_rectangle60,1545
+void zmw_border_draw(int options)zmw_border_draw144,3497
+void zmw_border_solid_draw()zmw_border_solid_draw152,3660
+void zmw_border_relief_in_draw()zmw_border_relief_in_draw156,3731
+void zmw_border_relief_out_draw()zmw_border_relief_out_draw160,3810
+void zmw_border_embossed_in_draw()zmw_border_embossed_in_draw164,3891
+void zmw_border_embossed_out_draw()zmw_border_embossed_out_draw168,3974
+static void cross_draw(Zmw_Rectangle *r, Zmw_Color c)cross_draw173,4060
+void zmw_cross_draw()zmw_cross_draw189,4301
+int zmw_rgb_scale_to_int(Zmw_Float_0_1 r, Zmw_Float_0_1 g, Zmw_Float_0_1 b,zmw_rgb_scale_to_int194,4386
+void zmw_rgb(Zmw_Float_0_1 r, Zmw_Float_0_1 g, Zmw_Float_0_1 b)zmw_rgb200,4529
+
+kernel/zmw_main.c,2467
+struct zmw_mainzmw_main31,1095
+  struct timeval last_cursor_move ; /* To use for shortcut popup */last_cursor_move33,1113
+  struct timeval last_user_action ; /* To use for tips */last_user_action34,1181
+  int still_time ;              /* Time since last pointer motion */still_time35,1239
+  int idle_time ;               /* Time since last user interaction */idle_time36,1308
+  Zmw_Boolean need_repaint ;need_repaint38,1380
+  Zmw_Boolean need_dispatch ;           /* for drag and drop */  need_dispatch39,1409
+  Zmw_Boolean use_window_from_button_press ;use_window_from_button_press44,1648
+  Zmw_Boolean accelerator_window_allowed ;accelerator_window_allowed46,1694
+  float frame_per_sec ;frame_per_sec48,1738
+  float frame_per_sec_cpu ;frame_per_sec_cpu49,1762
+  int cache_size ;cache_size50,1790
+  gint input_http ;input_http51,1809
+  int top_level_debug ;top_level_debug52,1829
+  void (*fct)() ;fct54,1854
+void zmw_need_repaint()zmw_need_repaint57,1877
+void zmw_need_dispatch()zmw_need_dispatch62,1943
+void zmw_use_window_from_button_press(Zmw_Boolean b)zmw_use_window_from_button_press70,2014
+Zmw_Boolean zmw_use_window_from_button_press_get()zmw_use_window_from_button_press_get75,2118
+void zmw_debug_flags()zmw_debug_flags81,2224
+static void debug_window()debug_window135,3907
+void zmw_display_accelerator_window()zmw_display_accelerator_window169,4668
+void zmw_call_widget(void (*fct)(), int (*action)())zmw_call_widget186,5027
+static int zmw_time_from(struct timeval *tv)zmw_time_from272,7576
+void zmw_draw(void (*fct)())zmw_draw283,7758
+static void zmw_search(void (*fct)())zmw_search334,8851
+static void zmw_dispatch_event(void (*fct)())zmw_dispatch_event345,9100
+static gboolean timeout(gpointer data)timeout351,9223
+void user_action()user_action425,10788
+void zmw_unpop(GdkEvent *e)zmw_unpop438,11101
+Zmw_Boolean zmw_keyboard_navigation()zmw_keyboard_navigation455,11498
+void event_handler(GdkEvent *e, gpointer o)event_handler496,12907
+#define ZMW_GET_XY(ZMW_GET_XY538,13853
+#define ZMW_GET_XYW(ZMW_GET_XYW539,13977
+static void zmw_take_int_param(gint *argc, gchar ***argv, char *namezmw_take_int_param734,19761
+static int zmw_global_timeout = 100 ;zmw_global_timeout753,20164
+void zmw_init(gint *argc, gchar ***argv)zmw_init755,20203
+void zmw_main(void (*fct)())zmw_main779,20859
+void zmw_main_quit(int r)zmw_main_quit869,23384
+void zmw_stack_dump()zmw_stack_dump900,24039
+
+kernel/zmw_name.c,3938
+#define PRINTF PRINTF41,1233
+static Zmw_Name **global_registered = NULL ;global_registered49,1476
+static int global_nb_registered = 0 ;global_nb_registered50,1521
+static int global_nb_name = 0 ;global_nb_name51,1559
+static void zmw_name_init()zmw_name_init56,1639
+static Zmw_Boolean zmw_name_equals(const Zmw_Name *n, Zmw_Hash h, const char *name)zmw_name_equals92,2383
+static Zmw_Hash zmw_name_hash(const char *name)zmw_name_hash101,2610
+static Zmw_Name** zmw_name_find_with_hash(const char *namezmw_name_find_with_hash115,2963
+static Zmw_Name** zmw_name_find(const char *name, const char *why)zmw_name_find138,3428
+static void zmw_name_remove(Zmw_Name **n)zmw_name_remove147,3660
+static void zmw_name_insert(Zmw_Name **where, Zmw_Name *n)zmw_name_insert163,3980
+Zmw_Boolean zmw_name_is(const Zmw_Name *n)zmw_name_is178,4284
+Zmw_Boolean zmw_name_is_inside(const Zmw_Name *n)zmw_name_is_inside188,4489
+Zmw_Boolean zmw_name_contains(const Zmw_Name *n)zmw_name_contains203,4793
+const char* zmw_name_type(Zmw_Name_Type nt)zmw_name_type228,5223
+const char* zmw_name_value(Zmw_Name *n)zmw_name_value237,5409
+void zmw_name_dump(FILE *f)zmw_name_dump259,5852
+void zmw_name_initialize(Zmw_Name **name, char *why)zmw_name_initialize283,6480
+void zmw_name_debug_window()zmw_name_debug_window293,6632
+void zmw_name_free()zmw_name_free333,7548
+Zmw_Name* zmw_name_register_value(const char *name, const char *why, void *value,zmw_name_register_value352,7899
+void *zmw_name_get_pointer_on_resource_with_name_and_type_and_default(const char *name, const char *why, Zmw_Name_Type nt, void *default_value)zmw_name_get_pointer_on_resource_with_name_and_type_and_default383,8462
+void *zmw_name_get_pointer_on_resource_with_name_and_type(const char *name, const char *why, Zmw_Name_Type nt)zmw_name_get_pointer_on_resource_with_name_and_type395,8801
+int *zmw_name_get_pointer_on_int_resource_with_name(const char *name, const char *why)zmw_name_get_pointer_on_int_resource_with_name401,9018
+int *zmw_name_get_pointer_on_int_resource(const char *why)zmw_name_get_pointer_on_int_resource406,9207
+Zmw_Boolean zmw_name_get_value_pointer_with_name(const char *name, const char *why, void **value)zmw_name_get_value_pointer_with_name412,9350
+Zmw_Boolean zmw_name_get_value_pointer(const char *why, void **value)zmw_name_get_value_pointer425,9626
+Zmw_Boolean zmw_name_get_value_int(const char *why, int *value)zmw_name_get_value_int430,9781
+Zmw_Boolean zmw_name_get_value_int_with_name(const char *name, const char *why, int *value)zmw_name_get_value_int_with_name435,9911
+void zmw_name_set_value_pointer_with_name(const char *name, const char *why, void *value)zmw_name_set_value_pointer_with_name440,10085
+void zmw_name_set_value_pointer(const char *why, void *value)zmw_name_set_value_pointer445,10259
+void zmw_name_set_value_int(const char *why, int value)zmw_name_set_value_int450,10395
+void zmw_name_set_value_int_with_name(const char *name, const char *why, int value)zmw_name_set_value_int_with_name454,10522
+void zmw_name_unregister_value(const char *name, const char *why)zmw_name_unregister_value460,10694
+void zmw_name_unregister_value_by_pointer(const char *why, void *p)zmw_name_unregister_value_by_pointer472,10946
+void zmw_name_register_with_name(Zmw_Name *n, const char *name)zmw_name_register_with_name498,11370
+void zmw_name_register(Zmw_Name *n)zmw_name_register504,11534
+#undef zmw_name_registeredzmw_name_registered509,11625
+char* zmw_name_registered(const Zmw_Name *n)zmw_name_registered510,11652
+void zmw_name_unregister(Zmw_Name *n)zmw_name_unregister515,11721
+void zmw_resource_get(void **pointer_value, const char *resourcezmw_resource_get542,12269
+void zmw_resource_int_get(int **pointer_value, const char *resourcezmw_resource_int_get553,12571
+void zmw_resource_pointer_get(void **pointer_value, const char *resourcezmw_resource_pointer_get561,12779
+
+kernel/zmw_rectangle.c,530
+Zmw_Rectangle zmw_rectangle_max(const Zmw_Rectangle *a, const Zmw_Rectangle *b)zmw_rectangle_max24,920
+Zmw_Rectangle zmw_rectangle_min(const Zmw_Rectangle *a, const Zmw_Rectangle *b)zmw_rectangle_min51,1426
+char *zmw_rectangle_string(const Zmw_Rectangle *a)zmw_rectangle_string69,1801
+void zmw_rectangle_void(Zmw_Rectangle *a)zmw_rectangle_void78,1969
+void zmw_padding_add(Zmw_Rectangle *r, Zmw_Width padding)zmw_padding_add87,2056
+void zmw_padding_remove(Zmw_Rectangle *r, Zmw_Width padding)zmw_padding_remove97,2285
+
+kernel/zmw_state.c,218
+void zmw_state_init(Zmw_State *s)zmw_state_init28,1037
+void zmw_state_push()zmw_state_push40,1406
+void zmw_state_pop()zmw_state_pop111,3409
+Zmw_Child* zmw_widget_previous_size()zmw_widget_previous_size133,3948
+
+utilities/http.c,2936
+static FILE *global_http ;global_http30,1050
+static char *global_url[100] ;global_url31,1077
+static char *global_name = NULL ;global_name32,1108
+static int global_x, global_y, global_window, global_event ;global_x33,1142
+static int global_x, global_y, global_window, global_event ;global_y33,1142
+static int global_x, global_y, global_window, global_event ;global_window33,1142
+static int global_x, global_y, global_window, global_event ;global_event33,1142
+static void append_string(char **s, const char *t)append_string37,1206
+static char* get_string(const char *t)get_string48,1385
+static char* get_int(int i)get_int53,1450
+static char* get_function_name(const char *v)get_function_name61,1550
+static char* get_menu_state(int *n)get_menu_state71,1702
+static char* get_children()get_children90,2137
+static char* get_rectangle(const Zmw_Rectangle *ws)get_rectangle134,3188
+static char *get_boolean(int i)get_boolean169,3845
+static char *get_horizontal_alignment(int i)get_horizontal_alignment177,3957
+static char *get_vertical_alignment(int i)get_vertical_alignment187,4139
+static char *get_name(const Zmw_Name *n)get_name197,4319
+static char *get_color(int n)get_color205,4470
+static char *get_pointer(void *n)get_pointer218,4758
+static char *get_family(int n)get_family226,4865
+static char *get_pointer_pointer(void **n)get_pointer_pointer231,4941
+static char *get_event_to_process()get_event_to_process239,5058
+static char *get_event_in()get_event_in244,5168
+static char* get_http_debug()get_http_debug250,5263
+static char *get_zmw()get_zmw259,5380
+#define ITEM(ITEM314,6856
+#define       ITEM_INT(ITEM_INT328,7235
+#define    ITEM_STRING(ITEM_STRING329,7316
+#define      ITEM_RECT(ITEM_RECT330,7394
+#define      ITEM_BOOL(ITEM_BOOL331,7476
+#define    ITEM_VALIGN(ITEM_VALIGN332,7557
+#define    ITEM_HALIGN(ITEM_HALIGN333,7645
+#define      ITEM_NAME(ITEM_NAME334,7733
+#define     ITEM_COLOR(ITEM_COLOR335,7821
+#define    ITEM_PTRPTR(ITEM_PTRPTR336,7909
+#define       ITEM_PTR(ITEM_PTR337,8000
+#define      ITEM_MENU(ITEM_MENU338,8088
+#define    ITEM_FAMILY(ITEM_FAMILY339,8176
+ int evaluate(int item, int *new_column, char **name, int **visible, int *in_size,evaluate342,8266
+static char *http_decode_url(const char *url)http_decode_url418,11240
+char *http_encode_url(const char *url)http_encode_url457,11912
+int http_printf(const char *format, ...)http_printf477,12301
+static void http_rectangle_display(Zmw_Rectangle *ws)http_rectangle_display488,12478
+static void http_size_display(Zmw_Child *ws)http_size_display511,12970
+int http_node()http_node538,13879
+int http_tree()http_tree666,17939
+int http_table()http_table695,18548
+int http_debug()http_debug727,19190
+static char *http_table_options(int sw)http_table_options745,19483
+void http_connection(gpointer o, int socket, GdkInputCondition condition)http_connection762,19817
+
+utilities/selection.c,378
+#define PRINTF PRINTF32,1092
+static char *global_text = NULL ;global_text51,1440
+void zmw_set_locale()zmw_set_locale53,1475
+char *zmw_get_selection(const char *source, const char *contentzmw_get_selection82,2045
+void zmw_set_selection(const char *source, const char *contentzmw_set_selection141,3217
+int zmw_handle_selection(GdkEvent *e)zmw_handle_selection154,3519
+
+utilities/socket.c,151
+int socket_open(int port)socket_open31,1067
+int socket_accept(int fildes)socket_accept68,2254
+void socket_listen(int fildes)socket_listen77,2378
+
+widgets/zmw_alert.c,48
+void zmw_alert(char **message)zmw_alert25,994
+
+widgets/zmw_anchor.c,912
+static void zmw_anchor_vertical_()zmw_anchor_vertical_27,1023
+void zmw_anchor_vertical(int *x)zmw_anchor_vertical85,2529
+void zmw_anchor_vertical_float(float *x)zmw_anchor_vertical_float115,3205
+void zmw_coordinates(int corner, int *x, int *y)zmw_coordinates146,3784
+void zmw_anchor_box_(int *x, int *y, int *width, int *heightzmw_anchor_box_158,4115
+void zmw_anchor_box(int *x, int *y, int *width, int *height)zmw_anchor_box290,7072
+void zmw_anchor_box_with_init_values(int *x, int *y, int *width, int *heightzmw_anchor_box_with_init_values299,7299
+void zmw_anchor_move_(int *x, int *y, int *ix, int *iy, Zmw_Boolean movable)zmw_anchor_move_309,7543
+void zmw_anchor_move(int *x, int *y)zmw_anchor_move398,9807
+void zmw_anchor_move_not(int x, int y)zmw_anchor_move_not404,9911
+void zmw_anchor_move_with_init_values(int *x, int *y, int *ix, int *iy)zmw_anchor_move_with_init_values413,10090
+
+widgets/zmw_box.c,109
+void zmw_box_compute_required_size()zmw_box_compute_required_size26,995
+void zmw_fixed()zmw_fixed45,1455
+
+widgets/zmw_button.c,960
+void zmw_button_name(const char *textzmw_button_name27,998
+static int global_zmw_accelerators_nb = 0 ;global_zmw_accelerators_nb41,1394
+static int global_zmw_accelerators_nb_max = 0 ;global_zmw_accelerators_nb_max42,1438
+  char *button ;button45,1502
+  GdkModifierType state ;state46,1519
+} *global_zmw_accelerators = NULL ;global_zmw_accelerators47,1545
+void zmw_accelerator_init()zmw_accelerator_init49,1583
+static void zmw_accelerator_add(const char *text, GdkModifierType state)zmw_accelerator_add53,1650
+void zmw_button(const char *text)zmw_button71,2380
+void zmw_button_general(const char *textzmw_button_general91,2854
+void zmw_button_with_hidden_accelerator(const char *textzmw_button_with_hidden_accelerator113,3343
+void zmw_button_with_accelerator(const char *textzmw_button_with_accelerator120,3514
+void zmw_accelerators_window(GdkModifierType filter)zmw_accelerators_window129,3679
+void zmw_tearoff()zmw_tearoff173,4652
+
+widgets/zmw_decorator.c,132
+static int zmw_decorator_border(int options)zmw_decorator_border26,986
+void zmw_decorator(int options, ...)zmw_decorator39,1283
+
+widgets/zmw_filechooser.c,461
+Zmw_Boolean zmw_is_dir(const char *name)zmw_is_dir29,1028
+void zmw_file_info(const char *name, char *type, int *size)zmw_file_info43,1214
+void zmw_filename_normalize(char **pname)zmw_filename_normalize66,1613
+Zmw_Boolean zmw_name_filtered(char *asked, char *real)zmw_name_filtered106,2382
+void zmw_select_file(char **filename, char *file, int end_of_dir)zmw_select_file126,2734
+void zmw_file_selection(Zmw_Boolean *visiblezmw_file_selection137,3059
+
+widgets/zmw_hbox.c,440
+void zmw_hbox_required_size(int focusable)zmw_hbox_required_size33,1128
+void zmw_hbox_children_allocated_size(int focusable)zmw_hbox_children_allocated_size72,1946
+void zmw_hbox_with_activable(Zmw_Boolean activable)zmw_hbox_with_activable224,5811
+void zmw_hbox()zmw_hbox261,6582
+void zmw_hbox_activable()zmw_hbox_activable266,6642
+void zmw_alignment_horizontal_make(int i, int border_width)zmw_alignment_horizontal_make275,6715
+
+widgets/zmw_image.c,1127
+#define PRINTF PRINTF25,994
+static void zmw_image_general(GdkPixbuf *pb)zmw_image_general27,1027
+void zmw_image(GdkPixbuf *pb)zmw_image52,1698
+void zmw_image_activable(GdkPixbuf *pb)zmw_image_activable58,1775
+GdkPixbuf* zmw_pixbuf_get(GdkPixbuf **pb)zmw_pixbuf_get70,1990
+void zmw_pixbuf_set(GdkPixbuf **pb, GdkPixbuf *pixbuf)zmw_pixbuf_set87,2297
+void zmw_pixbuf_load_and_set(GdkPixbuf **pb, GdkPixbuf **pixbuf, const char *filename)zmw_pixbuf_load_and_set96,2506
+void zmw_image_from_file_with_pixbuf(const char *filename, GdkPixbuf **pb)zmw_image_from_file_with_pixbuf120,3111
+void zmw_image_from_file(const char *filename)zmw_image_from_file131,3438
+void zmw_image_from_file_activable_with_pixbuf(const char *filename, GdkPixbuf **pb)zmw_image_from_file_activable_with_pixbuf138,3575
+void zmw_image_from_file_activable(const char *filename)zmw_image_from_file_activable147,3804
+void zmw_image_dynamic_from_file_with_pixbuf(const char *filenamezmw_image_dynamic_from_file_with_pixbuf153,3929
+void zmw_image_dynamic_from_file(const char *filename, char **old_name)zmw_image_dynamic_from_file178,4433
+
+widgets/zmw_message.c,197
+int zmw_message(int visible, const char *title, const char *button_name)zmw_message25,994
+void zmw_message_char(char *visible,const char *title, const char *button_name)zmw_message_char48,1413
+
+widgets/zmw_notebook.c,509
+#define ZMW_NOTEBOOK_BORDER ZMW_NOTEBOOK_BORDER31,1265
+static Zmw_Rectangle zmw_notebook_compute_required_label_size(Zmw_Child *ws)zmw_notebook_compute_required_label_size41,1507
+static void zmw_notebook_compute_required_size(Zmw_Child *ws)zmw_notebook_compute_required_size58,1874
+static void zmw_notebook_children_allocated_size(Zmw_Child *ws)zmw_notebook_children_allocated_size82,2463
+void zmw_notebook_draw(int *page)zmw_notebook_draw110,3523
+void zmw_notebook(int *page)zmw_notebook247,7817
+
+widgets/zmw_scrollbar.c,920
+static void zmw_scrollbar2_(Zmw_Float_0_1 *x, Zmw_Float_0_1 x_size, Zmw_Float_0_1 x_delta, Zmw_Float_0_1 *y, Zmw_Float_0_1 y_size, Zmw_Float_0_1 y_delta)zmw_scrollbar2_28,1041
+void zmw_scrollbar2_with_delta(Zmw_Float_0_1 *x, Zmw_Float_0_1 x_size, Zmw_Float_0_1 x_delta, Zmw_Float_0_1 *y, Zmw_Float_0_1 y_size, Zmw_Float_0_1 y_delta)zmw_scrollbar2_with_delta125,3801
+void zmw_scrollbar2(Zmw_Float_0_1 *x, Zmw_Float_0_1 x_size, Zmw_Float_0_1 *y, Zmw_Float_0_1 y_size)zmw_scrollbar2133,4066
+void zmw_hscrollbar(Zmw_Float_0_1 *x, Zmw_Float_0_1 x_size)zmw_hscrollbar138,4233
+void zmw_vscrollbar(Zmw_Float_0_1 *y, Zmw_Float_0_1 y_size)zmw_vscrollbar144,4360
+void zmw_hscrollbar_with_delta(Zmw_Float_0_1 *x, Zmw_Float_0_1 x_size, Zmw_Float_0_1 x_delta)zmw_hscrollbar_with_delta150,4487
+void zmw_vscrollbar_with_delta(Zmw_Float_0_1 *y, Zmw_Float_0_1 y_size, Zmw_Float_0_1 y_delta)zmw_vscrollbar_with_delta156,4671
+
+widgets/zmw_scrolled_view.c,432
+Zmw_Boolean zmw_child_visible(int child)zmw_child_visible25,966
+Zmw_Boolean zmw_child_next_visible(int child)zmw_child_next_visible34,1300
+void zmw_scrolled_view_clamp(int *start, int *nb, int max)zmw_scrolled_view_clamp41,1516
+void zmw_scrolled_view_with_columns(int *start, int *nb, int max, int nb_cols)zmw_scrolled_view_with_columns54,1709
+void zmw_scrolled_view(int *start, int *nb, int max)zmw_scrolled_view136,3521
+
+widgets/zmw_table.c,1253
+#define ZMW_TABLE_VERTICAL_WIDTH ZMW_TABLE_VERTICAL_WIDTH27,1010
+int * zmw_table_col_width(int nb_cols, int *computed_col_width)zmw_table_col_width29,1073
+int *zmw_table_row_height(int nb_cols, int *nb_rows)zmw_table_row_height57,1863
+void zmw_table_compute_required_size(int nb_cols, int *col_width)zmw_table_compute_required_size78,2529
+void zmw_table_compute_allocated_size(int nb_cols, int *col_width, int **wi, int **he)zmw_table_compute_allocated_size96,3017
+static Zmw_Child *global_children = NULL ;global_children171,5173
+static int global_nb_children ;global_nb_children172,5216
+void zmw_children_remove_not_used()zmw_children_remove_not_used174,5249
+void zmw_children_restore_not_used()zmw_children_restore_not_used196,5801
+int zmw_search_column(int nb_cols, int *col_width)zmw_search_column212,6176
+int zmw_search_row(int nb_cols, int *nb_rows)zmw_search_row229,6553
+void zmw_table_draw(int nb_cols, int *width, int *height, Zmw_Boolean *selection)zmw_table_draw246,6884
+void zmw_table_with_widths_and_selection(int nb_cols, int *col_widthzmw_table_with_widths_and_selection284,7740
+void zmw_table(int nb_cols)zmw_table373,9904
+void zmw_table_with_widths(int nb_cols, int *widths)zmw_table_with_widths377,10008
+
+widgets/zmw_text.c,1133
+void zmw_text_insert(char **text, int *cursor_pos, int *start_poszmw_text_insert29,1052
+void zmw_text_backspace(char **text, int *cursor_pos, int *start_pos)zmw_text_backspace50,1525
+void zmw_text_draw_selection(int start_pos, int cursor_pos)zmw_text_draw_selection58,1762
+void zmw_text_draw_text(Zmw_Boolean activable, Zmw_Boolean editable)zmw_text_draw_text97,2593
+void zmw_text_draw_cursor(int cursor_pos)zmw_text_draw_cursor115,3149
+void zmw_text_selection_take(const char *text, Zmw_Name *selectionningzmw_text_selection_take126,3440
+void zmw_text_cursor_set(const char *text, int *cursor_poszmw_text_cursor_set148,4009
+void zmw_text_simple(char **text, Zmw_Boolean editable, Zmw_Boolean activablezmw_text_simple165,4372
+void zmw_label(const char *text)zmw_label337,9423
+void zmw_entry_with_cursor_and_start(char **text, int *cursor_poszmw_entry_with_cursor_and_start342,9538
+void zmw_entry_with_cursor(char **text, int *cursor_pos)zmw_entry_with_cursor371,10120
+void zmw_entry(char **text)zmw_entry376,10242
+void zmw_int_editable(int *i)zmw_int_editable381,10313
+void zmw_int(int i)zmw_int392,10481
+
+widgets/zmw_toggle.c,1438
+int zmw_check_button_bits(int value, int bits, int options)zmw_check_button_bits25,994
+void zmw_check_button_bits_int(int *value, int bits)zmw_check_button_bits_int49,1573
+void zmw_check_button_bits_char(char *value, int bits)zmw_check_button_bits_char54,1705
+int zmw_check_button(int value)zmw_check_button59,1839
+void zmw_check_button_int(int *value)zmw_check_button_int64,1944
+void zmw_check_button_char(char *value)zmw_check_button_char69,2058
+int zmw_check_button_bits_with_label(int value, int bits, const char *label)zmw_check_button_bits_with_label74,2174
+void zmw_check_button_bits_int_with_label(int *value, int bits, const char *label)zmw_check_button_bits_int_with_label103,2714
+void zmw_check_button_bits_char_with_label(char *value, int bits, const char *label)zmw_check_button_bits_char_with_label108,2869
+int zmw_check_button_with_label(int value, const char *label)zmw_check_button_with_label113,3026
+void zmw_check_button_int_with_label(int *value, const char *label)zmw_check_button_int_with_label118,3154
+void zmw_check_button_char_with_label(char *value, const char *label)zmw_check_button_char_with_label123,3291
+void zmw_radio_with_option(int *value, int number, int option)zmw_radio_with_option129,3431
+void zmw_radio_button(int *value, int number)zmw_radio_button138,3602
+void zmw_radio_button_with_label(int *value, int number, const char *label)zmw_radio_button_with_label144,3720
+
+widgets/zmw_vbox.c,436
+void zmw_vbox_required_size(int focusable)zmw_vbox_required_size37,1218
+void zmw_vbox_children_allocated_size(int focusable)zmw_vbox_children_allocated_size76,2034
+void zmw_vbox_with_activable(Zmw_Boolean activable)zmw_vbox_with_activable228,5901
+void zmw_vbox()zmw_vbox265,6672
+void zmw_vbox_activable()zmw_vbox_activable270,6732
+void zmw_alignment_vertical_make(int i, int border_width)zmw_alignment_vertical_make279,6805
+
+widgets/zmw_viewport.c,641
+#define P P26,967
+int zmw_scrollbar_2_viewport(Zmw_Float_0_1 sb_pos, int sb_size, int vp_size)zmw_scrollbar_2_viewport28,981
+Zmw_Float_0_1 zmw_scrollbar_size(int sb_size, int vp_size)zmw_scrollbar_size33,1095
+void zmw_viewport_get_children(int *v_sb, int *h_sb, int *vp)zmw_viewport_get_children46,1369
+void zmw_scrollbar_needed(Zmw_Boolean *x, Zmw_Boolean *y,zmw_scrollbar_needed69,1833
+void zmw_viewport(Zmw_Float_0_1 x, Zmw_Float_0_1 y, Zmw_Float_0_1 *x_size, Zmw_Float_0_1 *y_size, Zmw_Rectangle *r)zmw_viewport84,2285
+void zmw_viewport_with_scrollbar(Zmw_Float_0_1 *x, Zmw_Float_0_1 *y)zmw_viewport_with_scrollbar172,5541
+
+widgets/zmw_void.c,462
+void zmw_void()zmw_void31,1151
+void zmw_if_(Zmw_Boolean visible, Zmw_Boolean recurse_on_init)zmw_if_83,2239
+void zmw_if(Zmw_Boolean visible)zmw_if99,2623
+void zmw_if_with_accelerators(Zmw_Boolean visible)zmw_if_with_accelerators104,2693
+void zmw_tip()zmw_tip114,2843
+void zmw_menu()zmw_menu119,2893
+void zmw_menu_without_accelerators()zmw_menu_without_accelerators124,2967
+void zmw_menu_with_detached(int *detached)zmw_menu_with_detached129,3044
+
+widgets/zmw_window.c,1738
+typedef enum { Zmw_Popup_None, Zmw_Popup_Right, Zmw_Popup_Bottom } Zmw_Popup ;Zmw_Popup_None27,1014
+typedef enum { Zmw_Popup_None, Zmw_Popup_Right, Zmw_Popup_Bottom } Zmw_Popup ;Zmw_Popup_Right27,1014
+typedef enum { Zmw_Popup_None, Zmw_Popup_Right, Zmw_Popup_Bottom } Zmw_Popup ;Zmw_Popup_Bottom27,1014
+typedef enum { Zmw_Popup_None, Zmw_Popup_Right, Zmw_Popup_Bottom } Zmw_Popup ;Zmw_Popup27,1014
+static void zmw_compute_window_size()zmw_compute_window_size34,1240
+void zmw_window_generic(GdkWindow **w, Zmw_Popup popzmw_window_generic87,2725
+Zmw_Boolean zmw_window_is_detached()zmw_window_is_detached269,7911
+void zmw_window_detached_toggle()zmw_window_detached_toggle289,8295
+void zmw_window_with_id(GdkWindow **w, const char *title)zmw_window_with_id319,8944
+void zmw_window(const char *title)zmw_window323,9064
+void zmw_window_popup_right_with_id_and_title(GdkWindow **w, const char *title)zmw_window_popup_right_with_id_and_title332,9144
+void zmw_window_popup_right_with_title(const char *title)zmw_window_popup_right_with_title336,9287
+void zmw_window_popup_right_with_id(GdkWindow **w)zmw_window_popup_right_with_id340,9407
+void zmw_window_popup_right()zmw_window_popup_right344,9516
+void zmw_window_popup_bottom_with_id_and_title(GdkWindow **w,const char *title)zmw_window_popup_bottom_with_id_and_title350,9593
+void zmw_window_popup_bottom_with_title(const char *title)zmw_window_popup_bottom_with_title354,9737
+void zmw_window_popup_bottom_with_id(GdkWindow **w)zmw_window_popup_bottom_with_id358,9859
+void zmw_window_popup_bottom()zmw_window_popup_bottom362,9970
+void zmw_window_drag_with_id(GdkWindow **w)zmw_window_drag_with_id368,10069
+void zmw_window_drag()zmw_window_drag373,10176

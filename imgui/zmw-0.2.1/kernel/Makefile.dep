@@ -1,0 +1,82 @@
+zmw.o: zmw.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_child_cache.o: zmw_child_cache.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_device.o: zmw_device.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_drag.o: zmw_drag.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_event.o: zmw_event.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_font.o: zmw_font.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_generated.o: zmw_generated.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_graphic.o: zmw_graphic.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h
+zmw_main.o: zmw_main.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/socket.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/selection.h
+zmw_name.o: zmw_name.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h
+zmw_rectangle.o: zmw_rectangle.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h
+zmw_state.o: zmw_state.c \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_public.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_widgets.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/http.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_private.h \
+ /home/jfeng/Project/comps/graphics/imgui/zmw-0.2.1/include/zmw/zmw_generated_private.h

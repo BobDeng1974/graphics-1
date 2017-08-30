@@ -1,0 +1,195 @@
+2009-02-14 (0.2.1)
+	Small update in order to have working 'texts' with newer GDK version
+	Regression tests are broken by the new texts. No time to fix them.
+	
+2005-07-04 (0.2.0)
+	Complete rewrite of the kernel API, in order to have :
+	The library can now be updated without recompiling external code
+
+2005-05-19 (0.1.0)
+	BEWARE : notebook page label should now be ACTIVABLE widget
+	Some function renaming
+	Zmw_Size renamed Zmw_Child, it is more accurate
+	typedef Zmw_Size     is now a width or height of a screen rectangle
+	typedef Zmw_Position is the x or y on the screen
+	typedef Zmw_Width    is the focus or padding or border width
+	ZMW_VALUE_UNDEFINED is now 32767 (could be stored in an unsigned int)
+	Use bit record where it is possible to reduce widget-stack memory usage
+	"zmw_main.c:event_handler" cleanup
+	Focus navigation with keyboard [control +] up down left right
+	The focus navigation can intuitively jump from window to another
+	Add regression tests on focus navigation
+	The window with accelerators list is less obstructive
+	The Xvfb process uses now a dynamicaly allocated DISPLAY number
+	Clipping code clean up, clipping computed not only for display action
+	Escape-key unpop all popups windows
+	Font families are now stored as a table index
+	The text cursor no more move on cursor up/down if it is not possible
+	Add Home/End/Delete key action for the text entry
+	
+2005-05-04 (0.0.12)
+	The file chooser set activated to false if it is not visible
+	The book managing application "load" menu now works
+	zmw_device.c zmw_text.c support now vertical cursor movements.
+	Correction of a geometry problem on focusable horizontal box
+	zmw.debug renamed as zmw.run->top_level_debug
+	Add "accel_menu2" regression test (2 buttons with the same accelerator)
+	Tell about "application/xml" in the documentation "zmw.xml"
+	No more "zmw_swap_x_y", "zmw_box_hv.h" is included twice with axis swap
+	About 20 functions renamed to be GTK like, see "zmw_upgrade" script
+	"zmw_run.c" renamed "zmw_main.c"
+	Add a Widget profiling to display time statistics per widget defined
+	Regression tests run fine on Debian Testing > 2005/04/15
+	zmw_device.c: Add a text size cache to pango
+	Add a function zmw_string_copy which do not malloc/free each time
+	Many small speed enhancements and clean up code
+	Fix some bad popup positionning
+	The background of the buttons change when the cursor is above
+	
+2004-09-23 (0.0.11)
+	No more core dump on exit
+	New application example: an XML GUI not using memory at all
+	Texts are now displayed with Pango
+	Multi line text
+	UTF8 support, copy/paste with UTF8
+	Incompatibility in font management, new functions:
+		zmw_font_(family|size|weight|style)
+	Regression tests: add "padborfoc" to test border problems
+	Sizes of toggle and radio with label are now correctly computed
+	
+2004-07-28 (0.0.10)
+	Makefile.config: ZMW_ROOT is defined only if undefined
+	benchmark: add a "profiling" goal
+	examples: add some examples used in the future article
+	Accelerator reception don't stop tree traversal (because it is safe)
+	The good window pointer is now displayed on the web interface
+	zmw_action_dispatch_event: NEW ALGORITHM, and it is trivial
+	Event dispatching on Focus: now trivial (thanks to zmw_action_search)
+	Remove "event_in_focus" from Zmw_Inheritable because it is unused
+	Remove "event_masked" from Zmw_Inheritable because it is now unused
+	Remove "zmw_second_pass", event_in is now computed on first pass
+	Bug raised by the algorithm IN regression tests: movepressed ressource2
+	Regression tests: add focus2, focus3, focus4
+	
+2004-07-07 (0.0.9)
+	New directory: "applications/benchmarks" with speed test
+	Create substructure "parent_to_child", move it to unherited
+	Remove functions "zmw_restore_window" and "zmw_action_do_not_enter"
+	When ZMW_WINDOW is used, it is now the previous widget-window
+	Nightly tar files should be smaller
+	Replace indexes by hash: many cleanups and simplifications
+	"zmw_cache.c" and "zmw_name.c" has been rewrotted nice/fast/small
+	ZMW_INDEX&Co have been removed, it is a huge step
+	zmw_filechooser/zmw_alert : use "zmw_if" in place of "if"
+	zmw_if no more traverses children if the parameter is false
+	Complete rewrite of menu system: much nicer and understandable
+	Event reception stops widget tree traversal, it is more cautious
+	Remove problems with multiple sibling detached in menus
+	Remove many many bugs from drag and drop
+	Some cleanups in zmw_event.c
+	Remove "remove_event" flag, "event_removed" is set to 1 immediatly
+	Remove "zmw_name_pass_through_is" add "tip_visible" in ZMW_SIZE
+	The widget stack is now dynamically allocated
+	Add "zmw_if_with_accelerators", "zmw_popup_without_accelerators"
+
+2004-06-15 (0.0.8)
+	Remove data duplication: ZMW_SIZE is now zMw[-1].u.children[Child.]
+	Many bugs corrected thanks to "valgrind"
+	Remove of the attribute "nb_of_children_0" (no more useful)
+	Children list is created only once when evaluating a parent
+	Horizontal/Vertical expands are not modified if the width is given
+	
+2004-06-02 (0.0.7)
+	The user can stop the widget-tree traversal with zmw_event_remove()
+	The drag and drop no more use transient widgets but zmw_if
+	zmw_drag_...() API change
+	zmw_drag_swap() API change (one less parameter)
+	All the transient management has been removed from library kernel
+	The default widget name is "" in place of "?" to have name smaller
+	The padding computation has moved from kernel to widget containers
+	The padding width is now copied into Zmw_Size
+	
+2004-05-18 (0.0.6)
+	The event reception no more stops the widget-tree traversal
+	zmw_if(): add the widget, the regression test, the documentation
+	Only examples used in the documentation are converted (use less space)
+        zmw_tip() use now zmw_if
+	if(zmw_window_is_poped...) { } replaced by ZMW(zmw_popup...) { }
+	The focused, activated, changed states is now stored in the stack
+	The web debugging have been enhanced, see the ``widget table''
+	...EVENT_IN renamed into ZMW_SIZE_EVENT_IN_RECTANGLE, _IN_CHILDREN
+	Command line options where very badly interpreted
+	High level resource manipulation is now really easy (one line)
+	Add regression test for zmw_anchor_box
+	Add regression test for TWO zmw_scrollbar2 each with its window
+	Add regression test for popup/tip or tip/popup on the same button
+	Add regression test for accelerator (remove tons of bugs)
+	Remove some random activation (see zmw.c) (regtest bug1.c created)
+	The empty scrolled_view was bugged (regtest bug2.c created)
+	
+2003-12-15 (0.0.5)
+	Detached subsubmenu is visible even if the submenu is not detached
+	debugging: The widget-stack indicates "file:line" of widget use
+	examples: Add regression test "movepressed.c"
+	zmw_use_window_from_button_press: moving with button pressed is now OK
+	zmw_filechooser(): Do not display directory size: regression problems.
+	Complete rewrite of regression test engine
+	Makefile compile messages are now in the good order
+	Makefile does not make things more than one time
+
+2003-11-27 (0.0.4)
+	Many bugs removed, thanks to "valgrind"
+	zmw_window_name(): May now returns the transient containing the window
+	zmw_border...(): The painted background is now with the right size
+	zmw_window(): The windows now receive less event types
+	zmw_rgb_to_int(): Now works on more visual
+	zmw_void(): add the widget, the example
+	The activated/changed widget no more need to remove events themselves
+	zmw_message() : API changes, it returns now the visible value
+	zmw_dragged(): Function removed, use zmw_selected() in place
+	zmw_changed(): Is now true if zmw_activated() is true
+	zmw_drag_swap(): API change; more powerful and less parameters
+	zmw.c: Widget using ZMW_EXTERNAL can now be transient
+	zmw.c: ZMW_ABORT display the stack of widgets
+	zmw_run.c: Tips were appearing randomly on slow computer
+	application/book: Many enhancements, I18N
+
+2003-11-12 (0.0.3)
+	Many changes have been made to make OpenGL port easy
+	There is now only one GC by window
+	Name checking can now be enabled/disabled interactively
+	Size-cache checking can now be enabled/disabled interactively
+	zmw_window...(): Do not change the colors anymore
+	zmw_rgb(): Allow to give the chroma of the interface
+	zmw_text(): It is zmw_activated() on <return> key.
+	zmw_text(): Use zmw_changed() in place of zmw_activated()
+	zmw_changed() indicates if the previous widget has been modified
+	examples: Add regression test "tip.c"
+	examples: Add regression test "popdown.c"
+	examples: Add regression test "dragswap.c" and documentation
+	zmw_drag_swap() function added to change widget order
+	The window popdown is now done automaticaly on window events
+	zmw_toggle.c: Toggle label activation now popdown menus
+	zmw_toggle.c : API changes, zmw_toggle returns now the toggle value
+	application/book: Many enhancements
+
+2003-10-31 (0.0.2)
+	Regression tests are OK with GTK 2.0.2
+	No more flickering display with GTK 2
+	Documentation updates
+	Solve portability problems with "fvwm2" in regression test
+	zmw_text & zmw_scrollbar: Unpop all the popups on button press
+	zmw_scrollbar: Add a delta parameter for bar translation with keys
+	zmw_scrollbar: Add Page Up/Down event handling
+	zmw_viewport: Is now activated on scrollbar change
+	zmw_table: vertical line placement corrected
+	zmw_window: The popped windows now continuously updates their position
+	examples: Add a "patchwork" of widgets for FreshMeat screenshot
+	examples: Add "animation" for the documentation
+	zmw_state_change_allowed: returns now true if outside any widget (ok?)
+
+2003-10-27 (0.0.1)
+	Freshmeat release
+
+2003-03-14 (0.0.0)
+	Restricted diffusion release

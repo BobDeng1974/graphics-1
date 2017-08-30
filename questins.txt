@@ -1,0 +1,42 @@
+
+
+Hi All,
+
+About benchmark 2D rendering, our benchmark just do following test:
+  * Image Blit
+     Use android "View + Canvas.drawBitmap + RotateAnimation" to test2D rendering
+  * Magazine View
+     Use android "View + Canvas.drawBitmap + postInvalidate" to test2D rendering
+  * Magazine Surface
+     Use android "SurfaceView + Canvas.drawBitmap" to test 2D rendering
+  * Magazine GL
+     Use android "GLSurfaceView + GLSurfaceView.Renderer + OpenGL1.0" to test 2D rendering.
+
+About hardware acceleration:
+  * hardware acceleration enabled by default
+  * hardware acceleration is not supported for all of the 2D drawing operations, turning it on globally might affect some of your custom views or drawing calls To remedy this, Android gives you the option to enable or disable hardware acceleration at multiple levels
+  * hardware acceleration can boom the preformance, but consume more ram, should record ram usages while tesing
+
+
+My questiones/advices about 2D rendering test
+  * Is the benchmark test is enough for our nook apps, just Canvas.drawBitmap ? What is the actual nook app usage? Any other 2D draw operations?
+  * The benchmark test item "Magazine GL" use OpenGL1.0, will stil use OpenGL1.0 for roadrunner in App?
+  * Does App team disable some view's or cavas operations hardware acceleration on purpose for eliminating hw bad affections ?
+
+  * Record the Ram usage while 2D rendering test,  memory bandwidth load is a plus.
+  * As we dicussed, need more aggressive test cases to profile the GPU
+  * Accroding to the test report and add more test itmes of 2D rendering for benchmark app.
+
+I attached the test report and should update accroding to App team's request. Will moved it to wiki page:
+  * see 2D_rendering_test_report.xlsxo
+
+Any updates ?
+
+Thanks,
+Jin
+
+A Canvas returned by SurfaceView.lockCanvas() cannot be hardware accelerated at the moment.
+Hardware accelerated Canvas through SurfaceView is currently not
+planned, at least not in J. 
+
+Recommendation is to use OpenGL.  If you are using Canvas for your drawing in a SurfaceView, you aren't really gaining anything over just not using a SurfaceView.  If you are using SurfaceView for performance reasons, you should prefer to use OpenGL to avoid the overhead of translating Canvas operations to OpenGL rendering.
