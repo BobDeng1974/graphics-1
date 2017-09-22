@@ -1,5 +1,6 @@
 
 
+http://events.linuxfoundation.jp/sites/events/files/slides/ALS_201407_tanibata_weston_ivi_shell_v05.pdf
 
 https://hdante.wordpress.com/2014/07/08/the-hello-wayland-tutorial/
 
