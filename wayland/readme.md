@@ -1,47 +1,47 @@
 
+# wayland ivi extension
+https://at.projects.genivi.org/wiki/display/PROJ/Wayland+IVI+Extension+Design
 
+# weston.ini
+http://manpages.ubuntu.com/manpages/zesty/en/man5/weston.ini.5.html
+
+# Introduction
+https://en.wikipedia.org/wiki/Wayland_%28display_server_protocol%29
+https://wayland.freedesktop.org/
 http://events.linuxfoundation.jp/sites/events/files/slides/ALS_201407_tanibata_weston_ivi_shell_v05.pdf
 
+
+# Client Programming
 https://hdante.wordpress.com/2014/07/08/the-hello-wayland-tutorial/
 
 
-
-wayland APIs
-	
+# Wayland APIs
+http://blog.csdn.net/jinzhuojun/article/details/40264449
+http://blog.csdn.net/jinzhuojun/article/details/47290707
+http://www.beyondcompare.cn/wayland%E4%B8%AD%E7%9A%84%E8%B7%A8%E8%BF%9B%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%B5%85%E6%9E%90.html
 
 subsurface sync/desync
 http://vberger.github.io/wayland-client-rs/src/wayland_client/interfaces/subsurface.rs.html
 http://wayland.freedesktop.org/docs/html/apa.html#protocol-spec-wl_subsurface
-
 http://blog.csdn.net/jinzhuojun/article/details/40264449
 http://blog.csdn.net/goodboychina/article/details/26145175
-
-# exmaple
 https://hackage.haskell.org/package/bindings-GLFW-3.1.1.3/src/glfw/src/wl_window.c
 
 
 # graphics stack
-***************************************************************************************
 Wayland
-=============
 EGL
-==============
 libdrm
----------
 DRM
 
 
 opengles
-------------
 EGL
-------------
 window system
 
 
 # drm
-***************************************************************************************
 http://jan.newmarch.name/Wayland/DRM/
-
 picture ==>drawn_into==> framebuffer ==shown_on==> CRTC ==control/drive==> connector ==be_plugged==> monitor
 encoder: Encoders help the CRTC to convert data from a framebuffer into the right format that can be used for the chosen connector.
 Remember, we can only drive one connector per CRTC.
@@ -52,11 +52,6 @@ Remember, we can only drive one connector per CRTC.
 #libdrm
 http://virtuousgeek.org/blog/index.php/jbarnes/2011/10/31/writing_stanalone_programs_with_egl_and_
 http://wnwolf.com/display/2012/09/05/libdrm-samples/
-
-
-
-
-
 http://en.wikipedia.org/wiki/Direct_Rendering_Infrastructure
 
 #plane/crtc/encoder/connector
@@ -108,5 +103,3 @@ https://hdante.wordpress.com/2014/07/08/the-hello-wayland-tutorial/
 http://www.cnblogs.com/blfshiye/p/4303278.html
 http://jylee-world.blogspot.jp/2013_12_01_archive.html
 http://blog.csdn.net/goodboychina/article/details/26080693
-
-
