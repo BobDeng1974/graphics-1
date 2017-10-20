@@ -1,6 +1,9 @@
 
 # wayland ivi extension
+http://processors.wiki.ti.com/index.php/Processor_SDK_Linux_Automotive_Software_Developers_Guide#Wayland.2FWeston
 https://at.projects.genivi.org/wiki/display/PROJ/Wayland+IVI+Extension+Design
+https://wiki.tizen.org/Wayland_ivi-shell
+https://at.projects.genivi.org/wiki/display/WIE/Quick+start
 
 # weston.ini
 http://manpages.ubuntu.com/manpages/zesty/en/man5/weston.ini.5.html
