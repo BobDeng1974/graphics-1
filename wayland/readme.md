@@ -1,4 +1,8 @@
 
+
+# wayland protocol argument types
+https://events.linuxfoundation.org/images/stories/pdf/als2012_othman.pdf
+
 # wayland ivi extension
 http://processors.wiki.ti.com/index.php/Processor_SDK_Linux_Automotive_Software_Developers_Guide#Wayland.2FWeston
 https://at.projects.genivi.org/wiki/display/PROJ/Wayland+IVI+Extension+Design
@@ -18,10 +22,11 @@ http://events.linuxfoundation.jp/sites/events/files/slides/ALS_201407_tanibata_w
 https://hdante.wordpress.com/2014/07/08/the-hello-wayland-tutorial/
 
 
-# Wayland APIs
+# Wayland IPC
 http://blog.csdn.net/jinzhuojun/article/details/40264449
+
+# Wayland Introduction
 http://blog.csdn.net/jinzhuojun/article/details/47290707
-http://www.beyondcompare.cn/wayland%E4%B8%AD%E7%9A%84%E8%B7%A8%E8%BF%9B%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%B5%85%E6%9E%90.html
 
 subsurface sync/desync
 http://vberger.github.io/wayland-client-rs/src/wayland_client/interfaces/subsurface.rs.html
